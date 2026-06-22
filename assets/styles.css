@@ -208,6 +208,7 @@ section.tight { padding: 30px 0; }
 .gift .g-name { display: flex; align-items: center; gap: 9px; font-weight: 600; }
 .gift .g-name .ico { width: 28px; height: 28px; }
 .gift .free { font-weight: 800; color: var(--green-d); font-size: .73rem; background: #fff; border: 1px solid var(--green-l); padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.gift .free s { color: #b08a5a; text-decoration-thickness: 1.5px; }
 .gift.locked { opacity: .4; }
 .gift.locked .free { background: #f0f0f0; color: #999; border-color: #eee; }
 
