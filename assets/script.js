@@ -1,11 +1,10 @@
 /* ============================================================
-   SCRATCHY — Product Page (PREVIEW v2)
-   Galleria, selettore bundle (+ regali per tier), CTA sticky, scroll.
-   Vanilla JS, zero dipendenze.
+   SCRATCHY — Product Page (PREVIEW v4)
+   Galleria, selettore bundle (+ regali per tier), bottone "trova
+   la dose", CTA sticky, scroll. Vanilla JS, zero dipendenze.
    ============================================================ */
 (function () {
   "use strict";
-
   var euro = function (n) { return "€" + n.toFixed(2).replace(".", ","); };
 
   /* ---------- GALLERIA ---------- */
@@ -29,7 +28,6 @@
   var gifts = Array.prototype.slice.call(document.querySelectorAll("#gift-list .gift"));
 
   function applyGifts(tier) {
-    // regali "hero" (Guida P.R.E.D.A. + prioritaria) attivi solo per 2+2 e 3+3
     var heroTiers = (tier === "hero" || tier === "value");
     gifts.forEach(function (g) {
       var need = g.getAttribute("data-min");
@@ -37,8 +35,9 @@
       g.classList.toggle("locked", !on);
     });
     if (giftHint) {
-      if (tier === "entry") giftHint.textContent = "Passa al Kit 2+2 per sbloccare la Guida P.R.E.D.A. e la spedizione prioritaria";
-      else giftHint.textContent = "Inclusi con il kit selezionato";
+      giftHint.textContent = (tier === "entry")
+        ? "Passa al Kit 2+2 per sbloccare la Guida P.R.E.D.A. e la spedizione prioritaria"
+        : "Inclusi con il kit selezionato";
     }
   }
 
@@ -47,14 +46,11 @@
     b.classList.add("selected");
     var input = b.querySelector("input");
     if (input) input.checked = true;
-
     var price = parseFloat(b.getAttribute("data-price"));
     var name = b.getAttribute("data-name");
-    var tier = b.getAttribute("data-tier");
-
     if (sumRate) sumRate.textContent = euro(price / 3);
     if (stickyName) stickyName.textContent = name + " · " + euro(price);
-    applyGifts(tier);
+    applyGifts(b.getAttribute("data-tier"));
   }
 
   bundles.forEach(function (b) {
@@ -62,11 +58,25 @@
     var input = b.querySelector("input");
     if (input) input.addEventListener("change", function () { if (input.checked) selectBundle(b); });
   });
-
   var pre = document.querySelector(".bundle.selected") || bundles[0];
   if (pre) selectBundle(pre);
 
-  /* ---------- SCROLL verso la buy box (CTA "#top") ---------- */
+  /* ---------- "Trova la tua dose" -> evidenzia il consigliato ---------- */
+  var quiz = document.getElementById("quiz-btn");
+  if (quiz) {
+    quiz.addEventListener("click", function () {
+      var hero = document.querySelector('.bundle[data-tier="hero"]');
+      if (!hero) return;
+      selectBundle(hero);
+      hero.scrollIntoView({ behavior: "smooth", block: "center" });
+      hero.animate(
+        [{ transform: "scale(1)" }, { transform: "scale(1.03)" }, { transform: "scale(1)" }],
+        { duration: 600, easing: "ease-in-out" }
+      );
+    });
+  }
+
+  /* ---------- SCROLL verso la buy box ---------- */
   var buybox = document.querySelector(".buybox");
   function scrollToBuy(e) {
     if (e) e.preventDefault();
@@ -84,18 +94,16 @@
       e.preventDefault();
       var sel = document.querySelector(".bundle.selected");
       var name = sel ? sel.getAttribute("data-name") : "Kit";
-      // In produzione: aggiunta al carrello Shopify del kit selezionato.
       alert("ANTEPRIMA — In produzione: aggiunta al carrello di " + name + ".");
     });
   }
 
   /* ---------- STICKY CTA ---------- */
   var sticky = document.getElementById("sticky");
-  var hero = document.querySelector(".hero");
+  var heroSec = document.querySelector(".hero");
   function onScroll() {
-    if (!sticky || !hero) return;
-    var pastHero = hero.getBoundingClientRect().bottom < 0;
-    sticky.classList.toggle("show", pastHero);
+    if (!sticky || !heroSec) return;
+    sticky.classList.toggle("show", heroSec.getBoundingClientRect().bottom < 0);
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll, { passive: true });
