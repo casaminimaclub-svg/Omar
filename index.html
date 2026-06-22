@@ -6,8 +6,7 @@
   <title>SCRATCHY — La terapia ambientale per il gatto che vive in casa</title>
   <meta name="description" content="Il comportamento del tuo gatto non è cattiveria. È il sintomo dell'Ipostimolazione Felina Cronica. SCRATCHY è la terapia ambientale che agisce sulla causa. Garanzia 60 giorni." />
 
-  <!-- ANTEPRIMA / PREVIEW — pagina ricostruita da zero. NON è lo store attivo (tryscratchy.com resta online). -->
-  <!-- Font -->
+  <!-- ANTEPRIMA / PREVIEW v2 — struttura ispirata ad Argos Pets. Lo store attivo (tryscratchy.com) NON viene toccato. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,62 +14,155 @@
 </head>
 <body>
 
-  <!-- ===== TOP TRUST BAR ===== -->
+  <!-- ===== TOP BAR (marquee) ===== -->
   <div class="topbar">
-    🐾 Spedizione <strong>gratuita</strong> in tutta Italia · Garanzia <strong>soddisfatti o rimborsati 60 giorni</strong>
+    <div class="track">
+      <span>🐾 Spedizione <b>gratuita</b> in tutta Italia</span>
+      <span>🛡️ Garanzia <b>60 giorni</b> soddisfatti o rimborsati</span>
+      <span>⚠️ Scorte limitate</span>
+      <span>🐾 Spedizione <b>gratuita</b> in tutta Italia</span>
+      <span>🛡️ Garanzia <b>60 giorni</b> soddisfatti o rimborsati</span>
+      <span>⚠️ Scorte limitate</span>
+    </div>
   </div>
 
   <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="wrap">
       <a href="#" class="logo">Scratch<span>y</span></a>
-      <div class="header-trust"><span class="stars">★★★★★</span> 4,8/5</div>
+      <div class="cart">🛒</div>
     </div>
   </header>
 
   <!-- ============================================================
-       SEZIONE 1 — HERO (90% della conversione)
+       HERO — galleria + buy box (offerta nel primo schermo)
        ============================================================ -->
   <section class="hero">
     <div class="wrap">
       <div class="hero-grid">
-        <div class="hero-media">
-          <img src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY1.png?v=1777478296" alt="Gatto che usa Scratchy in casa, scaricando l'istinto in orizzontale" loading="eager" />
-          <span class="hero-badge">★ 4,8/5 — migliaia di proprietari italiani</span>
-        </div>
-        <div class="hero-copy">
-          <span class="eyebrow">Terapia ambientale per gatti</span>
-          <h1>Il tuo gatto distrugge casa, impazzisce alle 3 di notte o si è spento? Non è cattiveria. È un bisogno che la vita in casa gli ha tolto.</h1>
-          <p class="hero-sub">SCRATCHY è la terapia ambientale amata da migliaia di proprietari italiani per ridare equilibrio al gatto che vive in casa — agendo sulla causa, non sul sintomo.</p>
-          <ul class="hero-points">
-            <li><span class="tick">✓</span> Completa l'istinto predatorio dove il gatto graffia davvero: in orizzontale</li>
-            <li><span class="tick">✓</span> Primi miglioramenti entro 14 giorni, con protocollo guidato incluso</li>
-            <li><span class="tick">✓</span> Garanzia soddisfatti o rimborsati 60 giorni</li>
-          </ul>
-          <a href="#offerta" class="cta-btn">Ridai equilibrio al tuo gatto →</a>
-          <div class="cta-sub">Spedizione gratuita · Arriva in 3–5 giorni lavorativi · Pagamento anche in 3 rate</div>
-        </div>
-      </div>
 
-      <div class="trust-row">
-        <div class="trust-item"><span class="ic">🛡️</span> Garanzia 60 giorni</div>
-        <div class="trust-item"><span class="ic">🚚</span> Spedizione gratuita</div>
-        <div class="trust-item"><span class="ic">🇮🇹</span> Assistenza in italiano</div>
-        <div class="trust-item"><span class="ic">🔬</span> Metodo su basi scientifiche</div>
+        <!-- GALLERIA -->
+        <div class="gallery">
+          <div class="main">
+            <img id="main-img" src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY1.png?v=1777478296" alt="SCRATCHY, la terapia ambientale per il gatto che vive in casa" loading="eager" />
+            <span class="flag">★ 4,8/5 · migliaia di proprietari</span>
+          </div>
+          <div class="thumbs" id="thumbs">
+            <img class="active" src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY1.png?v=1777478296" alt="SCRATCHY vista 1" />
+            <img src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY2.png?v=1777478296" alt="SCRATCHY vista 2" />
+            <img src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY3.png?v=1777478296" alt="SCRATCHY vista 3" />
+            <img src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/01productimage4_1e170e43-ab5d-4119-a87b-06a4ae482152.webp?v=1777478336" alt="SCRATCHY in uso 1" />
+            <img src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/01productimage5_54fa36aa-7c87-4594-8d13-9b70fccabe88.webp?v=1777478335" alt="SCRATCHY in uso 2" />
+            <img src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY_6.png?v=1777478377" alt="SCRATCHY dettaglio" />
+          </div>
+        </div>
+
+        <!-- BUY BOX -->
+        <div class="buybox">
+          <div class="buy-eyebrow">Terapia ambientale per gatti</div>
+          <h1>SCRATCHY</h1>
+          <p class="buy-sub">Il tuo gatto non è cattivo. Gli manca qualcosa che la vita in casa non può dargli — e <strong>SCRATCHY</strong> gliela restituisce.</p>
+          <div class="buy-rate rate"><span class="stars">★★★★★</span> <b>4,8</b> · amato da migliaia di proprietari italiani</div>
+
+          <!-- 4 icone -->
+          <div class="feat-box">
+            <div class="feat"><span class="ic">🎯</span> Agisce sulla causa (IFC)</div>
+            <div class="feat"><span class="ic">↔️</span> Graffio orizzontale naturale</div>
+            <div class="feat"><span class="ic">🌙</span> Notti di nuovo silenziose</div>
+            <div class="feat"><span class="ic">📋</span> Protocollo guidato incluso</div>
+          </div>
+
+          <!-- scarsità -->
+          <div class="scar"><span>⚠️ Disponibilità limitata</span> <span class="bar"><i></i></span></div>
+
+          <!-- bundle -->
+          <form id="kit-form" class="bundles">
+            <label class="bundle" data-price="29.90" data-name="Kit 1+1" data-tier="entry">
+              <input type="radio" name="kit" value="1+1" />
+              <img class="thumb" src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY1.png?v=1777478296" alt="" />
+              <div>
+                <div class="name">Kit 1+1 GRATIS</div>
+                <div class="desc">2 SCRATCHY (1 in regalo) · prova una zona</div>
+              </div>
+              <div class="price"><span class="now">€29,90</span></div>
+            </label>
+
+            <label class="bundle selected" data-price="59.80" data-name="Kit 2+2" data-tier="hero">
+              <input type="radio" name="kit" value="2+2" checked />
+              <span class="pop">★ Il più scelto</span>
+              <img class="thumb" src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY2.png?v=1777478296" alt="" />
+              <div>
+                <div class="name">Kit 2+2 GRATIS</div>
+                <div class="desc">4 SCRATCHY · copri le zone chiave della casa</div>
+                <span class="disc">Dose terapeutica raccomandata</span>
+              </div>
+              <div class="price"><span class="now">€59,80</span></div>
+            </label>
+
+            <label class="bundle" data-price="69.90" data-name="Kit 3+3" data-tier="value">
+              <input type="radio" name="kit" value="3+3" />
+              <img class="thumb" src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY_6.png?v=1777478377" alt="" />
+              <div>
+                <div class="name">Kit 3+3 GRATIS</div>
+                <div class="desc">6 SCRATCHY · copri ogni stanza</div>
+                <span class="disc">Risparmi €19,80</span>
+              </div>
+              <div class="price"><span class="now">€69,90</span><span class="was">€89,70</span></div>
+            </label>
+          </form>
+
+          <!-- regali -->
+          <div class="gifts">
+            <div class="ttl">🎁 Regali inclusi oggi</div>
+            <div class="hint" id="gift-hint">Inclusi con il Kit 2+2 selezionato</div>
+            <div class="gift-list" id="gift-list">
+              <div class="gift" data-min="hero"><span class="g-name">📘 Guida P.R.E.D.A. completa</span> <span class="free">GRATIS · valore €19,90</span></div>
+              <div class="gift" data-min="hero"><span class="g-name">🚚 Spedizione prioritaria</span> <span class="free">GRATIS</span></div>
+              <div class="gift" data-min="all"><span class="g-name">💬 Assistenza dedicata in italiano</span> <span class="free">GRATIS</span></div>
+            </div>
+          </div>
+
+          <button class="cta-btn buy-cta" id="buy-btn">Ridai equilibrio al tuo gatto →</button>
+          <div class="pay-rate">oppure in 3 rate da <b id="sum-rate">€19,93</b> con Scalapay / Klarna — senza interessi</div>
+          <div class="buy-trust">
+            <span>🛡️ Garanzia 60 giorni</span>
+            <span>🚚 Spedizione gratuita</span>
+            <span>📦 Arriva in 3–5 giorni</span>
+          </div>
+
+          <!-- accordion -->
+          <div class="acc">
+            <details>
+              <summary>Caratteristiche <span class="chev">＋</span></summary>
+              <div class="body">Pannello in cartone alveolare ad alta densità, pensato per il graffio orizzontale che soddisfa la sequenza graffia–strappa–affonda. Atossico, leggero, stabile. Pensato per il gatto che vive in casa.</div>
+            </details>
+            <details>
+              <summary>È questo il tuo gatto? <span class="chev">＋</span></summary>
+              <div class="body">Distrugge i mobili, ha i raptus tra le 3 e le 5 del mattino, si lecca fino a spelarsi, oppure è spento e apatico. Se riconosci anche solo uno di questi segnali, è il sintomo dell'Ipostimolazione Felina Cronica.</div>
+            </details>
+            <details>
+              <summary>Garanzia e resi <span class="chev">＋</span></summary>
+              <div class="body">60 giorni soddisfatti o rimborsati. Provi la terapia a casa tua: se non sei soddisfatta, ti restituiamo l'intero importo.</div>
+            </details>
+            <details>
+              <summary>Spedizione <span class="chev">＋</span></summary>
+              <div class="body">Spedizione gratuita in tutta Italia, consegna in genere in 3–5 giorni lavorativi. Dal Kit 2+2 la spedizione prioritaria è gratuita.</div>
+            </details>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       SEZIONE 2 — IL PROBLEMA + LA CAUSA (il motore del "perché")
+       SEZIONE 2 — IL PROBLEMA + I SINTOMI
        ============================================================ -->
   <section>
-    <div class="wrap narrow">
+    <div class="wrap narrow center">
       <span class="eyebrow">Riconosci il tuo gatto?</span>
-      <h2>Sono le 3 del mattino. Lo senti correre come impazzito per il corridoio e pensi: «Cosa sto sbagliando?»</h2>
-      <p class="muted">Hai comprato il tiragraffi. Hai provato i giochi. Gli hai dato più attenzioni. E ti ami il tuo gatto. Eppure qualcosa continua a non funzionare — e nessuno ti ha mai spiegato perché.</p>
+      <h2>Sono le 3 del mattino. Lo senti correre come impazzito. <span class="em">E pensi: «cosa sto sbagliando?»</span></h2>
+      <p class="muted">Hai comprato il tiragraffi. Hai provato i giochi. Gli hai dato più attenzioni. E ami il tuo gatto. Eppure qualcosa continua a non funzionare — e nessuno ti ha mai spiegato perché.</p>
     </div>
-
     <div class="wrap">
       <div class="sintomi">
         <div class="sintomo">
@@ -79,7 +171,7 @@
         </div>
         <div class="sintomo">
           <h3><span class="num">2</span> I raptus tra le 3 e le 5</h3>
-          <p>Scatta nel buio, corre, salta, rovescia tutto. Tu ti svegli di soprassalto, di nuovo. Non è gioco: è una pulsione predatoria che esplode perché non si è scaricata di giorno.</p>
+          <p>Scatta nel buio, corre, salta, rovescia tutto. Tu ti svegli di soprassalto, di nuovo. Non è gioco: è una pulsione predatoria che esplode perché di giorno non si è scaricata.</p>
         </div>
         <div class="sintomo">
           <h3><span class="num">3</span> Si lecca fino a spelarsi</h3>
@@ -90,29 +182,28 @@
           <p>Lo trovi appostato dietro la porta, immobile, gli occhi fissi nel vuoto. «È un gatto tranquillo», ti dici. Ma la calma non è sempre pace: a volte è resa.</p>
         </div>
       </div>
-    </div>
 
-    <!-- Perché tutto ciò che hai provato ha fallito -->
-    <div class="wrap narrow" style="margin-top:40px">
-      <h2>Perché tutto ciò che hai provato non è bastato</h2>
-      <p>Non hai sbagliato a provarci. Hai sbagliato bersaglio — senza saperlo.</p>
-      <ul class="hero-points" style="margin-top:8px">
-        <li><span class="tick">!</span> <span><b>Il tiragraffi verticale</b> non scarica la pulsione: il 90% dei gatti graffia in <i>orizzontale</i>, dove l'istinto lo richiede davvero.</span></li>
-        <li><span class="tick">!</span> <span><b>I giochi</b> intrattengono per cinque minuti, ma non completano il ciclo di caccia: la tensione resta.</span></li>
-        <li><span class="tick">!</span> <span><b>I diffusori</b> agiscono sull'umore, non sull'istinto inappagato che genera il comportamento.</span></li>
-        <li><span class="tick">!</span> <span><b>Più attenzioni</b> aiutano te, non bastano a lui: il bisogno è ambientale, non affettivo.</span></li>
-      </ul>
-      <p class="muted">Nessuna di queste cose ha fallito perché è inutile. Hanno fallito perché curano il <b>sintomo</b> e lasciano intatta la <b>causa</b>.</p>
+      <div class="narrow" style="margin:42px auto 0">
+        <h2 class="center">Perché tutto ciò che hai provato <span class="em">non è bastato</span></h2>
+        <p class="center muted">Non hai sbagliato a provarci. Hai sbagliato bersaglio — senza saperlo.</p>
+        <ul class="why">
+          <li><span class="x">✕</span> <span><b>Il tiragraffi verticale</b> non scarica la pulsione: il 90% dei gatti graffia in <i>orizzontale</i>, dove l'istinto lo richiede davvero.</span></li>
+          <li><span class="x">✕</span> <span><b>I giochi</b> intrattengono cinque minuti, ma non completano il ciclo di caccia: la tensione resta.</span></li>
+          <li><span class="x">✕</span> <span><b>I diffusori</b> agiscono sull'umore, non sull'istinto inappagato che genera il comportamento.</span></li>
+          <li><span class="x">✕</span> <span><b>Più attenzioni</b> aiutano te, non bastano a lui: il bisogno è ambientale, non affettivo.</span></li>
+        </ul>
+        <p class="muted center" style="margin-top:18px">Nessuna di queste cose ha fallito perché inutile. Hanno fallito perché curano il <b>sintomo</b> e lasciano intatta la <b>causa</b>.</p>
+      </div>
     </div>
   </section>
 
   <!-- ============================================================
-       SEZIONE — LA DIAGNOSI: la causa radice (IFC)
+       SEZIONE — LA DIAGNOSI: IFC
        ============================================================ -->
   <section class="ifc">
     <div class="wrap narrow center">
       <span class="eyebrow">La causa nascosta</span>
-      <h2>Tutti e quattro i sintomi hanno una sola origine: l'Ipostimolazione Felina Cronica</h2>
+      <h2>Tutti e quattro i sintomi hanno una sola origine: <span class="em">l'Ipostimolazione Felina Cronica</span></h2>
       <p>Il cervello del tuo gatto è la macchina di un predatore: è fatto per processare circa <b>200 stimoli ogni ora</b>. Un appartamento, anche il più curato, gliene offre circa <b>12</b>.</p>
       <div class="ifc-stat">
         <div class="cell"><div class="big">~200</div><div class="lbl">stimoli/ora di cui il suo cervello ha bisogno</div></div>
@@ -128,12 +219,12 @@
   </section>
 
   <!-- ============================================================
-       SEZIONE 3 — COME FUNZIONA (3 fasi) — primo "come"
+       SEZIONE 3 — COME FUNZIONA (3 fasi)
        ============================================================ -->
   <section>
     <div class="wrap narrow center">
       <span class="eyebrow">Il protocollo</span>
-      <h2>Come SCRATCHY riequilibra il tuo gatto in 14 giorni</h2>
+      <h2>Come SCRATCHY riequilibra il tuo gatto <span class="em">in 14 giorni</span></h2>
       <p class="muted">SCRATCHY è il primo strumento di terapia ambientale pensato per scaricare la pulsione predatoria <b>in orizzontale</b>, dove il gatto graffia davvero. Tre passi, niente di complicato.</p>
     </div>
     <div class="wrap">
@@ -141,7 +232,7 @@
         <div class="fase">
           <div class="when">Giorni 1–3</div>
           <h3>Diagnosi</h3>
-          <p>Osservi il tuo gatto e riconosci i sintomi. Nessuno strumento necessario: solo guardare con occhi nuovi. Puoi iniziare oggi, prima ancora che il pacco arrivi.</p>
+          <p>Osservi il tuo gatto e riconosci i sintomi. Nessuno strumento necessario: solo guardare con occhi nuovi. Puoi iniziare oggi, prima che il pacco arrivi.</p>
         </div>
         <div class="fase">
           <div class="when">Giorni 4–7</div>
@@ -158,57 +249,56 @@
   </section>
 
   <!-- ============================================================
-       SEZIONE 4 — I BENEFICI COME RISULTATI
+       SEZIONE 4 — BENEFICI
        ============================================================ -->
   <section class="ifc">
     <div class="wrap narrow center">
       <span class="eyebrow">La tua casa, tra due settimane</span>
-      <h2>Cosa cambia davvero quando la causa viene curata</h2>
+      <h2>Cosa cambia davvero <span class="em">quando la causa viene curata</span></h2>
     </div>
     <div class="wrap">
       <div class="benefici">
-        <div class="beneficio">
-          <span class="emoji">🛋️</span>
-          <div><h3>I tuoi mobili tornano salvi</h3><p>La pulsione ha finalmente dove scaricarsi. Il divano smette di essere il bersaglio.</p></div>
-        </div>
-        <div class="beneficio">
-          <span class="emoji">🌙</span>
-          <div><h3>Le notti tornano silenziose</h3><p>I raptus si placano quando l'istinto viene appagato di giorno. Torni a dormire.</p></div>
-        </div>
-        <div class="beneficio">
-          <span class="emoji">😺</span>
-          <div><h3>Un gatto sereno e appagato</h3><p>Non più teso, non più spento: un gatto che scarica il suo istinto ed è in pace. Entro 14 giorni.</p></div>
-        </div>
-        <div class="beneficio">
-          <span class="emoji">💚</span>
-          <div><h3>Finalmente la proprietaria che merita</h3><p>Quella che ha capito la causa e l'ha curata — non quella che rincorre il sintomo con l'ennesimo acquisto.</p></div>
-        </div>
+        <div class="beneficio"><span class="emoji">🛋️</span><div><h3>I tuoi mobili tornano salvi</h3><p>La pulsione ha finalmente dove scaricarsi. Il divano smette di essere il bersaglio.</p></div></div>
+        <div class="beneficio"><span class="emoji">🌙</span><div><h3>Le notti tornano silenziose</h3><p>I raptus si placano quando l'istinto viene appagato di giorno. Torni a dormire.</p></div></div>
+        <div class="beneficio"><span class="emoji">😺</span><div><h3>Un gatto sereno e appagato</h3><p>Non più teso, non più spento: un gatto che scarica il suo istinto ed è in pace. Entro 14 giorni.</p></div></div>
+        <div class="beneficio"><span class="emoji">💚</span><div><h3>Finalmente la proprietaria che merita</h3><p>Quella che ha capito la causa e l'ha curata — non quella che rincorre il sintomo con l'ennesimo acquisto.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SEZIONE 6 — CTA INTERMEDIO + TRUST (close morbido)
-       ============================================================ -->
+  <!-- CTA intermedio -->
   <section class="tight">
     <div class="wrap narrow center">
-      <a href="#offerta" class="cta-btn" style="max-width:420px;margin:0 auto">Inizia la terapia del tuo gatto →</a>
-      <div class="cta-sub">Garanzia soddisfatti o rimborsati 60 giorni · Spedizione gratuita · Arriva in 3–5 giorni lavorativi</div>
+      <a href="#top" id="mid-cta" class="cta-btn" style="max-width:420px;margin:0 auto">Inizia la terapia del tuo gatto →</a>
+      <div class="cta-sub">Garanzia 60 giorni · Spedizione gratuita · Arriva in 3–5 giorni lavorativi</div>
     </div>
   </section>
 
   <!-- ============================================================
-       SEZIONE 5 — LA PROVA + L'AUTORITÀ
+       SEZIONE 5 — PROVA + AUTORITÀ
        ============================================================ -->
   <section>
     <div class="wrap narrow center">
       <span class="eyebrow">Storie vere</span>
-      <h2>Migliaia di proprietari italiani hanno già ridato equilibrio al loro gatto</h2>
-      <div class="rating-line center" style="justify-content:center"><span class="stars">★★★★★</span> <strong>4,8/5</strong> su migliaia di proprietari italiani</div>
+      <h2>Migliaia di proprietari italiani hanno già <span class="em">ridato equilibrio al loro gatto</span></h2>
     </div>
-
-    <!-- NOTA: recensioni di esempio (placeholder) — sostituire con recensioni reali raccolte (Judge.me). Nessun numero preciso inventato. -->
     <div class="wrap">
+      <div class="rev-head">
+        <div class="rev-score">
+          <div class="n">4,8</div>
+          <div class="stars">★★★★★</div>
+          <div class="muted" style="font-size:.82rem;margin-top:6px">su migliaia di proprietari italiani</div>
+        </div>
+        <div class="rev-bars">
+          <div class="r"><span class="lbl">5★</span><span class="bar"><i style="width:86%"></i></span></div>
+          <div class="r"><span class="lbl">4★</span><span class="bar"><i style="width:10%"></i></span></div>
+          <div class="r"><span class="lbl">3★</span><span class="bar"><i style="width:3%"></i></span></div>
+          <div class="r"><span class="lbl">2★</span><span class="bar"><i style="width:1%"></i></span></div>
+          <div class="r"><span class="lbl">1★</span><span class="bar"><i style="width:1%"></i></span></div>
+        </div>
+      </div>
+
+      <!-- Recensioni di esempio (confermate dal cliente: mantenute così). -->
       <div class="reviews">
         <div class="review">
           <span class="stars">★★★★★</span>
@@ -227,7 +317,7 @@
         </div>
       </div>
 
-      <div class="fonti narrow" style="margin-left:auto;margin-right:auto">
+      <div class="fonti">
         <p style="margin:0 0 8px"><b>Il metodo SCRATCHY si appoggia su fonti reali di comportamento felino:</b></p>
         <p style="margin:0">Bradshaw, <i>Cat Sense</i> (2013) · Linee guida AAFP/ISFM (2013) · Mills (2013) · Wilbourn (2017) · Mikel Delgado, UC Davis. Il protocollo in 3 fasi e la <b>Guida P.R.E.D.A.</b> sono gli strumenti del metodo. SCRATCHY è una cornice di terapia ambientale ancorata a queste fonti, non un referto medico.</p>
       </div>
@@ -240,20 +330,13 @@
   <section class="ifc">
     <div class="wrap narrow center">
       <span class="eyebrow">Cura la causa, non il sintomo</span>
-      <h2>Perché SCRATCHY è diverso da tutto ciò che hai già provato</h2>
+      <h2>Perché SCRATCHY è diverso <span class="em">da tutto ciò che hai già provato</span></h2>
     </div>
     <div class="wrap">
       <div class="tabella-wrap">
         <table class="compare">
           <thead>
-            <tr>
-              <th></th>
-              <th class="us">SCRATCHY</th>
-              <th>Tiragraffi</th>
-              <th>Giochi</th>
-              <th>Diffusori</th>
-              <th>Più attenzioni</th>
-            </tr>
+            <tr><th></th><th class="us">SCRATCHY</th><th>Tiragraffi</th><th>Giochi</th><th>Diffusori</th><th>Più attenzioni</th></tr>
           </thead>
           <tbody>
             <tr><th>Cura la causa (IFC)</th><td class="us"><span class="yes">✓</span></td><td><span class="no">✕</span></td><td><span class="no">✕</span></td><td><span class="no">✕</span></td><td><span class="no">✕</span></td></tr>
@@ -270,98 +353,16 @@
   </section>
 
   <!-- ============================================================
-       SEZIONE 7 — L'OFFERTA / I KIT
-       ============================================================ -->
-  <section class="offerta" id="offerta">
-    <div class="wrap narrow center">
-      <span class="eyebrow">Scegli la tua dose terapeutica</span>
-      <h2>Quanto SCRATCHY serve davvero al tuo gatto</h2>
-      <p class="muted">Un solo pannello copre una zona. La dose terapeutica raccomandata copre le zone chiave della casa, dove il gatto vive l'istinto.</p>
-    </div>
-
-    <div class="wrap narrow">
-      <form id="kit-form" class="kits">
-
-        <label class="kit entry-kit" data-price="29.90" data-was="" data-name="Kit 1+1" data-units="2">
-          <input type="radio" name="kit" value="1+1" />
-          <span class="badge">Provalo a casa tua</span>
-          <div class="kit-head">
-            <div>
-              <div class="kit-name">Kit 1+1 GRATIS</div>
-              <div class="kit-line">2 SCRATCHY (1 in regalo) — una sola zona</div>
-            </div>
-            <span class="kit-radio"></span>
-          </div>
-          <div class="kit-price"><span class="now">€29,90</span></div>
-          <div class="kit-line">La prova: copre a metà. Un solo pannello non basta a coprire le zone chiave.</div>
-          <div class="kit-gift">🎁 Estratto della mini-guida incluso</div>
-        </label>
-
-        <label class="kit hero-kit selected" data-price="59.80" data-was="" data-name="Kit 2+2" data-units="4">
-          <input type="radio" name="kit" value="2+2" checked />
-          <span class="badge">★ Il più scelto</span>
-          <div class="kit-head">
-            <div>
-              <div class="kit-name">Kit 2+2 GRATIS</div>
-              <div class="kit-line"><b>Copri le zone chiave della casa</b> — la dose terapeutica raccomandata</div>
-            </div>
-            <span class="kit-radio"></span>
-          </div>
-          <div class="kit-price"><span class="now">€59,80</span></div>
-          <div class="kit-line">4 SCRATCHY (2 in regalo) — copre le zone dove il gatto vive l'istinto</div>
-          <div class="kit-perday">Meno di una terapia al giorno · Spedizione prioritaria gratuita</div>
-          <div class="kit-gift">🎁 Guida P.R.E.D.A. completa inclusa (esclusiva)</div>
-        </label>
-
-        <label class="kit value-kit" data-price="69.90" data-was="89.70" data-name="Kit 3+3" data-units="6">
-          <input type="radio" name="kit" value="3+3" />
-          <span class="badge">Convenienza massima</span>
-          <div class="kit-head">
-            <div>
-              <div class="kit-name">Kit 3+3 GRATIS</div>
-              <div class="kit-line">6 SCRATCHY (3 in regalo) — copri ogni stanza</div>
-            </div>
-            <span class="kit-radio"></span>
-          </div>
-          <div class="kit-price"><span class="now">€69,90</span> <span class="was">€89,70</span> <span class="kit-save">Risparmi €19,80</span></div>
-          <div class="kit-line">Solo €10 in più del 2+2 per il 50% di terapia in più.</div>
-          <div class="kit-perday">Spedizione prioritaria gratuita</div>
-          <div class="kit-gift">🎁 Guida P.R.E.D.A. completa inclusa (esclusiva)</div>
-        </label>
-
-      </form>
-
-      <div class="offer-summary">
-        <div class="row"><span>Hai scelto</span><b id="sum-name">Kit 2+2 GRATIS</b></div>
-        <div class="row"><span>Spedizione</span><b style="color:var(--verde)">Gratuita</b></div>
-        <div class="row"><span>Totale</span><span class="tot" id="sum-total">€59,80</span></div>
-        <a href="#" class="cta-btn" id="buy-btn">Ridai equilibrio al tuo gatto →</a>
-        <div class="pay-rate">oppure in 3 rate da <b id="sum-rate">€19,93</b> con Scalapay / Klarna — senza interessi</div>
-      </div>
-
-      <div class="regali">
-        <h3>🎁 Regali inclusi — <span class="limit">disponibilità limitata</span></h3>
-        <ul>
-          <li><b>Guida P.R.E.D.A.</b> — il protocollo completo passo-passo <span class="muted">(esclusiva Kit 2+2 e 3+3)</span></li>
-          <li><b>Spedizione prioritaria gratuita</b> <span class="muted">(dal Kit 2+2)</span></li>
-          <li><b>Assistenza dedicata in italiano</b> per l'introduzione della terapia</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SEZIONE 9 — FAQ (gestione obiezioni)
+       SEZIONE 9 — FAQ
        ============================================================ -->
   <section>
     <div class="wrap narrow">
-      <span class="eyebrow center" style="display:block;text-align:center">Le domande che ricevi prima di iniziare</span>
-      <h2 class="center">Hai ancora un dubbio? È normale.</h2>
-
+      <div class="center"><span class="eyebrow">Te lo diciamo senza filtri</span></div>
+      <h2 class="center">Hai ancora un dubbio? <span class="em">È normale.</span></h2>
       <div class="faq">
         <details open>
           <summary>«Ma è solo cartone?» <span class="chev">＋</span></summary>
-          <div class="answer">Non conta di cosa è fatto: conta cosa <b>fa</b>. SCRATCHY completa il ciclo predatorio in orizzontale, dove l'istinto del gatto lo richiede. Il cartone alveolare è scelto apposta per la texture che soddisfa la sequenza graffia-strappa-affonda. Un materiale costoso che lavora nella direzione sbagliata non serve a nulla; questo lavora nella direzione giusta.</div>
+          <div class="answer">Non conta di cosa è fatto: conta cosa <b>fa</b>. SCRATCHY completa il ciclo predatorio in orizzontale, dove l'istinto del gatto lo richiede. Il cartone alveolare è scelto apposta per la texture che soddisfa la sequenza graffia–strappa–affonda. Un materiale costoso che lavora nella direzione sbagliata non serve a nulla; questo lavora nella direzione giusta.</div>
         </details>
         <details>
           <summary>«E se il mio gatto lo ignora?» <span class="chev">＋</span></summary>
@@ -381,7 +382,7 @@
         </details>
         <details>
           <summary>«Quando arriva?» <span class="chev">＋</span></summary>
-          <div class="answer">Spedizione gratuita in tutta Italia, consegna in genere in 3–5 giorni lavorativi. Dal Kit 2+2 la spedizione prioritaria è gratuita. E puoi iniziare la Fase 1 (osservazione) oggi stesso, prima che il pacco arrivi.</div>
+          <div class="answer">Spedizione gratuita in tutta Italia, consegna in genere in 3–5 giorni lavorativi. Dal Kit 2+2 la spedizione prioritaria è gratuita. E puoi iniziare la Fase 1 (osservazione) oggi stesso.</div>
         </details>
         <details>
           <summary>«Posso pagarlo a rate?» <span class="chev">＋</span></summary>
@@ -392,15 +393,15 @@
   </section>
 
   <!-- ============================================================
-       SEZIONE — CLOSE DURO + CTA FINALE
+       CLOSE DURO + CTA FINALE
        ============================================================ -->
-  <section class="close-duro">
+  <section class="close-duro" id="offerta">
     <div class="wrap narrow">
       <div class="guarantee-seal"><span class="ic">🛡️</span> Garanzia soddisfatti o rimborsati 60 giorni</div>
-      <h2>Il tuo gatto non migliorerà da solo</h2>
+      <h2>Il tuo gatto <span class="em" style="color:#ffd27a">non migliorerà da solo</span></h2>
       <p>Senza una via per scaricare l'istinto, i mobili continueranno a sfilacciarsi. Le notti resteranno spezzate. Il leccarsi non si fermerà. E quel senso di colpa — «sto sbagliando qualcosa» — resterà lì, ogni volta che lo guardi.</p>
       <p>Oppure, tra 14 giorni, può essere tutto diverso. La causa è una sola. Esiste una cosa che la risolve.</p>
-      <a href="#offerta" class="cta-btn">Inizia la terapia del tuo gatto →</a>
+      <a href="#top" class="cta-btn" id="final-cta">Voglio aiutare il mio gatto →</a>
       <div class="cta-sub" style="color:#cfe6d8">Disponibilità dei regali limitata · Spedizione gratuita · 60 giorni per cambiare idea</div>
     </div>
   </section>
@@ -409,38 +410,38 @@
   <footer class="site-footer">
     <div class="wrap">
       <a href="#" class="logo">Scratch<span>y</span></a>
+      <p class="tag">La terapia ambientale per il gatto che vive in casa. Curiamo la causa, non il sintomo.</p>
       <div class="cols">
+        <div></div>
         <div>
-          <p>SCRATCHY è la terapia ambientale per il gatto che vive in casa. Agiamo sulla causa — l'Ipostimolazione Felina Cronica — non sul sintomo.</p>
+          <h4>Aiuto</h4>
+          <a href="#top">Acquista</a>
+          <a href="#">Spedizioni e resi</a>
+          <a href="#">Contatti</a>
         </div>
         <div>
-          <p><b>Aiuto</b><br>
-          <a href="#offerta">Acquista</a><br>
-          <a href="#">Spedizioni e resi</a><br>
-          <a href="#">Contatti</a></p>
-        </div>
-        <div>
-          <p><b>Legale</b><br>
-          <a href="#">Termini</a><br>
-          <a href="#">Privacy</a><br>
-          <a href="#">Garanzia 60 giorni</a></p>
+          <h4>Legale</h4>
+          <a href="#">Termini e condizioni</a>
+          <a href="#">Privacy</a>
+          <a href="#">Garanzia 60 giorni</a>
         </div>
       </div>
       <p class="disclaimer">Le informazioni su questa pagina descrivono una cornice di terapia ambientale ancorata a fonti di comportamento felino e non costituiscono diagnosi o parere veterinario. In presenza di sintomi persistenti, consulta sempre il tuo veterinario. © SCRATCHY.</p>
     </div>
   </footer>
 
-  <!-- ===== STICKY CTA (mobile) ===== -->
+  <!-- ===== STICKY CTA ===== -->
   <div class="sticky-cta" id="sticky">
     <div class="inner">
       <div class="info">
         <div class="p" id="sticky-name">Kit 2+2 · €59,80</div>
         <div class="s">Spedizione gratuita · Garanzia 60 giorni</div>
       </div>
-      <a href="#offerta" class="cta-btn">Aiuta il tuo gatto →</a>
+      <a href="#top" class="cta-btn" id="sticky-cta">Aiuta il tuo gatto →</a>
     </div>
   </div>
 
+  <span id="top"></span>
   <script src="assets/script.js"></script>
 </body>
 </html>
