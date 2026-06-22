@@ -7,23 +7,30 @@
    ============================================================ */
 
 :root {
-  --green: #1f7a4d;
-  --green-d: #155c39;
-  --green-l: #e6f3ec;
-  --ink: #1a2420;
-  --muted: #69736d;
-  --bg: #f4f7f8;
-  --bg-soft: #eef4f3;
+  /* Verde eucalipto: anima del brand (terapia / calma / cura) */
+  --green: #1a5746;
+  --green-d: #123f33;
+  --green-l: #e7f0ea;
+  /* Terracotta: CTA calde, invitanti, premium */
+  --cta: #cf6b43;
+  --cta-d: #b1542f;
+  --cta-l: #fbeee6;
+  /* Neutri caldi (crema avorio editoriale) */
+  --ink: #20271f;
+  --muted: #6e766e;
+  --bg: #faf6ef;
+  --bg-soft: #f1ece1;
   --card: #ffffff;
-  --line: #e5ebe8;
-  --scar: #df5236;     /* scarsità / urgenza */
-  --scar-l: #fdeee9;
-  --gold: #f3a623;     /* stelle */
-  --save: #1f7a4d;
-  --radius: 14px;
-  --radius-lg: 22px;
-  --shadow: 0 12px 34px rgba(26, 36, 32, .10);
-  --shadow-s: 0 4px 14px rgba(26, 36, 32, .07);
+  --line: #e9e1d3;
+  /* Accenti */
+  --scar: #c14a2c;     /* scarsità / urgenza (mattone) */
+  --scar-l: #f8eae3;
+  --gold: #e0a52e;     /* stelle (oro caldo) */
+  --save: #1a5746;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow: 0 14px 38px rgba(40, 30, 18, .12);
+  --shadow-s: 0 5px 16px rgba(40, 30, 18, .08);
   --max: 1140px;
   --narrow: 760px;
 }
@@ -80,25 +87,26 @@ section.tight { padding: 34px 0; }
 .site-header { position: sticky; top: 0; z-index: 40; background: rgba(244,247,248,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
 .logo { font-family: "Fraunces", serif; font-weight: 700; font-size: 1.45rem; letter-spacing: -.02em; color: var(--green-d); text-decoration: none; }
-.logo span { color: var(--scar); }
+.logo span { color: var(--cta); }
 .cart { font-size: 1.2rem; }
 
 /* ---------- buttons ---------- */
 .cta-btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  background: var(--green); color: #fff; font-weight: 800; font-size: 1.05rem;
+  background: linear-gradient(180deg, #d9774e 0%, var(--cta) 60%, var(--cta-d) 100%);
+  color: #fff; font-weight: 800; font-size: 1.05rem; letter-spacing: .01em;
   text-decoration: none; border: none; cursor: pointer; padding: 16px 26px;
-  border-radius: 12px; box-shadow: 0 5px 0 var(--green-d), var(--shadow-s);
-  transition: transform .08s, box-shadow .08s, background .2s; width: 100%; text-align: center;
+  border-radius: 12px; box-shadow: 0 5px 0 var(--cta-d), var(--shadow-s);
+  transition: transform .08s, box-shadow .08s, filter .2s; width: 100%; text-align: center;
 }
-.cta-btn:hover { background: var(--green-d); }
-.cta-btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--green-d); }
+.cta-btn:hover { filter: brightness(1.04); }
+.cta-btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--cta-d); }
 .cta-sub { font-size: .82rem; color: var(--muted); text-align: center; margin-top: 10px; }
 
 /* ============================================================
    HERO — galleria + buy box (stile Argos)
    ============================================================ */
-.hero { background: linear-gradient(180deg, #ffffff 0%, var(--bg-soft) 100%); padding: 28px 0 48px; }
+.hero { background: radial-gradient(120% 80% at 80% 0%, #fff 0%, var(--bg) 55%, var(--bg-soft) 100%); padding: 28px 0 48px; }
 .hero-grid { display: grid; grid-template-columns: 1fr; gap: 26px; }
 
 /* galleria */
@@ -129,7 +137,7 @@ section.tight { padding: 34px 0; }
 .bundles { display: grid; gap: 12px; }
 .bundle { position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; background: #fff; border: 2px solid var(--line); border-radius: var(--radius); padding: 14px; cursor: pointer; transition: border-color .15s, box-shadow .15s; }
 .bundle:hover { border-color: var(--green); }
-.bundle.selected { border-color: var(--green); box-shadow: 0 0 0 4px rgba(31,122,77,.12); }
+.bundle.selected { border-color: var(--cta); box-shadow: 0 0 0 4px rgba(207,107,67,.14); background: linear-gradient(180deg, #fff 0%, var(--cta-l) 100%); }
 .bundle input { position: absolute; opacity: 0; pointer-events: none; }
 .bundle .thumb { width: 54px; height: 54px; border-radius: 10px; object-fit: cover; border: 1px solid var(--line); background: #fff; }
 .bundle .name { font-weight: 800; font-size: 1rem; }
@@ -137,7 +145,7 @@ section.tight { padding: 34px 0; }
 .bundle .price { text-align: right; }
 .bundle .now { font-weight: 800; font-size: 1.15rem; }
 .bundle .was { display: block; font-size: .8rem; color: var(--muted); text-decoration: line-through; }
-.bundle .pop { position: absolute; top: -11px; right: 14px; background: var(--green); color: #fff; font-size: .68rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+.bundle .pop { position: absolute; top: -11px; right: 14px; background: var(--cta); color: #fff; font-size: .68rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; box-shadow: var(--shadow-s); }
 .bundle .disc { display: inline-block; background: var(--scar-l); color: var(--scar); font-size: .72rem; font-weight: 800; padding: 2px 7px; border-radius: 6px; margin-top: 4px; }
 .bundle .radio { display: none; }
 
@@ -247,13 +255,12 @@ table.compare td.us { background: var(--green-l); font-weight: 700; }
 .close-duro { background: var(--green-d); color: #eafaf1; text-align: center; }
 .close-duro h2 { color: #fff; }
 .close-duro p { color: #cfe6d8; }
-.close-duro .cta-btn { max-width: 420px; margin: 18px auto 0; background: var(--scar); box-shadow: 0 5px 0 #b53d24, var(--shadow-s); }
-.close-duro .cta-btn:hover { background: #c2452f; }
+.close-duro .cta-btn { max-width: 420px; margin: 18px auto 0; }
 .guarantee-seal { display: inline-flex; align-items: center; gap: 12px; margin: 0 auto 20px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); padding: 12px 18px; border-radius: 999px; color: #fff; font-weight: 700; }
 .guarantee-seal .ic { font-size: 1.5rem; }
 
 /* ---------- footer ---------- */
-.site-footer { background: #131a16; color: #aeb6af; padding: 44px 0; font-size: .85rem; }
+.site-footer { background: #15211b; color: #aeb6af; padding: 44px 0; font-size: .85rem; }
 .site-footer .logo { color: #fff; }
 .site-footer .tag { margin: 10px 0 0; color: #8c948d; }
 .site-footer .cols { display: grid; grid-template-columns: 1fr; gap: 26px; margin-top: 26px; }
