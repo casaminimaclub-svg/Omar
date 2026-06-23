@@ -204,8 +204,8 @@ section.tight { padding: 30px 0; }
 .bundle.selected .pick { border-color: var(--cta); background: var(--cta); }
 .bundle .pick .gi { width: 15px; height: 15px; color: #fff; opacity: 0; transform: scale(.5); transition: opacity .15s, transform .15s; stroke-width: 3; }
 .bundle.selected .pick .gi { opacity: 1; transform: scale(1); }
-.bundle .name { font-weight: 800; font-size: 1.05rem; letter-spacing: -.01em; }
-.bundle .desc { font-size: .82rem; color: var(--muted); margin-top: 2px; }
+.bundle .name { font-weight: 800; font-size: 1.05rem; letter-spacing: -.01em; color: var(--cta-d); }
+.bundle .desc { font-size: .82rem; color: var(--green-d); margin-top: 2px; }
 .bundle .perks { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 8px; }
 .bundle .perks span { display: inline-flex; align-items: center; gap: 5px; font-size: .74rem; font-weight: 700; color: var(--green-d); }
 .bundle .perks .gi { width: .9em; height: .9em; color: var(--green); }
@@ -213,7 +213,7 @@ section.tight { padding: 30px 0; }
 .bundle .tag.save { background: var(--cta-l); color: var(--cta-d); }
 .bundle .price { text-align: right; white-space: nowrap; }
 .bundle .now { font-weight: 800; font-size: 1.3rem; color: var(--green-d); font-family: "Baloo 2", sans-serif; }
-.bundle .per { display: block; font-size: .7rem; color: var(--muted); font-weight: 700; }
+.bundle .per { display: block; font-size: .7rem; color: var(--green); font-weight: 700; }
 .bundle .was { display: block; font-size: .82rem; color: var(--muted); text-decoration: line-through; }
 .bundle .pop { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, var(--cta), var(--cta-2)); color: #fff; font-size: .68rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 4px 14px; border-radius: 999px; box-shadow: var(--shadow-s); display: inline-flex; align-items: center; gap: 5px; animation: pulseBadge 2.4s ease-in-out infinite; }
 .bundle .pop .gi { width: .85em; height: .85em; }
@@ -233,8 +233,14 @@ section.tight { padding: 30px 0; }
 .gift.locked { opacity: .4; }
 .gift.locked .free { background: #f0f0f0; color: #999; border-color: #eee; }
 
-.buy-cta { margin-top: 18px; border-radius: 999px; padding: 18px 28px; font-size: 1.18rem; box-shadow: 0 7px 0 var(--cta-d), var(--shadow); }
-.buy-cta:active { transform: translateY(6px); box-shadow: 0 1px 0 var(--cta-d); }
+/* bottone acquisto: bordo arcobaleno-brand in movimento + testo verde scuro */
+.buy-cta-wrap { margin-top: 18px; border-radius: 999px; padding: 3px; cursor: pointer;
+  background: linear-gradient(90deg, #6f9e2c, #9cc23a, #f2b01e, #f4892f, #e2682c, #f4892f, #f2b01e, #9cc23a, #6f9e2c);
+  background-size: 300% 100%; animation: slideGrad 6s linear infinite; box-shadow: 0 12px 28px rgba(244,137,47,.4); }
+.buy-cta-wrap:hover { animation-duration: 1.8s; }
+.buy-cta { margin-top: 0; border-radius: 999px; padding: 17px 28px; font-size: 1.2rem; color: #123a22; box-shadow: none; }
+.buy-cta .note { color: #143f27; opacity: 1; font-weight: 700; }
+.buy-cta:active { transform: translateY(2px); }
 .pay-rate { text-align: center; font-size: .85rem; color: var(--muted); margin-top: 13px; }
 .pay-rate b { color: var(--ink); }
 .pay-rate .klarna { display: inline-block; background: #ffb3c7; color: #17120f; font-weight: 800; font-size: .72rem; padding: 2px 8px; border-radius: 6px; }
@@ -538,7 +544,7 @@ table.compare td.us { background: var(--green-l); }
             </div>
           </div>
 
-          <button class="cta-btn buy-cta" id="buy-btn"><span class="lbl"><svg class="gi"><use href="#ic-bag"/></svg> Aggiungi al carrello</span><span class="note">Reso gratuito entro 60 giorni</span></button>
+          <div class="buy-cta-wrap"><button class="cta-btn buy-cta" id="buy-btn"><span class="lbl"><svg class="gi"><use href="#ic-bag"/></svg> Aggiungi al carrello</span><span class="note">Reso gratuito entro 60 giorni</span></button></div>
 
           <div class="trust-chips offer-trust">
             <div class="tchip"><span class="ico tint c1"><svg class="gi"><use href="#ic-flask"/></svg></span> <span>Metodo su <b>fonti di comportamento felino</b></span></div>
