@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCRATCHY — La terapia ambientale per il gatto che vive in casa</title>
+  <meta name="description" content="Il comportamento del tuo gatto non è cattiveria. È il sintomo dell'Ipostimolazione Felina Cronica. SCRATCHY è la terapia ambientale che agisce sulla causa. Garanzia 60 giorni." />
+
+  <!-- ANTEPRIMA / PREVIEW v4 — icone vettoriali, micro-interazioni. Lo store attivo NON viene toccato. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+/* ============================================================
+   SCRATCHY — Product Page (PREVIEW v4 — "fatto bene")
+   Icone vettoriali (no emoji), interazioni e micro-animazioni
+   in stile Toesy/Argos. Offerta elaborata. Identità SCRATCHY.
+   Font: Plus Jakarta Sans (UI) + Fraunces (titoli) + Baloo 2 (logo).
+   ============================================================ */
+
+:root {
+  --ink: #232b25;
+  --muted: #6b746d;
+  --line: #ece8df;
+  --card: #ffffff;
+  --bg: #ffffff;
+  --bg-soft: #f5f8f3;
+
+  /* verde oliva caldo (secondario "naturale/verdigno") */
+  --green: #6f9e2c;
+  --green-d: #4f7320;
+  --green-l: #eef4db;
+
+  /* arancione: colore dominante della pagina (CTA + offerta) */
+  --cta: #f4892f;
+  --cta-2: #fba93a;
+  --cta-d: #db6f1a;
+  --cta-l: #fdecd9;
+
+  /* sistema cromatico UNICO e caldo (arancio / ambra / oliva / ocra) */
+  --c-green: #6f9e2c;  --c-green-l: #eef4db;   /* oliva */
+  --c-blue:  #ef8a2e;  --c-blue-l:  #fdecda;   /* arancio */
+  --c-coral: #e2682c;  --c-coral-l: #fce4d6;   /* terracotta */
+  --c-amber: #efa524;  --c-amber-l: #fcefca;   /* ambra */
+  --c-lilac: #c79324;  --c-lilac-l: #f7eec6;   /* ocra/oro */
+
+  --gold: #f2a521;
+  --scar: #e2682c;
+  --scar-l: #fce4d6;
+
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow: 0 18px 44px rgba(35, 43, 37, .13);
+  --shadow-s: 0 6px 18px rgba(35, 43, 37, .08);
+  --max: 1140px;
+  --narrow: 760px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(42% 30% at 90% 3%, rgba(244,165,36,.20), transparent 70%),
+    radial-gradient(38% 24% at 5% 14%, rgba(244,137,47,.16), transparent 70%),
+    radial-gradient(44% 30% at 98% 48%, rgba(226,104,44,.12), transparent 70%),
+    radial-gradient(40% 26% at 0% 70%, rgba(111,158,44,.16), transparent 70%),
+    radial-gradient(38% 24% at 84% 94%, rgba(199,147,36,.15), transparent 70%);
+  background-attachment: fixed;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--green-d); }
+
+h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.1; margin: 0 0 .5em; font-weight: 600; letter-spacing: -.015em; }
+h1 { font-size: clamp(1.8rem, 5.2vw, 2.6rem); }
+h2 { font-size: clamp(1.65rem, 4.6vw, 2.6rem); }
+h3 { font-size: clamp(1.12rem, 3vw, 1.4rem); }
+p { margin: 0 0 1rem; }
+.em { color: var(--green); font-style: italic; }
+
+.wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+.narrow { max-width: var(--narrow); }
+.center { text-align: center; }
+.muted { color: var(--muted); }
+section { padding: 64px 0; position: relative; }
+section.tight { padding: 30px 0; }
+.panel { background: rgba(255,255,255,.78); backdrop-filter: blur(3px); border-radius: 30px; padding: 44px 0; box-shadow: 0 1px 0 rgba(255,255,255,.6) inset; }
+
+.eyebrow { display: inline-block; font-size: .74rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--green-d); background: var(--green-l); padding: 7px 14px; border-radius: 999px; margin-bottom: 14px; }
+
+/* ===== icone vettoriali ===== */
+.gi { width: 1.25em; height: 1.25em; display: inline-block; vertical-align: middle; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.gi.fill { fill: currentColor; stroke: none; }
+.ico { flex: 0 0 auto; display: grid; place-items: center; border-radius: 50%; }
+.ico .gi { width: 1.05em; height: 1.05em; }
+.c1{ color:var(--c-green);} .c1.tint{background:var(--c-green-l);}
+.c2{ color:var(--c-blue);}  .c2.tint{background:var(--c-blue-l);}
+.c3{ color:var(--c-coral);} .c3.tint{background:var(--c-coral-l);}
+.c4{ color:#cf8410;}        .c4.tint{background:var(--c-amber-l);}
+.c5{ color:var(--c-lilac);} .c5.tint{background:var(--c-lilac-l);}
+
+/* ===== stelle ===== */
+.stars { color: var(--gold); display: inline-flex; gap: 1px; }
+.stars .gi { width: 1em; height: 1em; }
+.rate { display: inline-flex; align-items: center; gap: 8px; font-size: .92rem; color: var(--muted); }
+.rate b { color: var(--ink); }
+
+/* ===== topbar ===== */
+.topbar { background: linear-gradient(90deg, #1aa05f, #14b8a6, #3b82f6, #8b5cf6, #ec4899, #f97316, #f4a72b, #1aa05f); background-size: 300% 100%; animation: slideGrad 14s linear infinite; color: #fff; font-size: .82rem; overflow: hidden; white-space: nowrap; }
+.topbar .track { display: inline-block; padding: 9px 0; animation: marquee 26s linear infinite; font-weight: 700; }
+.topbar .track span { margin: 0 22px; display: inline-flex; align-items: center; gap: 7px; }
+.topbar .gi { width: 1em; height: 1em; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes slideGrad { to { background-position: 200% 50%; } }
+
+/* ===== header ===== */
+.site-header { position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.site-header .wrap { position: relative; display: flex; align-items: center; justify-content: center; height: 60px; }
+.logo { font-family: "Baloo 2", system-ui, sans-serif; font-weight: 800; font-size: 1.7rem; letter-spacing: -.01em; text-decoration: none; display: inline-flex; }
+.logo span { line-height: 1; }
+/* header: logo SEMPRE centrato e nero */
+.site-header .logo span { color: #161616; }
+.cart { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--ink); }
+.cart .gi { width: 1.4rem; height: 1.4rem; }
+/* footer: logo bianco su fondo scuro */
+.site-footer .logo span { color: #ffffff; }
+
+/* ===== bottoni ===== */
+.cta-btn { position: relative; overflow: hidden; display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+  background: linear-gradient(180deg, var(--cta-2) 0%, var(--cta) 52%, var(--cta-d) 100%);
+  color: #fff; font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; font-size: 1.08rem; letter-spacing: .005em;
+  text-decoration: none; border: none; cursor: pointer; padding: 16px 26px; border-radius: 14px;
+  box-shadow: 0 6px 0 var(--cta-d), var(--shadow-s); transition: transform .08s, box-shadow .08s, filter .2s; width: 100%; text-align: center; }
+.cta-btn .lbl { display: inline-flex; align-items: center; gap: 9px; }
+.cta-btn .note { font-weight: 600; font-size: .76rem; opacity: .95; margin-top: 3px; }
+.cta-btn::after { content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 45%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.5), transparent); transform: translateX(-180%) skewX(-12deg); animation: shine 4.5s ease-in-out infinite; }
+.cta-btn:hover { filter: brightness(1.05); }
+.cta-btn:active { transform: translateY(5px); box-shadow: 0 1px 0 var(--cta-d); }
+@keyframes shine { 0% { transform: translateX(-180%) skewX(-12deg); } 55%,100% { transform: translateX(320%) skewX(-12deg); } }
+.cta-sub { font-size: .82rem; color: var(--muted); text-align: center; margin-top: 10px; }
+
+/* bottone bordo-gradiente animato (vibe "trova la taglia" di Toesy) */
+.gbtn { display: block; width: 100%; padding: 2px; border: none; border-radius: 14px; cursor: pointer; margin-bottom: 16px;
+  background: linear-gradient(90deg, var(--c-green), var(--c-blue), var(--c-lilac), var(--c-coral), var(--c-amber), var(--c-green));
+  background-size: 300% 100%; animation: slideGrad 7s linear infinite; }
+.gbtn > span { display: flex; align-items: center; justify-content: center; gap: 9px; background: #fff; border-radius: 12px; padding: 13px 16px; font-weight: 800; color: var(--ink); transition: background .2s; }
+.gbtn:hover { animation-duration: 2.2s; }
+.gbtn:hover > span { background: #fbfdfb; }
+.gbtn .gi { color: var(--green); }
+
+/* ============================================================ HERO */
+.hero { padding: 24px 0 46px; }
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 26px; }
+.gallery .main { position: relative; }
+.gallery .main img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-s); border: 1px solid var(--line); }
+.gallery .main .flag { position: absolute; top: 14px; left: 14px; display: inline-flex; align-items: center; gap: 6px; background: #fff; color: var(--green-d); font-weight: 800; font-size: .78rem; padding: 7px 12px; border-radius: 999px; box-shadow: var(--shadow-s); }
+.gallery .main .flag .gi { width: .95em; height: .95em; color: var(--gold); }
+.thumbs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 10px; }
+.thumbs img { aspect-ratio: 1/1; object-fit: cover; border-radius: 12px; border: 2px solid var(--line); cursor: pointer; background: #fff; transition: border-color .15s, transform .15s; }
+.thumbs img:hover { transform: translateY(-2px); }
+.thumbs img.active { border-color: var(--green); }
+
+.buybox { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px; box-shadow: var(--shadow); }
+.buybox h1 { margin: 6px 0 6px; font-family: "Baloo 2", sans-serif; font-weight: 800; letter-spacing: 0; }
+.buybox h1.buy-title { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; font-size: clamp(1.7rem, 4vw, 2.1rem); line-height: 1.05; letter-spacing: -.02em; margin: 3px 0 8px; color: var(--ink); }
+.buybox h1.buy-title sup { font-size: .42em; font-weight: 700; top: -.7em; color: var(--muted); }
+.buybox .buy-sub { margin-top: 10px; }
+.offer-trust { margin: 14px 0 0; }
+.buy-eyebrow { color: var(--green-d); font-weight: 800; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; }
+.buy-sub { color: var(--muted); margin: 2px 0 12px; }
+.buy-rate { margin-bottom: 16px; }
+
+.trust-chips { display: grid; gap: 10px; margin-bottom: 16px; }
+.tchip { display: flex; gap: 11px; align-items: center; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; font-size: .86rem; transition: transform .15s, box-shadow .15s; }
+.tchip:hover { transform: translateY(-2px); box-shadow: var(--shadow-s); }
+.tchip .ico { width: 34px; height: 34px; }
+.tchip b { font-weight: 700; }
+
+.feat-box { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.feat { display: flex; gap: 10px; align-items: center; font-size: .85rem; font-weight: 700; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 11px; transition: transform .15s, box-shadow .15s, border-color .15s; }
+.feat:hover { transform: translateY(-2px); box-shadow: var(--shadow-s); border-color: #ddd6c8; }
+.feat .ico { width: 34px; height: 34px; }
+
+/* scarsità con shimmer */
+.scar { margin-bottom: 18px; }
+.scar .top { display: flex; align-items: center; gap: 7px; font-size: .85rem; font-weight: 800; color: var(--scar); margin-bottom: 7px; }
+.scar .top .gi { width: 1.05em; height: 1.05em; }
+.scar .bar { height: 10px; background: var(--scar-l); border-radius: 999px; overflow: hidden; position: relative; }
+.scar .bar i { display: block; height: 100%; width: 26%; border-radius: 999px; background: linear-gradient(90deg, var(--c-amber), var(--cta), var(--scar)); }
+.scar .bar::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%); background-size: 220px 100%; animation: shimmer 1.8s linear infinite; }
+@keyframes shimmer { 0% { background-position: -220px 0; } 100% { background-position: 280px 0; } }
+.scar .when { font-size: .76rem; color: var(--muted); margin-top: 6px; }
+
+/* ===== bundle elaborati ===== */
+.bundles { display: grid; gap: 13px; }
+.bundle { position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; background: #fff; border: 2px solid var(--line); border-radius: var(--radius); padding: 16px 15px; cursor: pointer; transition: transform .14s, border-color .15s, box-shadow .15s, background .15s; }
+.bundle:hover { transform: translateY(-2px); border-color: var(--green); box-shadow: var(--shadow-s); }
+.bundle.selected { border-color: var(--cta); box-shadow: 0 0 0 4px rgba(244,137,47,.18), var(--shadow-s); background: linear-gradient(180deg, #fff, var(--cta-l)); }
+.bundle input { position: absolute; opacity: 0; pointer-events: none; }
+.bundle .pick { flex: 0 0 24px; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #d7d0c2; display: grid; place-items: center; transition: border-color .15s, background .15s; }
+.bundle.selected .pick { border-color: var(--cta); background: var(--cta); }
+.bundle .pick .gi { width: 15px; height: 15px; color: #fff; opacity: 0; transform: scale(.5); transition: opacity .15s, transform .15s; stroke-width: 3; }
+.bundle.selected .pick .gi { opacity: 1; transform: scale(1); }
+.bundle .name { font-weight: 800; font-size: 1.05rem; letter-spacing: -.01em; }
+.bundle .desc { font-size: .82rem; color: var(--muted); margin-top: 2px; }
+.bundle .perks { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 8px; }
+.bundle .perks span { display: inline-flex; align-items: center; gap: 5px; font-size: .74rem; font-weight: 700; color: var(--green-d); }
+.bundle .perks .gi { width: .9em; height: .9em; color: var(--green); }
+.bundle .tag { display: inline-block; margin-top: 8px; font-size: .72rem; font-weight: 800; padding: 3px 9px; border-radius: 7px; background: var(--green-l); color: var(--green-d); }
+.bundle .tag.save { background: var(--cta-l); color: var(--cta-d); }
+.bundle .price { text-align: right; white-space: nowrap; }
+.bundle .now { font-weight: 800; font-size: 1.3rem; color: var(--green-d); font-family: "Baloo 2", sans-serif; }
+.bundle .per { display: block; font-size: .7rem; color: var(--muted); font-weight: 700; }
+.bundle .was { display: block; font-size: .82rem; color: var(--muted); text-decoration: line-through; }
+.bundle .pop { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, var(--cta), var(--cta-2)); color: #fff; font-size: .68rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 4px 14px; border-radius: 999px; box-shadow: var(--shadow-s); display: inline-flex; align-items: center; gap: 5px; animation: pulseBadge 2.4s ease-in-out infinite; }
+.bundle .pop .gi { width: .85em; height: .85em; }
+@keyframes pulseBadge { 0%,100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.07); } }
+
+/* regali */
+.gifts { margin-top: 18px; background: linear-gradient(135deg, var(--c-amber-l), #fff7ec); border: 1px dashed var(--c-amber); border-radius: var(--radius); padding: 15px 16px; }
+.gifts .ttl { font-weight: 800; color: #c47f12; font-size: .92rem; display: flex; align-items: center; gap: 7px; }
+.gifts .ttl .gi { width: 1.1em; height: 1.1em; }
+.gifts .hint { font-size: .78rem; color: var(--muted); margin: 3px 0 11px; }
+.gift-list { display: grid; gap: 9px; }
+.gift { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: .86rem; transition: opacity .2s; }
+.gift .g-name { display: flex; align-items: center; gap: 9px; font-weight: 600; }
+.gift .g-name .ico { width: 28px; height: 28px; }
+.gift .free { font-weight: 800; color: var(--green-d); font-size: .73rem; background: #fff; border: 1px solid var(--green-l); padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.gift .free s { color: #b08a5a; text-decoration-thickness: 1.5px; }
+.gift.locked { opacity: .4; }
+.gift.locked .free { background: #f0f0f0; color: #999; border-color: #eee; }
+
+.buy-cta { margin-top: 18px; border-radius: 999px; padding: 18px 28px; font-size: 1.18rem; box-shadow: 0 7px 0 var(--cta-d), var(--shadow); }
+.buy-cta:active { transform: translateY(6px); box-shadow: 0 1px 0 var(--cta-d); }
+.pay-rate { text-align: center; font-size: .85rem; color: var(--muted); margin-top: 13px; }
+.pay-rate b { color: var(--ink); }
+.pay-rate .klarna { display: inline-block; background: #ffb3c7; color: #17120f; font-weight: 800; font-size: .72rem; padding: 2px 8px; border-radius: 6px; }
+.pay-rate .scala { display: inline-block; background: #c9f24d; color: #17120f; font-weight: 800; font-size: .72rem; padding: 2px 8px; border-radius: 6px; }
+.pay-badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 12px; }
+.pay-badges span { font-size: .64rem; font-weight: 800; letter-spacing: .04em; color: #6a6a6a; background: var(--bg-soft); border: 1px solid var(--line); padding: 5px 9px; border-radius: 7px; }
+.secure { display: flex; align-items: center; justify-content: center; gap: 7px; font-size: .78rem; color: var(--muted); margin-top: 11px; }
+.secure .gi { width: 1em; height: 1em; }
+
+.acc { margin-top: 18px; border-top: 1px solid var(--line); }
+.acc details { border-bottom: 1px solid var(--line); }
+.acc summary { list-style: none; cursor: pointer; padding: 14px 2px; font-weight: 700; font-size: .92rem; display: flex; justify-content: space-between; align-items: center; }
+.acc summary::-webkit-details-marker { display: none; }
+.acc summary .chev { color: var(--green); transition: transform .2s; }
+.acc summary .chev .gi { width: 1.1em; height: 1.1em; }
+.acc details[open] summary .chev { transform: rotate(45deg); }
+.acc .body { padding: 0 2px 14px; color: var(--muted); font-size: .9rem; }
+
+/* ===== sintomi ===== */
+.sintomi { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 26px; }
+.sintomo { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow-s); transition: transform .15s, box-shadow .15s; }
+.sintomo:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.sintomo h3 { display: flex; gap: 13px; align-items: center; margin-bottom: 8px; }
+.sintomo .ico { width: 44px; height: 44px; }
+.sintomo .ico .gi { width: 1.3em; height: 1.3em; }
+.sintomo p { margin: 0; color: var(--muted); }
+
+.why { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 11px; }
+.why li { display: flex; gap: 11px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 13px 15px; transition: transform .15s, box-shadow .15s; }
+.why li:hover { transform: translateY(-2px); box-shadow: var(--shadow-s); }
+.why .ico { width: 26px; height: 26px; background: var(--scar-l); color: var(--scar); }
+.why .ico .gi { width: .9em; height: .9em; stroke-width: 2.5; }
+
+/* ===== IFC ===== */
+.ifc-stat { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 520px; margin: 24px auto 0; }
+.ifc-stat .cell { background: #fff; border-radius: var(--radius); padding: 24px; text-align: center; box-shadow: var(--shadow-s); border: 1px solid var(--line); }
+.ifc-stat .cell.a .big { color: var(--c-green); }
+.ifc-stat .cell.b .big { color: var(--c-coral); }
+.ifc-stat .big { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 2.5rem; line-height: 1; margin-bottom: 6px; }
+.ifc-stat .lbl { font-size: .86rem; color: var(--muted); }
+.assoluzione { max-width: var(--narrow); margin: 28px auto 0; text-align: center; background: var(--green-l); border-radius: var(--radius); padding: 28px; }
+.assoluzione strong { color: var(--green-d); }
+
+/* ===== fasi ===== */
+.fasi { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 32px; }
+.fase { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px 24px; position: relative; box-shadow: var(--shadow-s); transition: transform .15s, box-shadow .15s; }
+.fase:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.fase .step { position: absolute; top: -18px; left: 22px; width: 40px; height: 40px; border-radius: 13px; color: #fff; display: grid; place-items: center; font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 1.2rem; box-shadow: var(--shadow-s); }
+.fase.f1 .step { background: linear-gradient(135deg, #82b13a, var(--c-green)); }
+.fase.f2 .step { background: linear-gradient(135deg, var(--cta-2), var(--cta)); }
+.fase.f3 .step { background: linear-gradient(135deg, #f3b53a, var(--c-amber)); }
+.fase .when { font-size: .76rem; font-weight: 800; color: var(--green-d); text-transform: uppercase; letter-spacing: .06em; }
+.fase h3 { margin: 4px 0 6px; }
+.fase p { margin: 0; color: var(--muted); }
+
+/* ===== benefici ===== */
+.benefici { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 28px; }
+.beneficio { display: flex; gap: 16px; align-items: flex-start; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow-s); transition: transform .15s, box-shadow .15s; }
+.beneficio:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.beneficio .ico { width: 52px; height: 52px; border-radius: 15px; }
+.beneficio .ico .gi { width: 1.5em; height: 1.5em; }
+.beneficio h3 { margin: 0 0 4px; }
+.beneficio p { margin: 0; color: var(--muted); }
+
+/* ===== recensioni ===== */
+.rev-head { display: grid; grid-template-columns: 1fr; gap: 22px; align-items: center; max-width: 760px; margin: 26px auto 0; }
+.rev-score { text-align: center; background: var(--green-l); border-radius: var(--radius); padding: 24px; }
+.rev-score .n { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 3rem; line-height: 1; color: var(--green-d); }
+.rev-bars { display: grid; gap: 8px; }
+.rev-bars .r { display: flex; align-items: center; gap: 10px; font-size: .82rem; color: var(--muted); }
+.rev-bars .r .lbl { width: 30px; display: inline-flex; align-items: center; gap: 3px; }
+.rev-bars .r .lbl .gi { width: .85em; height: .85em; color: var(--gold); }
+.rev-bars .r .bar { flex: 1; height: 9px; background: #fff; border-radius: 999px; overflow: hidden; }
+.rev-bars .r .bar i { display: block; height: 100%; background: var(--gold); border-radius: 999px; }
+.reviews { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 30px; }
+.review { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow-s); transition: transform .15s, box-shadow .15s; }
+.review:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.review p { font-style: italic; color: var(--ink); margin: 10px 0 14px; }
+.review .who { display: flex; align-items: center; gap: 10px; font-size: .9rem; }
+.review .who .av { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; color: #fff; font-family: "Baloo 2", sans-serif; }
+.review:nth-child(1) .av { background: var(--c-green); } .review:nth-child(2) .av { background: var(--c-blue); } .review:nth-child(3) .av { background: var(--c-coral); }
+.verified { color: var(--green); font-size: .78rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
+.verified .gi { width: .9em; height: .9em; }
+.fonti { margin: 28px auto 0; background: var(--bg-soft); border-radius: var(--radius); padding: 22px; font-size: .9rem; color: var(--muted); max-width: var(--narrow); border: 1px solid var(--line); }
+.fonti b { color: var(--ink); }
+
+/* ===== tabella ===== */
+.tabella-wrap { overflow-x: auto; margin-top: 28px; border-radius: var(--radius); box-shadow: var(--shadow-s); border: 1px solid var(--line); }
+table.compare { width: 100%; border-collapse: collapse; background: #fff; min-width: 640px; }
+table.compare th, table.compare td { padding: 15px 12px; text-align: center; border-bottom: 1px solid var(--line); font-size: .92rem; }
+table.compare thead th { background: var(--ink); color: #fff; font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; }
+table.compare thead th.us { background: linear-gradient(135deg, var(--cta-2), var(--cta)); }
+table.compare tbody th { text-align: left; font-weight: 700; color: var(--ink); background: var(--bg-soft); }
+table.compare td.us { background: var(--green-l); }
+.yes, .no { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; }
+.yes { background: var(--c-green-l); color: var(--c-green); }
+.no { background: var(--scar-l); color: var(--scar); }
+.yes .gi, .no .gi { width: 1em; height: 1em; stroke-width: 2.6; }
+
+/* ===== FAQ ===== */
+.faq { margin-top: 26px; }
+.faq details { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; transition: box-shadow .15s; }
+.faq details[open] { box-shadow: var(--shadow-s); }
+.faq summary { list-style: none; cursor: pointer; padding: 18px 20px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .chev { transition: transform .2s; color: var(--green); }
+.faq summary .chev .gi { width: 1.2em; height: 1.2em; }
+.faq details[open] summary .chev { transform: rotate(45deg); }
+.faq .answer { padding: 0 20px 18px; color: var(--muted); }
+
+/* ===== close duro ===== */
+.close-duro { text-align: center; }
+.close-duro .box { background: linear-gradient(160deg, var(--green-d) 0%, #0e4b30 100%); color: #eafaf1; border-radius: 30px; padding: 46px 26px; box-shadow: var(--shadow); }
+.close-duro h2 { color: #fff; }
+.close-duro p { color: #cfe8da; }
+.close-duro .cta-btn { max-width: 430px; margin: 18px auto 0; }
+.guarantee-seal { display: inline-flex; align-items: center; gap: 11px; margin: 0 auto 20px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); padding: 12px 18px; border-radius: 999px; color: #fff; font-weight: 700; }
+.guarantee-seal .gi { width: 1.4em; height: 1.4em; }
+
+/* ===== footer ===== */
+.site-footer { background: linear-gradient(160deg, var(--green-d), #0d4530); color: #c4d6cb; padding: 48px 0; font-size: .85rem; }
+.site-footer .logo .l6 { color: #fff; }
+.site-footer .tag { margin: 10px 0 0; color: #a9c2b3; }
+.site-footer .cols { display: grid; grid-template-columns: 1fr; gap: 26px; margin-top: 26px; }
+.site-footer h4 { font-family: "Plus Jakarta Sans", sans-serif; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: #fff; margin: 0 0 10px; }
+.site-footer a { color: #bfe9d2; text-decoration: none; display: block; margin-bottom: 6px; }
+.news { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15); border-radius: var(--radius); padding: 16px; }
+.news .row { display: flex; gap: 8px; margin-top: 8px; }
+.news input { flex: 1; border: none; border-radius: 10px; padding: 12px 14px; font-size: .9rem; }
+.news button { border: none; border-radius: 10px; padding: 0 14px; background: var(--cta); color: #fff; cursor: pointer; display: grid; place-items: center; }
+.news button .gi { width: 1.2em; height: 1.2em; }
+.disclaimer { margin-top: 26px; font-size: .76rem; color: #8fac9b; border-top: 1px solid rgba(255,255,255,.12); padding-top: 16px; }
+
+/* ===== sticky ===== */
+.sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: rgba(255,255,255,.97); backdrop-filter: blur(10px); border-top: 1px solid var(--line); padding: 10px 14px; transform: translateY(120%); transition: transform .25s; box-shadow: 0 -6px 20px rgba(0,0,0,.08); }
+.sticky-cta.show { transform: translateY(0); }
+.sticky-cta .inner { display: flex; align-items: center; gap: 12px; max-width: var(--max); margin: 0 auto; }
+.sticky-cta .info { flex: 1; min-width: 0; }
+.sticky-cta .info .p { font-weight: 800; }
+.sticky-cta .info .s { font-size: .76rem; color: var(--muted); }
+.sticky-cta .cta-btn { width: auto; flex: 0 0 auto; padding: 12px 20px; font-size: .95rem; }
+.sticky-cta .cta-btn .note { display: none; }
+
+@media (min-width: 880px) {
+  .hero-grid { grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .gallery { position: sticky; top: 76px; }
+  .trust-chips { grid-template-columns: 1fr 1fr; }
+  .sintomi { grid-template-columns: 1fr 1fr; }
+  .why { grid-template-columns: 1fr 1fr; }
+  .fasi { grid-template-columns: 1fr 1fr 1fr; }
+  .benefici { grid-template-columns: 1fr 1fr; }
+  .reviews { grid-template-columns: 1fr 1fr 1fr; }
+  .rev-head { grid-template-columns: 240px 1fr; }
+  .site-footer .cols { grid-template-columns: 2fr 1fr 1fr; }
+}
+@media (max-width: 879px) { body { padding-bottom: 78px; } }
+
+</style>
+</head>
+<body>
+
+  <!-- ===== SPRITE ICONE (vettoriali, no emoji) ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="ic-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6"/></symbol>
+    <symbol id="ic-horizontal" viewBox="0 0 24 24"><polyline points="6 9 3 12 6 15"/><polyline points="18 9 21 12 18 15"/><line x1="3" y1="12" x2="21" y2="12"/></symbol>
+    <symbol id="ic-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="ic-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></symbol>
+    <symbol id="ic-book" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+    <symbol id="ic-flask" viewBox="0 0 24 24"><path d="M14 2v6.3a2 2 0 0 0 .3 1.05l5.4 8.65A2 2 0 0 1 18 21H6a2 2 0 0 1-1.7-3l5.4-8.65A2 2 0 0 0 10 8.3V2"/><line x1="6.5" y1="15" x2="17.5" y2="15"/><line x1="8.5" y1="2" x2="15.5" y2="2"/></symbol>
+    <symbol id="ic-return" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><polyline points="3 3 3 8 8 8"/></symbol>
+    <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="ic-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="8" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+    <symbol id="ic-gift" viewBox="0 0 24 24"><path d="M20 12v10H4V12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></symbol>
+    <symbol id="ic-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="ic-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="ic-sofa" viewBox="0 0 24 24"><path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/><path d="M3 16a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2H3z"/><path d="M5 18v2M19 18v2"/><path d="M8 14V9.5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1V14"/></symbol>
+    <symbol id="ic-paw" viewBox="0 0 24 24"><circle cx="5.5" cy="11" r="1.8"/><circle cx="9.5" cy="7.5" r="1.8"/><circle cx="14.5" cy="7.5" r="1.8"/><circle cx="18.5" cy="11" r="1.8"/><path d="M12 12.5c2.8 0 5 2 5 4.2 0 1.9-1.7 2.8-3.6 2.8-.9 0-1 .5-1.4.5s-.5-.5-1.4-.5C7.7 19.5 7 18.6 7 16.7c0-2.2 2.2-4.2 5-4.2z"/></symbol>
+    <symbol id="ic-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7z"/></symbol>
+    <symbol id="ic-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="ic-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+    <symbol id="ic-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+    <symbol id="ic-star" viewBox="0 0 24 24"><path d="M11.48 3.5a.6.6 0 0 1 1.04 0l2.3 4.66 5.14.75a.6.6 0 0 1 .33 1.02l-3.72 3.63.88 5.12a.6.6 0 0 1-.87.63L12 17.5l-4.6 2.42a.6.6 0 0 1-.87-.63l.88-5.12L3.7 9.93a.6.6 0 0 1 .33-1.02l5.14-.75z"/></symbol>
+    <symbol id="ic-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+    <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  </svg>
+
+  <span id="top"></span>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="topbar">
+    <div class="track">
+      <span><svg class="gi"><use href="#ic-truck"/></svg> Spedizione <b>gratuita</b> in tutta Italia</span>
+      <span><svg class="gi"><use href="#ic-shield"/></svg> Garanzia <b>60 giorni</b> soddisfatti o rimborsati</span>
+      <span><svg class="gi"><use href="#ic-flame"/></svg> Scorte limitate</span>
+      <span><svg class="gi"><use href="#ic-truck"/></svg> Spedizione <b>gratuita</b> in tutta Italia</span>
+      <span><svg class="gi"><use href="#ic-shield"/></svg> Garanzia <b>60 giorni</b> soddisfatti o rimborsati</span>
+      <span><svg class="gi"><use href="#ic-flame"/></svg> Scorte limitate</span>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="wrap">
+      <a href="#top" class="logo"><span class="l1">S</span><span class="l2">c</span><span class="l3">r</span><span class="l4">a</span><span class="l1">t</span><span class="l2">c</span><span class="l3">h</span><span class="l7">y</span></a>
+      <span class="cart"><svg class="gi"><use href="#ic-bag"/></svg></span>
+    </div>
+  </header>
+
+  <!-- ============================================================ HERO ============================================================ -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+
+        <div class="gallery">
+          <div class="main">
+            <img id="main-img" src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY1.png?v=1777478296" alt="SCRATCHY, la terapia ambientale per il gatto che vive in casa" loading="eager" />
+            <span class="flag"><svg class="gi fill"><use href="#ic-star"/></svg> 4,8/5 · migliaia di proprietari</span>
+          </div>
+          <div class="thumbs" id="thumbs">
+            <img class="active" src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY1.png?v=1777478296" alt="SCRATCHY vista 1" />
+            <img src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY2.png?v=1777478296" alt="SCRATCHY vista 2" />
+            <img src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY3.png?v=1777478296" alt="SCRATCHY vista 3" />
+            <img src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/01productimage4_1e170e43-ab5d-4119-a87b-06a4ae482152.webp?v=1777478336" alt="SCRATCHY in uso 1" />
+            <img src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/01productimage5_54fa36aa-7c87-4594-8d13-9b70fccabe88.webp?v=1777478335" alt="SCRATCHY in uso 2" />
+            <img src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/SCRATCHY_6.png?v=1777478377" alt="SCRATCHY dettaglio" />
+          </div>
+        </div>
+
+        <div class="buybox">
+          <div class="buy-eyebrow">Terapia ambientale per gatti</div>
+          <h1 class="buy-title">Scratchy<sup>™</sup></h1>
+          <div class="buy-rate rate"><span class="stars"><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg></span> <b>4,8</b> · amato da migliaia di proprietari italiani</div>
+          <p class="buy-sub">Non è cattiveria: al tuo gatto manca ciò che un appartamento non può dargli. <strong>Scratchy</strong> gli ridà l'istinto — e a te la pace in casa.</p>
+
+          <div class="feat-box">
+            <div class="feat"><span class="ico tint c1"><svg class="gi"><use href="#ic-target"/></svg></span> Agisce sulla causa (IFC)</div>
+            <div class="feat"><span class="ico tint c2"><svg class="gi"><use href="#ic-horizontal"/></svg></span> Graffio orizzontale naturale</div>
+            <div class="feat"><span class="ico tint c5"><svg class="gi fill"><use href="#ic-moon"/></svg></span> Notti di nuovo silenziose</div>
+            <div class="feat"><span class="ico tint c4"><svg class="gi"><use href="#ic-clipboard"/></svg></span> Protocollo guidato incluso</div>
+          </div>
+
+          <div class="scar">
+            <div class="top"><svg class="gi fill"><use href="#ic-flame"/></svg> Disponibilità limitata</div>
+            <div class="bar"><i></i></div>
+            <div class="when">Le scorte di questo lotto stanno finendo</div>
+          </div>
+
+          <!-- bottone bordo animato (vibe "trova la taglia" di Toesy) -->
+          <button type="button" class="gbtn" id="quiz-btn"><span><svg class="gi"><use href="#ic-target"/></svg> Non sai quale scegliere? Trova la tua dose ideale</span></button>
+
+          <form id="kit-form" class="bundles">
+            <label class="bundle" data-price="29.90" data-name="Kit 1+1" data-units="2" data-tier="entry">
+              <input type="radio" name="kit" value="1+1" />
+              <span class="pick"><svg class="gi"><use href="#ic-check"/></svg></span>
+              <div>
+                <div class="name">Kit 1+1 GRATIS</div>
+                <div class="desc">2 SCRATCHY (1 in regalo) · prova una zona</div>
+              </div>
+              <div class="price"><span class="now">€29,90</span><span class="per">€14,95 a Scratchy</span></div>
+            </label>
+
+            <label class="bundle selected" data-price="59.80" data-name="Kit 2+2" data-units="4" data-tier="hero">
+              <input type="radio" name="kit" value="2+2" checked />
+              <span class="pop"><svg class="gi fill"><use href="#ic-star"/></svg> Il più scelto</span>
+              <span class="pick"><svg class="gi"><use href="#ic-check"/></svg></span>
+              <div>
+                <div class="name">Kit 2+2 GRATIS</div>
+                <div class="desc">4 SCRATCHY · copri le zone chiave della casa</div>
+                <div class="perks">
+                  <span><svg class="gi"><use href="#ic-check"/></svg> Dose terapeutica completa</span>
+                  <span><svg class="gi"><use href="#ic-check"/></svg> Spedizione prioritaria</span>
+                </div>
+                <span class="tag">Consigliato dal protocollo</span>
+              </div>
+              <div class="price"><span class="now">€59,80</span><span class="per">€14,95 a Scratchy</span></div>
+            </label>
+
+            <label class="bundle" data-price="69.90" data-name="Kit 3+3" data-units="6" data-tier="value">
+              <input type="radio" name="kit" value="3+3" />
+              <span class="pick"><svg class="gi"><use href="#ic-check"/></svg></span>
+              <div>
+                <div class="name">Kit 3+3 GRATIS</div>
+                <div class="desc">6 SCRATCHY · copri ogni stanza</div>
+                <div class="perks">
+                  <span><svg class="gi"><use href="#ic-check"/></svg> Spedizione prioritaria</span>
+                </div>
+                <span class="tag save">Risparmi €19,80</span>
+              </div>
+              <div class="price"><span class="now">€69,90</span><span class="was">€89,70</span><span class="per">€11,65 a Scratchy</span></div>
+            </label>
+          </form>
+
+          <div class="gifts">
+            <div class="ttl"><svg class="gi"><use href="#ic-gift"/></svg> Regali inclusi oggi</div>
+            <div class="hint" id="gift-hint">Inclusi con il Kit 2+2 selezionato</div>
+            <div class="gift-list" id="gift-list">
+              <div class="gift" data-min="hero"><span class="g-name"><span class="ico tint c1"><svg class="gi"><use href="#ic-book"/></svg></span> Guida P.R.E.D.A. completa</span> <span class="free">GRATIS · <s>€19,90</s></span></div>
+              <div class="gift" data-min="hero"><span class="g-name"><span class="ico tint c2"><svg class="gi"><use href="#ic-truck"/></svg></span> Spedizione prioritaria</span> <span class="free">GRATIS</span></div>
+              <div class="gift" data-min="all"><span class="g-name"><span class="ico tint c3"><svg class="gi"><use href="#ic-chat"/></svg></span> Assistenza dedicata in italiano</span> <span class="free">GRATIS</span></div>
+            </div>
+          </div>
+
+          <button class="cta-btn buy-cta" id="buy-btn"><span class="lbl"><svg class="gi"><use href="#ic-bag"/></svg> Aggiungi al carrello</span><span class="note">Reso gratuito entro 60 giorni</span></button>
+
+          <div class="trust-chips offer-trust">
+            <div class="tchip"><span class="ico tint c1"><svg class="gi"><use href="#ic-flask"/></svg></span> <span>Metodo su <b>fonti di comportamento felino</b></span></div>
+            <div class="tchip"><span class="ico tint c2"><svg class="gi"><use href="#ic-return"/></svg></span> <span><b>Reso gratuito 60 giorni</b> — il rischio è nostro</span></div>
+          </div>
+
+          <div class="pay-rate">oppure in 3 rate da <b id="sum-rate">€19,93</b> con <span class="scala">Scalapay</span> <span class="klarna">Klarna</span> — senza interessi</div>
+          <div class="pay-badges"><span>VISA</span><span>MASTERCARD</span><span>PAYPAL</span><span>AMEX</span><span>KLARNA</span><span>SCALAPAY</span></div>
+          <div class="secure"><svg class="gi"><use href="#ic-lock"/></svg> Pagamento 100% sicuro · acquista anche con PayPal</div>
+          <div class="secure"><svg class="gi"><use href="#ic-shield"/></svg> Protezione acquirente PayPal inclusa</div>
+
+          <div class="acc">
+            <details>
+              <summary>Caratteristiche <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary>
+              <div class="body">Pannello in cartone resistente a nido d'ape, pensato per il graffio orizzontale che soddisfa il gesto naturale di graffiare e strappare. Sicuro, atossico, leggero e stabile. Pensato per il gatto che vive in casa.</div>
+            </details>
+            <details>
+              <summary>È questo il tuo gatto? <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary>
+              <div class="body">Distrugge i mobili, corre all'impazzata di notte, si lecca fino a spelarsi, oppure è spento e senza energie. Se riconosci anche solo uno di questi segnali, è il segnale che al tuo gatto manca lo sfogo del suo istinto.</div>
+            </details>
+            <details>
+              <summary>Garanzia e resi <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary>
+              <div class="body">60 giorni soddisfatti o rimborsati. Provi la terapia a casa tua: se non sei soddisfatta, ti restituiamo l'intero importo.</div>
+            </details>
+            <details>
+              <summary>Spedizione <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary>
+              <div class="body">Spedizione gratuita in tutta Italia, consegna in genere in 3–5 giorni lavorativi. Dal Kit 2+2 la spedizione prioritaria è gratuita.</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ SEZIONE 2 — PROBLEMA ============================================================ -->
+  <section>
+    <div class="wrap narrow center">
+      <span class="eyebrow">Riconosci il tuo gatto?</span>
+      <h2>Sono le 3 di notte e il tuo gatto corre all'impazzata per tutta la casa. <span class="em">E ti chiedi: «cosa sto sbagliando?»</span></h2>
+      <p class="muted">Hai comprato il tiragraffi. Hai provato i giochi. Gli hai dato più attenzioni. E ami il tuo gatto. Eppure qualcosa continua a non funzionare — e nessuno ti ha mai spiegato perché.</p>
+    </div>
+    <div class="wrap">
+      <div class="sintomi">
+        <div class="sintomo"><h3><span class="ico tint c3"><svg class="gi"><use href="#ic-sofa"/></svg></span> I mobili a brandelli</h3><p>Il bracciolo del divano sfilacciato, i fili tirati, l'angolo della libreria graffiato a sangue. Non lo fa per dispetto: sta cercando di scaricare un istinto che non trova altra via.</p></div>
+        <div class="sintomo"><h3><span class="ico tint c5"><svg class="gi fill"><use href="#ic-moon"/></svg></span> Le corse all'impazzata di notte</h3><p>Scatta nel buio, corre, salta, rovescia tutto. E tu ti svegli di colpo, un'altra volta. Non è gioco: è l'istinto di caccia che esce così, perché di giorno non ha trovato sfogo.</p></div>
+        <div class="sintomo"><h3><span class="ico tint c2"><svg class="gi fill"><use href="#ic-paw"/></svg></span> Si lecca fino a spelarsi</h3><p>Quelle chiazze senza pelo sulle zampe e sulla pancia. Si lecca in modo ossessivo. È un nervosismo che rivolge contro sé stesso quando la tensione non ha dove andare.</p></div>
+        <div class="sintomo"><h3><span class="ico tint c4"><svg class="gi fill"><use href="#ic-heart"/></svg></span> Spento, fermo, assente</h3><p>Lo trovi fermo dietro la porta, immobile, con gli occhi nel vuoto. «È un gatto tranquillo», ti dici. Ma la calma non è sempre pace: a volte è solo un gatto che si è arreso.</p></div>
+      </div>
+
+      <div class="narrow" style="margin:42px auto 0">
+        <h2 class="center">Perché tutto ciò che hai provato <span class="em">non è bastato</span></h2>
+        <p class="center muted">Non hai sbagliato a provarci. Hai sbagliato bersaglio — senza saperlo.</p>
+        <ul class="why">
+          <li><span class="ico"><svg class="gi"><use href="#ic-x"/></svg></span> <span><b>Il tiragraffi verticale</b> non dà sfogo all'istinto: il 90% dei gatti graffia in <i>orizzontale</i>, cioè per terra, dove l'istinto lo chiede davvero.</span></li>
+          <li><span class="ico"><svg class="gi"><use href="#ic-x"/></svg></span> <span><b>I giochi</b> intrattengono cinque minuti, ma non completano il ciclo di caccia: la tensione resta.</span></li>
+          <li><span class="ico"><svg class="gi"><use href="#ic-x"/></svg></span> <span><b>I diffusori</b> agiscono sull'umore, non sull'istinto inappagato che genera il comportamento.</span></li>
+          <li><span class="ico"><svg class="gi"><use href="#ic-x"/></svg></span> <span><b>Più attenzioni</b> aiutano te, non bastano a lui: il bisogno è ambientale, non affettivo.</span></li>
+        </ul>
+        <p class="muted center" style="margin-top:18px">Nessuna di queste cose ha fallito perché inutile. Hanno fallito perché curano il <b>sintomo</b> e lasciano intatta la <b>causa</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ DIAGNOSI IFC ============================================================ -->
+  <section>
+    <div class="wrap"><div class="panel">
+      <div class="narrow center" style="margin:0 auto">
+        <span class="eyebrow">La causa nascosta</span>
+        <h2>Tutti e quattro i sintomi hanno una sola origine: <span class="em">l'Ipostimolazione Felina Cronica</span></h2>
+        <p>Il tuo gatto resta un cacciatore: il suo cervello è fatto per ricevere circa <b>200 stimoli ogni ora</b>. Una casa, anche la più curata, gliene dà circa <b>12</b>.</p>
+        <div class="ifc-stat">
+          <div class="cell a"><div class="big">~200</div><div class="lbl">stimoli/ora di cui il suo cervello ha bisogno</div></div>
+          <div class="cell b"><div class="big">~12</div><div class="lbl">stimoli/ora che offre un appartamento</div></div>
+        </div>
+        <p style="margin-top:24px">La caccia ha una sequenza naturale — <b>cercare, inseguire, catturare, mordere</b> — ma in casa resta sempre a metà. Quell'istinto non trova sfogo e deve uscire in qualche modo: così va a finire sui mobili, esplode di notte, si rivolta contro il suo corpo, oppure lo spegne. Questa è l'<b>Ipostimolazione Felina Cronica (IFC)</b>, cioè un gatto che riceve troppi pochi stimoli ogni giorno: è l'unica causa che lega insieme tutti e quattro i segnali.</p>
+        <div class="assoluzione">
+          <p style="margin:0"><strong>E ora la cosa più importante: non è colpa tua. E non è colpa del tuo gatto.</strong></p>
+          <p style="margin:.6em 0 0">È colpa di una casa che non è pensata per un cacciatore — e di nessuno che te l'avesse mai spiegato. Hai fatto tutto quello che ti avevano detto. Ti mancava solo questo.</p>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ============================================================ COME FUNZIONA ============================================================ -->
+  <section>
+    <div class="wrap narrow center">
+      <span class="eyebrow">Il protocollo</span>
+      <h2>Come SCRATCHY riequilibra il tuo gatto <span class="em">in 14 giorni</span></h2>
+      <p class="muted">SCRATCHY è il primo strumento di terapia ambientale pensato per far sfogare l'istinto di caccia <b>in orizzontale</b>, cioè per terra, dove il gatto graffia davvero. Tre passi, niente di complicato.</p>
+    </div>
+    <div class="wrap">
+      <div class="fasi">
+        <div class="fase f1"><span class="step">1</span><div class="when">Giorni 1–3</div><h3>Diagnosi</h3><p>Osservi il tuo gatto e riconosci i sintomi. Nessuno strumento necessario: solo guardare con occhi nuovi. Puoi iniziare oggi, prima che il pacco arrivi.</p></div>
+        <div class="fase f2"><span class="step">2</span><div class="when">Giorni 4–7</div><h3>Installazione</h3><p>Posizioni SCRATCHY nelle zone chiave della casa. Il gatto comincia a sfogare lì il suo istinto, per terra, invece che sui mobili.</p></div>
+        <div class="fase f3"><span class="step">3</span><div class="when">Giorni 8–14</div><h3>Consolidamento</h3><p>Il comportamento si riequilibra. Le notti si calmano, i mobili respirano, il gatto torna sé stesso. Primi risultati entro 14 giorni.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ BENEFICI ============================================================ -->
+  <section>
+    <div class="wrap"><div class="panel">
+      <div class="narrow center" style="margin:0 auto">
+        <span class="eyebrow">La tua casa, tra due settimane</span>
+        <h2>Cosa cambia davvero <span class="em">quando la causa viene curata</span></h2>
+      </div>
+      <div class="wrap">
+        <div class="benefici">
+          <div class="beneficio"><span class="ico tint c1"><svg class="gi"><use href="#ic-sofa"/></svg></span><div><h3>I tuoi mobili tornano salvi</h3><p>L'istinto ha finalmente dove sfogarsi. Il divano smette di essere il bersaglio.</p></div></div>
+          <div class="beneficio"><span class="ico tint c2"><svg class="gi fill"><use href="#ic-moon"/></svg></span><div><h3>Le notti tornano silenziose</h3><p>Le corse notturne si calmano quando di giorno l'istinto trova sfogo. Torni a dormire.</p></div></div>
+          <div class="beneficio"><span class="ico tint c4"><svg class="gi fill"><use href="#ic-paw"/></svg></span><div><h3>Un gatto sereno e appagato</h3><p>Non più teso, non più spento: un gatto che scarica il suo istinto ed è in pace. Entro 14 giorni.</p></div></div>
+          <div class="beneficio"><span class="ico tint c3"><svg class="gi fill"><use href="#ic-heart"/></svg></span><div><h3>Finalmente la proprietaria che merita</h3><p>Quella che ha capito la causa e l'ha curata — non quella che rincorre il sintomo con l'ennesimo acquisto.</p></div></div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- CTA intermedio -->
+  <section class="tight">
+    <div class="wrap narrow center">
+      <a href="#top" id="mid-cta" class="cta-btn" style="max-width:430px;margin:0 auto"><span class="lbl">Inizia la terapia del tuo gatto <svg class="gi"><use href="#ic-arrow"/></svg></span><span class="note">Garanzia 60 giorni · Spedizione gratuita</span></a>
+    </div>
+  </section>
+
+  <!-- ============================================================ PROVA ============================================================ -->
+  <section>
+    <div class="wrap narrow center">
+      <span class="eyebrow">Storie vere</span>
+      <h2>Migliaia di proprietari italiani hanno già <span class="em">ridato equilibrio al loro gatto</span></h2>
+    </div>
+    <div class="wrap">
+      <div class="rev-head">
+        <div class="rev-score">
+          <div class="n">4,8</div>
+          <div class="stars"><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg></div>
+          <div class="muted" style="font-size:.82rem;margin-top:6px">su migliaia di proprietari italiani</div>
+        </div>
+        <div class="rev-bars">
+          <div class="r"><span class="lbl">5<svg class="gi fill"><use href="#ic-star"/></svg></span><span class="bar"><i style="width:86%"></i></span></div>
+          <div class="r"><span class="lbl">4<svg class="gi fill"><use href="#ic-star"/></svg></span><span class="bar"><i style="width:10%"></i></span></div>
+          <div class="r"><span class="lbl">3<svg class="gi fill"><use href="#ic-star"/></svg></span><span class="bar"><i style="width:3%"></i></span></div>
+          <div class="r"><span class="lbl">2<svg class="gi fill"><use href="#ic-star"/></svg></span><span class="bar"><i style="width:1%"></i></span></div>
+          <div class="r"><span class="lbl">1<svg class="gi fill"><use href="#ic-star"/></svg></span><span class="bar"><i style="width:1%"></i></span></div>
+        </div>
+      </div>
+
+      <!-- Recensioni mantenute come confermato dal cliente. -->
+      <div class="reviews">
+        <div class="review"><span class="stars"><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg></span><p>«Il mio gatto si svegliava ogni notte alle 4 e correva per casa. Dopo dieci giorni con SCRATCHY dorme — e io con lui. Non ci credevo.»</p><div class="who"><span class="av">G</span><div><b>Giulia M.</b> · Milano<br><span class="verified"><svg class="gi"><use href="#ic-check"/></svg> Acquisto verificato</span></div></div></div>
+        <div class="review"><span class="stars"><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg></span><p>«Avevo provato tre tiragraffi diversi, tutti ignorati. Questo lo usa in orizzontale da solo. Il divano è salvo dopo due anni di battaglia.»</p><div class="who"><span class="av">F</span><div><b>Francesca R.</b> · Torino<br><span class="verified"><svg class="gi"><use href="#ic-check"/></svg> Acquisto verificato</span></div></div></div>
+        <div class="review"><span class="stars"><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg><svg class="gi fill"><use href="#ic-star"/></svg></span><p>«Il mio gatto era diventato spento, stava fermo tutto il giorno. Ora caccia, gratta, è di nuovo vivo. Non immaginavo fosse questo il problema.»</p><div class="who"><span class="av">S</span><div><b>Silvia D.</b> · Bologna<br><span class="verified"><svg class="gi"><use href="#ic-check"/></svg> Acquisto verificato</span></div></div></div>
+      </div>
+
+      <div class="fonti">
+        <p style="margin:0 0 8px"><b>Il metodo SCRATCHY si appoggia su fonti reali di comportamento felino:</b></p>
+        <p style="margin:0">Bradshaw, <i>Cat Sense</i> (2013) · Linee guida AAFP/ISFM (2013) · Mills (2013) · Wilbourn (2017) · Mikel Delgado, UC Davis. Il protocollo in 3 fasi e la <b>Guida P.R.E.D.A.</b> sono gli strumenti del metodo. SCRATCHY è una cornice di terapia ambientale ancorata a queste fonti, non un referto medico.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ TABELLA ============================================================ -->
+  <section>
+    <div class="wrap"><div class="panel">
+      <div class="narrow center" style="margin:0 auto">
+        <span class="eyebrow">Cura la causa, non il sintomo</span>
+        <h2>Perché SCRATCHY è diverso <span class="em">da tutto ciò che hai già provato</span></h2>
+      </div>
+      <div class="wrap">
+        <div class="tabella-wrap">
+          <table class="compare">
+            <thead><tr><th></th><th class="us">SCRATCHY</th><th>Tiragraffi</th><th>Giochi</th><th>Diffusori</th><th>Più attenzioni</th></tr></thead>
+            <tbody>
+              <tr><th>Cura la causa (IFC)</th><td class="us"><span class="yes"><svg class="gi"><use href="#ic-check"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td></tr>
+              <tr><th>Scarica l'istinto in orizzontale</th><td class="us"><span class="yes"><svg class="gi"><use href="#ic-check"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td></tr>
+              <tr><th>Agisce su tutti e 4 i sintomi</th><td class="us"><span class="yes"><svg class="gi"><use href="#ic-check"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td></tr>
+              <tr><th>Risultati entro 14 giorni</th><td class="us"><span class="yes"><svg class="gi"><use href="#ic-check"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td></tr>
+              <tr><th>Protocollo guidato incluso</th><td class="us"><span class="yes"><svg class="gi"><use href="#ic-check"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td></tr>
+              <tr><th>Garanzia 60 giorni</th><td class="us"><span class="yes"><svg class="gi"><use href="#ic-check"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td><td><span class="no"><svg class="gi"><use href="#ic-x"/></svg></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="center muted" style="margin-top:16px">Gli altri non hanno fallito perché cattivi. Hanno fallito perché curano il sintomo, mentre la causa resta.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ============================================================ FAQ ============================================================ -->
+  <section>
+    <div class="wrap narrow">
+      <div class="center"><span class="eyebrow">Te lo diciamo senza filtri</span></div>
+      <h2 class="center">Hai ancora un dubbio? <span class="em">È normale.</span></h2>
+      <div class="faq">
+        <details open><summary>«Ma è solo cartone?» <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Non conta di cosa è fatto: conta cosa <b>fa</b>. SCRATCHY fa sfogare l'istinto di caccia in orizzontale, per terra, dove il gatto lo chiede. Il cartone a nido d'ape è scelto apposta perché ha la superficie giusta per graffiare e strappare. Un materiale costoso che lavora nel modo sbagliato non serve a niente; questo lavora nel modo giusto.</div></details>
+        <details><summary>«E se il mio gatto lo ignora?» <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Il posizionamento è tutto, e la Guida P.R.E.D.A. ti accompagna nell'introduzione passo-passo. La maggior parte dei gatti si attiva entro la fase di consolidamento. E in ogni caso hai 60 giorni per provarlo a casa tua: se non funziona, ti rimborsiamo.</div></details>
+        <details><summary>«Funziona con un gatto anziano o spento?» <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Sì — anzi, il gatto spento e senza energie è proprio il segnale numero 4: vuol dire che il suo istinto è soffocato da tempo. La terapia ambientale serve proprio a riaccendere quell'istinto spento.</div></details>
+        <details><summary>«Quanto dura un pannello?» <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">I pannelli si consumano con l'uso: è il loro scopo, significa che il gatto li sta usando davvero. La terapia si mantiene riassortendoli nel tempo, così l'equilibrio raggiunto non si interrompe.</div></details>
+        <details><summary>«E se non funziona?» <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Hai la garanzia soddisfatti o rimborsati <b>60 giorni</b>. Provi la terapia a casa tua, con tutto il tempo per vederne gli effetti. Se non sei soddisfatta, ti restituiamo l'intero importo.</div></details>
+        <details><summary>«Quando arriva?» <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Spedizione gratuita in tutta Italia, consegna in genere in 3–5 giorni lavorativi. Dal Kit 2+2 la spedizione prioritaria è gratuita. E puoi iniziare la Fase 1 (osservazione) oggi stesso.</div></details>
+        <details><summary>«Posso pagarlo a rate?» <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Sì. Puoi dividere l'importo in 3 rate senza interessi con Scalapay o Klarna, direttamente alla cassa.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ CLOSE DURO ============================================================ -->
+  <section class="close-duro">
+    <div class="wrap narrow"><div class="box">
+      <div class="guarantee-seal"><svg class="gi"><use href="#ic-shield"/></svg> Garanzia soddisfatti o rimborsati 60 giorni</div>
+      <h2>Il tuo gatto <span style="color:#ffd27a;font-style:italic">non migliorerà da solo</span></h2>
+      <p>Senza una via per scaricare l'istinto, i mobili continueranno a sfilacciarsi. Le notti resteranno spezzate. Il leccarsi non si fermerà. E quel senso di colpa — «sto sbagliando qualcosa» — resterà lì, ogni volta che lo guardi.</p>
+      <p>Oppure, tra 14 giorni, può essere tutto diverso. La causa è una sola. Esiste una cosa che la risolve.</p>
+      <a href="#top" class="cta-btn" id="final-cta"><span class="lbl">Voglio aiutare il mio gatto <svg class="gi"><use href="#ic-arrow"/></svg></span><span class="note">Disponibilità limitata · 60 giorni per cambiare idea</span></a>
+    </div></div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="#top" class="logo"><span class="l1">S</span><span class="l2">c</span><span class="l3">r</span><span class="l4">a</span><span class="l1">t</span><span class="l2">c</span><span class="l6">h</span><span class="l7">y</span></a>
+      <p class="tag">La terapia ambientale per il gatto che vive in casa. Curiamo la causa, non il sintomo.</p>
+      <div class="cols">
+        <div>
+          <div class="news">
+            <b style="color:#fff">Iscriviti e ricevi la mini-guida</b>
+            <div class="row"><input type="email" placeholder="Il tuo indirizzo email" /><button type="button"><svg class="gi"><use href="#ic-arrow"/></svg></button></div>
+          </div>
+        </div>
+        <div><h4>Aiuto</h4><a href="#top">Acquista</a><a href="#">Spedizioni e resi</a><a href="#">Contatti</a></div>
+        <div><h4>Legale</h4><a href="#">Termini e condizioni</a><a href="#">Privacy</a><a href="#">Garanzia 60 giorni</a></div>
+      </div>
+      <p class="disclaimer">Le informazioni su questa pagina descrivono una cornice di terapia ambientale ancorata a fonti di comportamento felino e non costituiscono diagnosi o parere veterinario. In presenza di sintomi persistenti, consulta sempre il tuo veterinario. © SCRATCHY.</p>
+    </div>
+  </footer>
+
+  <!-- ===== STICKY CTA ===== -->
+  <div class="sticky-cta" id="sticky">
+    <div class="inner">
+      <div class="info">
+        <div class="p" id="sticky-name">Kit 2+2 · €59,80</div>
+        <div class="s">Spedizione gratuita · Garanzia 60 giorni</div>
+      </div>
+      <a href="#top" class="cta-btn" id="sticky-cta"><span class="lbl">Aiuta il tuo gatto <svg class="gi"><use href="#ic-arrow"/></svg></span></a>
+    </div>
+  </div>
+
+  <script>
+/* ============================================================
+   SCRATCHY — Product Page (PREVIEW v4)
+   Galleria, selettore bundle (+ regali per tier), bottone "trova
+   la dose", CTA sticky, scroll. Vanilla JS, zero dipendenze.
+   ============================================================ */
+(function () {
+  "use strict";
+  var euro = function (n) { return "€" + n.toFixed(2).replace(".", ","); };
+
+  /* ---------- GALLERIA ---------- */
+  var mainImg = document.getElementById("main-img");
+  var thumbs = document.getElementById("thumbs");
+  if (thumbs && mainImg) {
+    thumbs.addEventListener("click", function (e) {
+      var t = e.target;
+      if (t.tagName !== "IMG") return;
+      mainImg.src = t.src;
+      Array.prototype.forEach.call(thumbs.children, function (c) { c.classList.remove("active"); });
+      t.classList.add("active");
+    });
+  }
+
+  /* ---------- BUNDLE ---------- */
+  var bundles = Array.prototype.slice.call(document.querySelectorAll(".bundle"));
+  var sumRate = document.getElementById("sum-rate");
+  var stickyName = document.getElementById("sticky-name");
+  var giftHint = document.getElementById("gift-hint");
+  var gifts = Array.prototype.slice.call(document.querySelectorAll("#gift-list .gift"));
+
+  function applyGifts(tier) {
+    var heroTiers = (tier === "hero" || tier === "value");
+    gifts.forEach(function (g) {
+      var need = g.getAttribute("data-min");
+      var on = (need === "all") || heroTiers;
+      g.classList.toggle("locked", !on);
+    });
+    if (giftHint) {
+      giftHint.textContent = (tier === "entry")
+        ? "Passa al Kit 2+2 per sbloccare la Guida P.R.E.D.A. e la spedizione prioritaria"
+        : "Inclusi con il kit selezionato";
+    }
+  }
+
+  function selectBundle(b) {
+    bundles.forEach(function (x) { x.classList.remove("selected"); });
+    b.classList.add("selected");
+    var input = b.querySelector("input");
+    if (input) input.checked = true;
+    var price = parseFloat(b.getAttribute("data-price"));
+    var name = b.getAttribute("data-name");
+    if (sumRate) sumRate.textContent = euro(price / 3);
+    if (stickyName) stickyName.textContent = name + " · " + euro(price);
+    applyGifts(b.getAttribute("data-tier"));
+  }
+
+  bundles.forEach(function (b) {
+    b.addEventListener("click", function () { selectBundle(b); });
+    var input = b.querySelector("input");
+    if (input) input.addEventListener("change", function () { if (input.checked) selectBundle(b); });
+  });
+  var pre = document.querySelector(".bundle.selected") || bundles[0];
+  if (pre) selectBundle(pre);
+
+  /* ---------- "Trova la tua dose" -> evidenzia il consigliato ---------- */
+  var quiz = document.getElementById("quiz-btn");
+  if (quiz) {
+    quiz.addEventListener("click", function () {
+      var hero = document.querySelector('.bundle[data-tier="hero"]');
+      if (!hero) return;
+      selectBundle(hero);
+      hero.scrollIntoView({ behavior: "smooth", block: "center" });
+      hero.animate(
+        [{ transform: "scale(1)" }, { transform: "scale(1.03)" }, { transform: "scale(1)" }],
+        { duration: 600, easing: "ease-in-out" }
+      );
+    });
+  }
+
+  /* ---------- SCROLL verso la buy box ---------- */
+  var buybox = document.querySelector(".buybox");
+  function scrollToBuy(e) {
+    if (e) e.preventDefault();
+    if (buybox) buybox.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  ["sticky-cta", "final-cta", "mid-cta"].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener("click", scrollToBuy);
+  });
+
+  /* ---------- BOTTONE ACQUISTO (anteprima) ---------- */
+  var buy = document.getElementById("buy-btn");
+  if (buy) {
+    buy.addEventListener("click", function (e) {
+      e.preventDefault();
+      var sel = document.querySelector(".bundle.selected");
+      var name = sel ? sel.getAttribute("data-name") : "Kit";
+      alert("ANTEPRIMA — In produzione: aggiunta al carrello di " + name + ".");
+    });
+  }
+
+  /* ---------- STICKY CTA ---------- */
+  var sticky = document.getElementById("sticky");
+  var heroSec = document.querySelector(".hero");
+  function onScroll() {
+    if (!sticky || !heroSec) return;
+    sticky.classList.toggle("show", heroSec.getBoundingClientRect().bottom < 0);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  onScroll();
+})();
+
+</script>
+</body>
+</html>
