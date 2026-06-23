@@ -225,8 +225,8 @@ section.tight { padding: 30px 0; }
   background: linear-gradient(90deg, #6f9e2c, #9cc23a, #f2b01e, #f4892f, #e2682c, #f4892f, #f2b01e, #9cc23a, #6f9e2c);
   background-size: 300% 100%; animation: slideGrad 6s linear infinite; box-shadow: 0 12px 28px rgba(244,137,47,.4); }
 .buy-cta-wrap:hover { animation-duration: 1.8s; }
-.buy-cta { margin-top: 0; border-radius: 999px; padding: 17px 28px; font-size: 1.2rem; color: #123a22; box-shadow: none; }
-.buy-cta .note { color: #143f27; opacity: 1; font-weight: 700; }
+.buy-cta { margin-top: 0; border-radius: 999px; padding: 17px 28px; font-size: 1.2rem; color: #0a5a37; box-shadow: none; }
+.buy-cta .note { color: #0c4a2d; opacity: 1; font-weight: 700; }
 .buy-cta:active { transform: translateY(2px); }
 .pay-rate { text-align: center; font-size: .85rem; color: var(--muted); margin-top: 13px; }
 .pay-rate b { color: var(--ink); }
