@@ -185,7 +185,7 @@ section.tight { padding: 30px 0; }
 .bundles { display: grid; gap: 13px; }
 .bundle { position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; background: #fff; border: 2px solid var(--line); border-radius: var(--radius); padding: 16px 15px; cursor: pointer; transition: transform .14s, border-color .15s, box-shadow .15s, background .15s; }
 .bundle:hover { transform: translateY(-2px); border-color: var(--green); box-shadow: var(--shadow-s); }
-.bundle.selected { border-color: var(--cta); box-shadow: 0 0 0 4px rgba(244,137,47,.18), var(--shadow-s); background: linear-gradient(180deg, #fff, var(--cta-l)); }
+.bundle.selected { border-color: var(--cta); box-shadow: 0 0 0 3px rgba(244,137,47,.22), 0 14px 32px rgba(244,137,47,.22); background: linear-gradient(180deg, #fff 0%, #fde2cb 100%); }
 .bundle input { position: absolute; opacity: 0; pointer-events: none; }
 .bundle .pick { flex: 0 0 24px; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #d7d0c2; display: grid; place-items: center; transition: border-color .15s, background .15s; }
 .bundle.selected .pick { border-color: var(--cta); background: var(--cta); }
@@ -202,7 +202,7 @@ section.tight { padding: 30px 0; }
 .bundle .now { font-weight: 800; font-size: 1.3rem; color: var(--green-d); font-family: "Baloo 2", sans-serif; }
 .bundle .per { display: block; font-size: .7rem; color: var(--green); font-weight: 700; }
 .bundle .was { display: block; font-size: .82rem; color: var(--muted); text-decoration: line-through; }
-.bundle .pop { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, var(--cta), var(--cta-2)); color: #fff; font-size: .68rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 4px 14px; border-radius: 999px; box-shadow: var(--shadow-s); display: inline-flex; align-items: center; gap: 5px; animation: pulseBadge 2.4s ease-in-out infinite; }
+.bundle .pop { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, var(--cta-2), var(--cta), var(--cta-d)); color: #fff; font-size: .72rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 5px 16px; border-radius: 999px; box-shadow: 0 6px 14px rgba(244,137,47,.4); display: inline-flex; align-items: center; gap: 6px; animation: pulseBadge 2.4s ease-in-out infinite; }
 .bundle .pop .gi { width: .85em; height: .85em; }
 @keyframes pulseBadge { 0%,100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.07); } }
 
@@ -221,14 +221,14 @@ section.tight { padding: 30px 0; }
 .gift.locked .free { background: #f0f0f0; color: #999; border-color: #eee; }
 
 /* bottone acquisto: bordo arcobaleno-brand in movimento + testo verde scuro */
-.buy-cta-wrap { margin-top: 18px; border-radius: 999px; padding: 3px; cursor: pointer;
-  background: linear-gradient(90deg, #6f9e2c, #9cc23a, #f2b01e, #f4892f, #e2682c, #f4892f, #f2b01e, #9cc23a, #6f9e2c);
-  background-size: 300% 100%; animation: slideGrad 6s linear infinite; box-shadow: 0 12px 28px rgba(244,137,47,.4); }
-.buy-cta-wrap:hover { animation-duration: 1.8s; }
-.buy-cta { margin-top: 0; border-radius: 999px; padding: 18px 28px; box-shadow: none;
-  background: linear-gradient(180deg, #f8982f 0%, #ee7d18 55%, #db6a0b 100%);
+.buy-cta-wrap { margin-top: 16px; border-radius: var(--radius); padding: 2px; cursor: pointer;
+  background: linear-gradient(90deg, #f9b657, #f4892f, #e2682c, #f4892f, #f9b657);
+  background-size: 220% 100%; animation: slideGrad 6s linear infinite; box-shadow: 0 14px 30px rgba(244,137,47,.26); }
+.buy-cta-wrap:hover { animation-duration: 2.4s; }
+.buy-cta { margin-top: 0; border-radius: 14px; padding: 18px 28px; box-shadow: none;
+  background: linear-gradient(180deg, #f6922c 0%, #ef7d1a 55%, #e06f0f 100%);
   color: #fffaf3; font-family: "Baloo 2", system-ui, sans-serif; font-size: 1.3rem; font-weight: 800; letter-spacing: .015em;
-  text-shadow: 0 1px 2px rgba(110,45,0,.32); }
+  text-shadow: 0 1px 2px rgba(110,45,0,.3); }
 .buy-cta .note { color: #fff; opacity: .96; font-weight: 700; font-family: "Plus Jakarta Sans", sans-serif; font-size: .76rem; letter-spacing: 0; text-shadow: 0 1px 1px rgba(110,45,0,.25); }
 .buy-cta:active { transform: translateY(2px); }
 
