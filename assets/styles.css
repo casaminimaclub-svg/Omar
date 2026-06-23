@@ -152,7 +152,9 @@ section.tight { padding: 30px 0; }
 
 .buybox { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px; box-shadow: var(--shadow); }
 .buybox h1 { margin: 6px 0 6px; font-family: "Baloo 2", sans-serif; font-weight: 800; letter-spacing: 0; }
-.buybox h1.buy-title { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: clamp(1.5rem, 3.4vw, 2rem); line-height: 1.12; letter-spacing: -.01em; margin: 0 0 8px; }
+.buybox h1.buy-title { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; font-size: clamp(1.7rem, 4vw, 2.1rem); line-height: 1.05; letter-spacing: -.02em; margin: 3px 0 8px; color: var(--ink); }
+.buybox h1.buy-title sup { font-size: .42em; font-weight: 700; top: -.7em; color: var(--muted); }
+.buybox .buy-sub { margin-top: 10px; }
 .offer-trust { margin: 14px 0 0; }
 .buy-eyebrow { color: var(--green-d); font-weight: 800; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; }
 .buy-sub { color: var(--muted); margin: 2px 0 12px; }
