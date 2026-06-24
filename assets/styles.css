@@ -70,25 +70,13 @@ p { margin: 0 0 1rem; }
   font-style: italic;
   font-weight: 800;
   background-image: linear-gradient(
-    100deg,
-    #d99410 0%, #e9a715 18%, #ffce3d 38%, #fff3ad 50%,
-    #ffce3d 62%, #e9a715 82%, #d99410 100%
+    95deg,
+    #ffce3d 0%, #f4b51c 35%, #e09f12 70%, #c9890c 100%
   );
-  background-size: 220% 100%;
-  background-position: 120% 0;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: em-shine 3.6s ease-in-out infinite;
-}
-@keyframes em-shine {
-  0%   { background-position: 120% 0; }
-  55%  { background-position: -20% 0; }
-  100% { background-position: -20% 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .em { animation: none; background-position: 50% 0; }
 }
 
 .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 20px; }
