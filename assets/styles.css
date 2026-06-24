@@ -154,9 +154,17 @@ section.tight { padding: 30px 0; }
 /* ============================================================ HERO */
 .hero { padding: 24px 0 46px; }
 .hero-grid { display: grid; grid-template-columns: 1fr; gap: 26px; }
-.gallery .slides { display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; border-radius: var(--radius-lg); box-shadow: var(--shadow-s); border: 1px solid var(--line); background: #fff; }
+.gallery .slides-wrap { position: relative; }
+.gallery .slides { display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; touch-action: pan-x; scrollbar-width: none; border-radius: var(--radius-lg); box-shadow: var(--shadow-s); border: 1px solid var(--line); background: #fff; cursor: grab; }
+.gallery .slides.dragging { cursor: grabbing; scroll-snap-type: none; }
 .gallery .slides::-webkit-scrollbar { display: none; }
-.gallery .slide { flex: 0 0 100%; width: 100%; aspect-ratio: 1/1; object-fit: cover; scroll-snap-align: center; background: #fff; }
+.gallery .slide { flex: 0 0 100%; width: 100%; aspect-ratio: 1/1; object-fit: cover; scroll-snap-align: center; background: #fff; -webkit-user-drag: none; user-select: none; }
+.gnav { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,.92); border: 1px solid var(--line); box-shadow: var(--shadow-s); display: grid; place-items: center; cursor: pointer; z-index: 2; transition: background .15s, transform .15s; }
+.gnav:hover { background: #fff; }
+.gnav:active { transform: translateY(-50%) scale(.94); }
+.gnav.prev { left: 10px; } .gnav.next { right: 10px; }
+.gnav .gi { width: 20px; height: 20px; color: var(--ink); }
+.gnav.prev .gi { transform: rotate(180deg); }
 .paws { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 16px; }
 .paw { background: none; border: none; cursor: pointer; padding: 4px; line-height: 0; color: #d2ccbf; transition: transform .18s ease, color .25s ease; }
 .paw .gi { width: 30px; height: 30px; }

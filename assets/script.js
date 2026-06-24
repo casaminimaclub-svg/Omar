@@ -7,30 +7,64 @@
   "use strict";
   var euro = function (n) { return "€" + n.toFixed(2).replace(".", ","); };
 
-  /* ---------- GALLERIA (swipe/scroll + zampe sincronizzate) ---------- */
+  /* ---------- GALLERIA (swipe touch + drag mouse + frecce + zampe) ---------- */
   var slides = document.getElementById("slides");
   var paws = document.getElementById("paws");
   if (slides && paws) {
     var pawList = Array.prototype.slice.call(paws.children);
+    var count = slides.children.length;
+    var current = 0;
+
     var setActive = function (i) {
+      current = i;
       pawList.forEach(function (p, idx) { p.classList.toggle("active", idx === i); });
     };
-    // clic sulla zampa -> scorre alla slide
-    pawList.forEach(function (btn, i) {
-      btn.addEventListener("click", function () {
-        slides.scrollTo({ left: i * slides.clientWidth, behavior: "smooth" });
-        setActive(i);
-      });
-    });
-    // swipe/scroll -> aggiorna la zampa attiva
+    var goTo = function (i) {
+      i = Math.max(0, Math.min(count - 1, i));
+      slides.scrollTo({ left: i * slides.clientWidth, behavior: "smooth" });
+      setActive(i);
+    };
+
+    // zampe
+    pawList.forEach(function (btn, i) { btn.addEventListener("click", function () { goTo(i); }); });
+
+    // frecce
+    var prev = document.getElementById("gPrev");
+    var next = document.getElementById("gNext");
+    if (prev) prev.addEventListener("click", function () { goTo(current - 1); });
+    if (next) next.addEventListener("click", function () { goTo(current + 1); });
+
+    // swipe/scroll (touch nativo) -> aggiorna la zampa
     var t;
     slides.addEventListener("scroll", function () {
       clearTimeout(t);
-      t = setTimeout(function () {
-        var i = Math.round(slides.scrollLeft / slides.clientWidth);
-        setActive(i);
-      }, 60);
+      t = setTimeout(function () { setActive(Math.round(slides.scrollLeft / slides.clientWidth)); }, 60);
     }, { passive: true });
+
+    // drag col MOUSE (il touch usa lo scroll nativo)
+    var down = false, startX = 0, startScroll = 0, moved = false;
+    slides.addEventListener("pointerdown", function (e) {
+      if (e.pointerType !== "mouse") return;
+      down = true; moved = false; startX = e.clientX; startScroll = slides.scrollLeft;
+      slides.classList.add("dragging");
+      try { slides.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    slides.addEventListener("pointermove", function (e) {
+      if (!down) return;
+      var dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) moved = true;
+      slides.scrollLeft = startScroll - dx;
+    });
+    var endDrag = function () {
+      if (!down) return;
+      down = false; slides.classList.remove("dragging");
+      goTo(Math.round(slides.scrollLeft / slides.clientWidth));
+    };
+    slides.addEventListener("pointerup", endDrag);
+    slides.addEventListener("pointercancel", endDrag);
+    slides.addEventListener("pointerleave", endDrag);
+    // evita che il drag selezioni/trascini le immagini
+    slides.addEventListener("dragstart", function (e) { e.preventDefault(); });
   }
 
   /* ---------- BUNDLE ---------- */

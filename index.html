@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=33" />
+  <link rel="stylesheet" href="assets/styles.css?v=34" />
 </head>
 <body>
 
@@ -69,12 +69,16 @@
       <div class="hero-grid">
 
         <div class="gallery">
-          <div class="slides" id="slides">
-            <img class="slide" src="assets/img/scratchy-1.webp" alt="SCRATCHY — perché il gatto distrugge i mobili" loading="eager" />
-            <img class="slide" src="assets/img/scratchy-2.webp" alt="SCRATCHY — gatti calmi e appagati" loading="lazy" />
-            <img class="slide" src="assets/img/scratchy-3.webp" alt="SCRATCHY — stimolazione totale, zero stress" loading="lazy" />
-            <img class="slide" src="assets/img/scratchy-4.webp" alt="SCRATCHY — recensioni dei proprietari" loading="lazy" />
-            <img class="slide" src="assets/img/scratchy-5.webp" alt="SCRATCHY — il problema non è il tuo gatto, è l'ambiente" loading="lazy" />
+          <div class="slides-wrap">
+            <div class="slides" id="slides">
+              <img class="slide" src="assets/img/scratchy-1.webp" alt="SCRATCHY — perché il gatto distrugge i mobili" loading="eager" draggable="false" />
+              <img class="slide" src="assets/img/scratchy-2.webp" alt="SCRATCHY — gatti calmi e appagati" loading="lazy" draggable="false" />
+              <img class="slide" src="assets/img/scratchy-3.webp" alt="SCRATCHY — stimolazione totale, zero stress" loading="lazy" draggable="false" />
+              <img class="slide" src="assets/img/scratchy-4.webp" alt="SCRATCHY — recensioni dei proprietari" loading="lazy" draggable="false" />
+              <img class="slide" src="assets/img/scratchy-5.webp" alt="SCRATCHY — il problema non è il tuo gatto, è l'ambiente" loading="lazy" draggable="false" />
+            </div>
+            <button type="button" class="gnav prev" id="gPrev" aria-label="Immagine precedente"><svg class="gi"><use href="#ic-arrow"/></svg></button>
+            <button type="button" class="gnav next" id="gNext" aria-label="Immagine successiva"><svg class="gi"><use href="#ic-arrow"/></svg></button>
           </div>
           <div class="paws" id="paws">
             <button type="button" class="paw active" aria-label="Immagine 1"><svg class="gi fill"><use href="#ic-paw"/></svg></button>
@@ -439,6 +443,6 @@
     </div>
   </div>
 
-  <script src="assets/script.js?v=33"></script>
+  <script src="assets/script.js?v=34"></script>
 </body>
 </html>
