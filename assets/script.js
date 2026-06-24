@@ -7,18 +7,30 @@
   "use strict";
   var euro = function (n) { return "€" + n.toFixed(2).replace(".", ","); };
 
-  /* ---------- GALLERIA (navigazione a zampe) ---------- */
-  var mainImg = document.getElementById("main-img");
+  /* ---------- GALLERIA (swipe/scroll + zampe sincronizzate) ---------- */
+  var slides = document.getElementById("slides");
   var paws = document.getElementById("paws");
-  if (paws && mainImg) {
-    paws.addEventListener("click", function (e) {
-      var btn = e.target.closest(".paw");
-      if (!btn) return;
-      var src = btn.getAttribute("data-src");
-      if (src) mainImg.src = src;
-      Array.prototype.forEach.call(paws.children, function (c) { c.classList.remove("active"); });
-      btn.classList.add("active");
+  if (slides && paws) {
+    var pawList = Array.prototype.slice.call(paws.children);
+    var setActive = function (i) {
+      pawList.forEach(function (p, idx) { p.classList.toggle("active", idx === i); });
+    };
+    // clic sulla zampa -> scorre alla slide
+    pawList.forEach(function (btn, i) {
+      btn.addEventListener("click", function () {
+        slides.scrollTo({ left: i * slides.clientWidth, behavior: "smooth" });
+        setActive(i);
+      });
     });
+    // swipe/scroll -> aggiorna la zampa attiva
+    var t;
+    slides.addEventListener("scroll", function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        var i = Math.round(slides.scrollLeft / slides.clientWidth);
+        setActive(i);
+      }, 60);
+    }, { passive: true });
   }
 
   /* ---------- BUNDLE ---------- */
