@@ -167,9 +167,10 @@ section.tight { padding: 30px 0; }
 .tchip b { font-weight: 700; }
 
 .feat-box { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
-.feat { display: flex; gap: 10px; align-items: center; font-size: .85rem; font-weight: 700; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 11px; transition: transform .15s, box-shadow .15s, border-color .15s; }
-.feat:hover { transform: translateY(-2px); box-shadow: var(--shadow-s); border-color: #ddd6c8; }
+.feat { display: flex; gap: 10px; align-items: center; font-size: .85rem; font-weight: 700; color: var(--ink); background: var(--green-l); border: 1px solid #e0e9cb; border-radius: 12px; padding: 11px; transition: transform .15s, box-shadow .15s; }
+.feat:hover { transform: translateY(-2px); box-shadow: var(--shadow-s); }
 .feat .ico { width: 34px; height: 34px; }
+.feat .ico.tint { background: #fff; box-shadow: 0 1px 4px rgba(40,40,30,.1); }
 
 /* scarsità con shimmer */
 .scar { margin-bottom: 18px; }
@@ -227,8 +228,8 @@ section.tight { padding: 30px 0; }
 .buy-cta-wrap:hover { animation-duration: 2.4s; }
 .buy-cta { margin-top: 0; border-radius: 14px; padding: 18px 28px; box-shadow: none;
   background: linear-gradient(180deg, #f6922c 0%, #ef7d1a 55%, #e06f0f 100%);
-  color: #fffaf3; font-family: "Baloo 2", system-ui, sans-serif; font-size: 1.3rem; font-weight: 800; letter-spacing: .015em;
-  text-shadow: 0 1px 2px rgba(110,45,0,.3); }
+  color: #fffaf3; font-family: "Plus Jakarta Sans", system-ui, sans-serif; font-size: 1.08rem; font-weight: 800; letter-spacing: .045em; text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(110,45,0,.28); }
 .buy-cta .note { color: #fff; opacity: .96; font-weight: 700; font-family: "Plus Jakarta Sans", sans-serif; font-size: .76rem; letter-spacing: 0; text-shadow: 0 1px 1px rgba(110,45,0,.25); }
 .buy-cta:active { transform: translateY(2px); }
 
