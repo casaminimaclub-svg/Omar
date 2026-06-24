@@ -331,8 +331,9 @@ section.tight { padding: 30px 0; }
 .review:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 .review p { font-style: italic; color: var(--ink); margin: 10px 0 14px; }
 .review .who { display: flex; align-items: center; gap: 10px; font-size: .9rem; }
-.review .who .av { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; color: #fff; font-family: "Baloo 2", sans-serif; }
-.review:nth-child(1) .av { background: var(--c-green); } .review:nth-child(2) .av { background: var(--c-blue); } .review:nth-child(3) .av { background: var(--c-coral); }
+.review .who .av { width: 44px; height: 44px; flex: 0 0 auto; border-radius: 50%; display: grid; place-items: center; background: var(--bg-soft); border: 2px dashed #d8cdb6; color: #c4b896; overflow: hidden; }
+.review .who .av .gi { width: 18px; height: 18px; }
+.review .who .av img { width: 100%; height: 100%; object-fit: cover; }
 .verified { color: var(--green); font-size: .78rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
 .verified .gi { width: .9em; height: .9em; }
 .fonti { margin: 28px auto 0; background: var(--bg-soft); border-radius: var(--radius); padding: 22px; font-size: .9rem; color: var(--muted); max-width: var(--narrow); border: 1px solid var(--line); }
