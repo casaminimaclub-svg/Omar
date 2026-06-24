@@ -357,7 +357,8 @@ section.tight { padding: 30px 0; }
 .rev-bars .r .bar { flex: 1; height: 9px; background: #fff; border-radius: 999px; overflow: hidden; }
 .rev-bars .r .bar i { display: block; height: 100%; background: var(--gold); border-radius: 999px; }
 .reviews { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 30px; }
-.review { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow-s); transition: transform .15s, box-shadow .15s; }
+.review { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow-s); transition: transform .15s, box-shadow .15s; }
+.review-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; margin-bottom: 14px; display: block; }
 .review:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 .review p { font-style: italic; color: var(--ink); margin: 10px 0 14px; }
 .review .who { display: flex; align-items: center; gap: 10px; font-size: .9rem; }
