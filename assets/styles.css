@@ -155,6 +155,14 @@ section.tight { padding: 30px 0; }
 @keyframes shine { 0% { transform: translateX(-180%) skewX(-12deg); } 55%,100% { transform: translateX(320%) skewX(-12deg); } }
 .cta-sub { font-size: .82rem; color: var(--muted); text-align: center; margin-top: 10px; }
 
+/* pulsanti CTA secondari, puliti e stilizzati (pill + freccia) */
+.cta-pill { width: auto; border-radius: 999px; padding: 16px 34px; font-size: 1.12rem;
+  box-shadow: 0 10px 24px rgba(244,137,47,.36), inset 0 1px 0 rgba(255,255,255,.35); }
+.cta-pill .lbl { gap: 11px; }
+.cta-pill .lbl .gi { width: 1.05em; height: 1.05em; transition: transform .2s; }
+.cta-pill:hover .lbl .gi { transform: translateY(-3px); }
+.cta-pill:active { transform: translateY(3px); box-shadow: 0 4px 12px rgba(244,137,47,.34); }
+
 /* bottone bordo-gradiente animato (vibe "trova la taglia" di Toesy) */
 .gbtn { display: block; width: 100%; padding: 2px; border: none; border-radius: 14px; cursor: pointer; margin-bottom: 16px;
   background: linear-gradient(90deg, var(--c-green), var(--c-blue), var(--c-lilac), var(--c-coral), var(--c-amber), var(--c-green));
