@@ -96,7 +96,7 @@
     var price = parseFloat(b.getAttribute("data-price"));
     var name = b.getAttribute("data-name");
     if (sumRate) sumRate.textContent = euro(price / 3);
-    if (stickyName) stickyName.textContent = name + " · " + euro(price);
+    /* La barra fissa promuove sempre il Kit 2+2 (il più scelto), non cambia con la selezione */
     applyGifts(b.getAttribute("data-tier"));
   }
 
