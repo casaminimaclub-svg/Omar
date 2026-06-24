@@ -76,6 +76,17 @@ section { padding: 64px 0; position: relative; }
 section.tight { padding: 30px 0; }
 .panel { background: rgba(255,255,255,.78); backdrop-filter: blur(3px); border-radius: 30px; padding: 44px 0; box-shadow: 0 1px 0 rgba(255,255,255,.6) inset; }
 
+/* segnaposto immagini (da creare e inserire) */
+.img-slot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; background: var(--bg-soft); border: 2px dashed #d8cdb6; border-radius: var(--radius-lg); color: var(--muted); padding: 36px 22px; min-height: 280px; }
+.img-slot .gi { width: 40px; height: 40px; color: #c4b896; }
+.img-slot b { color: var(--ink); font-weight: 800; font-size: 1.02rem; }
+.img-slot small { font-size: .82rem; color: var(--muted); max-width: 460px; }
+.img-slot .pill { font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--green-d); background: var(--green-l); padding: 4px 11px; border-radius: 999px; }
+.ba { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 26px; }
+.ba .img-slot { min-height: 240px; }
+.ba .pill.prima { color: var(--scar); background: var(--scar-l); }
+@media (min-width: 760px) { .ba { grid-template-columns: 1fr 1fr; } }
+
 .eyebrow { display: inline-block; font-size: .74rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--green-d); background: var(--green-l); padding: 7px 14px; border-radius: 999px; margin-bottom: 14px; }
 
 /* ===== icone vettoriali ===== */
