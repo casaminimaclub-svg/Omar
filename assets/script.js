@@ -7,16 +7,17 @@
   "use strict";
   var euro = function (n) { return "€" + n.toFixed(2).replace(".", ","); };
 
-  /* ---------- GALLERIA ---------- */
+  /* ---------- GALLERIA (navigazione a zampe) ---------- */
   var mainImg = document.getElementById("main-img");
-  var thumbs = document.getElementById("thumbs");
-  if (thumbs && mainImg) {
-    thumbs.addEventListener("click", function (e) {
-      var t = e.target;
-      if (t.tagName !== "IMG") return;
-      mainImg.src = t.src;
-      Array.prototype.forEach.call(thumbs.children, function (c) { c.classList.remove("active"); });
-      t.classList.add("active");
+  var paws = document.getElementById("paws");
+  if (paws && mainImg) {
+    paws.addEventListener("click", function (e) {
+      var btn = e.target.closest(".paw");
+      if (!btn) return;
+      var src = btn.getAttribute("data-src");
+      if (src) mainImg.src = src;
+      Array.prototype.forEach.call(paws.children, function (c) { c.classList.remove("active"); });
+      btn.classList.add("active");
     });
   }
 

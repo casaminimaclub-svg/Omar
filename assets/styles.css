@@ -145,10 +145,11 @@ section.tight { padding: 30px 0; }
 .gallery .main img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-s); border: 1px solid var(--line); }
 .gallery .main .flag { position: absolute; top: 14px; left: 14px; display: inline-flex; align-items: center; gap: 6px; background: #fff; color: var(--green-d); font-weight: 800; font-size: .78rem; padding: 7px 12px; border-radius: 999px; box-shadow: var(--shadow-s); }
 .gallery .main .flag .gi { width: .95em; height: .95em; color: var(--gold); }
-.thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 10px; }
-.thumbs img { aspect-ratio: 1/1; object-fit: cover; border-radius: 12px; border: 2px solid var(--line); cursor: pointer; background: #fff; transition: border-color .15s, transform .15s; }
-.thumbs img:hover { transform: translateY(-2px); }
-.thumbs img.active { border-color: var(--green); }
+.paws { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 16px; }
+.paw { background: none; border: none; cursor: pointer; padding: 4px; line-height: 0; color: #d2ccbf; transition: transform .18s ease, color .25s ease; }
+.paw .gi { width: 30px; height: 30px; }
+.paw:hover { color: #bcb4a4; transform: translateY(-2px); }
+.paw.active { color: var(--cta); transform: translateY(-3px) scale(1.08); }
 
 .buybox { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px; box-shadow: var(--shadow); }
 .buybox h1 { margin: 6px 0 6px; font-family: "Baloo 2", sans-serif; font-weight: 800; letter-spacing: 0; }
