@@ -87,8 +87,8 @@ section.tight { padding: 30px 0; }
 .ba .pill.prima { color: var(--scar); background: var(--scar-l); }
 .ba-item { position: relative; margin: 0; }
 .ba-item .body-img { aspect-ratio: 1/1; object-fit: cover; }
-.ba-item .pill { position: absolute; top: 12px; left: 12px; z-index: 2; font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--green-d); background: var(--green-l); padding: 5px 11px; border-radius: 999px; box-shadow: var(--shadow-s); }
-.ba-item .pill.prima { color: var(--scar); background: var(--scar-l); }
+.ba-item .pill { position: absolute; top: 14px; left: 14px; z-index: 2; font-size: .76rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #fff; background: var(--green); padding: 7px 16px; border-radius: 999px; box-shadow: 0 4px 12px rgba(0,0,0,.22); }
+.ba-item .pill.prima { color: #fff; background: var(--scar); }
 .ba-item figcaption { text-align: center; font-weight: 700; color: var(--ink); margin-top: 10px; font-size: .92rem; }
 .body-img { width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow); border: 1px solid var(--line); display: block; }
 .body-img.wide { aspect-ratio: 16/9; object-fit: cover; }
