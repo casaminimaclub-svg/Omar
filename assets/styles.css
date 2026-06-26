@@ -263,7 +263,7 @@ section.tight { padding: 30px 0; }
 .bundle .b-price .per { display: block; font-size: .68rem; color: var(--green); font-weight: 700; margin-top: 2px; }
 
 /* badge "Il più scelto" */
-.bundle .pop { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, var(--cta-2), var(--cta), var(--cta-d)); color: #fff; font-size: .72rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 5px 16px; border-radius: 999px; box-shadow: 0 6px 14px rgba(244,137,47,.4); display: inline-flex; align-items: center; gap: 6px; }
+.bundle .pop { position: absolute; top: -13px; right: 14px; left: auto; transform: none; background: linear-gradient(90deg, var(--cta-2), var(--cta), var(--cta-d)); color: #fff; font-size: .72rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 5px 16px; border-radius: 999px; box-shadow: 0 6px 14px rgba(244,137,47,.4); display: inline-flex; align-items: center; gap: 6px; }
 .bundle .pop .gi { width: .85em; height: .85em; }
 
 /* ===== "Cosa ricevi" — card pulita, righe con icona e badge GRATIS ===== */
