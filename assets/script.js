@@ -816,3 +816,29 @@
   window.addEventListener("hashchange", fromHash);
   fromHash();
 })();
+
+/* ============================================================
+   VIDEO PROOF — autoplay muto + loop infinito garantito
+   ============================================================ */
+(function () {
+  "use strict";
+  var vids = document.querySelectorAll(".vcard video");
+  if (!vids.length) return;
+  function kick(v) {
+    v.muted = true; v.defaultMuted = true;
+    var p = v.play();
+    if (p && p.catch) p.catch(function () {});
+  }
+  Array.prototype.forEach.call(vids, function (v) {
+    v.muted = true; v.setAttribute("muted", "");
+    kick(v);
+    v.addEventListener("loadeddata", function () { kick(v); });
+    v.addEventListener("canplay", function () { kick(v); });
+    // se per qualsiasi motivo si mette in pausa, riparte
+    v.addEventListener("pause", function () { if (!document.hidden) kick(v); });
+  });
+  // alla riattivazione della scheda, rilancia tutti
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) Array.prototype.forEach.call(vids, kick);
+  });
+})();
