@@ -155,4 +155,40 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll, { passive: true });
   onScroll();
+
+  /* ---------- RIVELAZIONE ALLO SCROLL (stagger morbido) ---------- */
+  /* Rispetta prefers-reduced-motion; se IO non c'è, non nasconde nulla. */
+  try {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduce && "IntersectionObserver" in window) {
+      var sel = [
+        ".sintomo", ".fase", ".beneficio", ".review", ".why li", ".tchip", ".feat",
+        ".bundle", ".ba-item", ".img-slot", ".ifc-stat .cell", ".gifts", ".guarantee-box",
+        ".assoluzione", ".fonti", ".rev-score", ".faq details", "table.compare",
+        ".close-duro .box", ".body-img", ".eyebrow"
+      ].join(",");
+
+      var els = Array.prototype.slice.call(document.querySelectorAll(sel));
+      els.forEach(function (el) {
+        // stagger in base alla posizione tra i fratelli (max ~6 step)
+        var parent = el.parentElement;
+        var idx = parent ? Array.prototype.indexOf.call(parent.children, el) : 0;
+        el.dataset.revDelay = Math.min(idx, 6) * 60;
+        el.classList.add("reveal");
+      });
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var t = e.target;
+          io.unobserve(t);
+          var d = parseInt(t.dataset.revDelay, 10) || 0;
+          // ritardo applicato all'aggiunta della classe -> niente delay sui futuri hover
+          setTimeout(function () { t.classList.add("in"); }, d);
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+      els.forEach(function (el) { io.observe(el); });
+    }
+  } catch (err) { /* in caso di errore non blocchiamo la pagina */ }
 })();

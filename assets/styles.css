@@ -35,10 +35,12 @@
   --scar: #e2682c;
   --scar-l: #fce4d6;
 
-  --radius: 16px;
-  --radius-lg: 24px;
-  --shadow: 0 18px 44px rgba(35, 43, 37, .13);
-  --shadow-s: 0 6px 18px rgba(35, 43, 37, .08);
+  --radius: 18px;
+  --radius-lg: 26px;
+  --shadow: 0 3px 8px rgba(35,43,37,.05), 0 22px 48px rgba(35,43,37,.15);
+  --shadow-s: 0 2px 6px rgba(35,43,37,.05), 0 10px 22px rgba(35,43,37,.09);
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --ring: 0 0 0 3px rgba(244,137,47,.5);
   --max: 1140px;
   --narrow: 760px;
 }
@@ -458,3 +460,61 @@ table.compare td.us { background: var(--green-l); }
   .site-footer .cols { grid-template-columns: 2fr 1fr 1fr; }
 }
 @media (max-width: 879px) { body { padding-bottom: 78px; } }
+
+/* ============================================================
+   ENHANCEMENTS (ui-ux-pro-max) — elevazione "clay", stati di
+   interazione, micro-motion d'ingresso, accessibilità.
+   Non cambia colori/font/CTA: eleva qualità percepita e UX.
+   ============================================================ */
+
+/* tap più reattivo e niente flash blu su mobile */
+a, button, summary, label.bundle, .gnav, .paw, .news button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+::selection { background: rgba(244,137,47,.26); color: var(--ink); }
+
+/* focus visibile e coerente (accessibilità da tastiera) */
+a:focus-visible, button:focus-visible, summary:focus-visible,
+input:focus-visible, .bundle:focus-within, .gnav:focus-visible, .paw:focus-visible {
+  outline: none; box-shadow: var(--ring); border-radius: 12px;
+}
+.cta-btn:focus-visible, .buy-cta-wrap:focus-within { box-shadow: var(--ring), var(--shadow-s); }
+
+/* hover/press più "vivi" e morbidi (spring) sulle card chiave */
+.sintomo, .fase, .beneficio, .review, .why li, .tchip, .feat, .bundle {
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
+}
+.sintomo:hover, .fase:hover, .beneficio:hover, .review:hover { transform: translateY(-5px) scale(1.014); box-shadow: var(--shadow); }
+.why li:hover, .tchip:hover, .feat:hover { transform: translateY(-3px); box-shadow: var(--shadow-s); }
+.bundle:hover { transform: translateY(-3px) scale(1.006); }
+.beneficio:hover .ico, .sintomo:hover .ico { transform: scale(1.08) rotate(-3deg); transition: transform .25s var(--ease); }
+
+/* immagini: zoom morbido al passaggio (desktop) */
+@media (hover: hover) {
+  .body-img, .review-photo, .ba-item .body-img { transition: transform .4s var(--ease), box-shadow .3s var(--ease); }
+  .ba-item:hover .body-img, .review:hover .review-photo { transform: scale(1.02); }
+}
+
+/* CTA principale: lift morbido al hover (oltre al glow esistente) */
+@media (hover: hover) {
+  .buy-cta-wrap { transition: transform .2s var(--ease); }
+  .buy-cta-wrap:hover { transform: translateY(-2px); }
+}
+
+/* prezzi/numeri allineati (tabular) per evitare salti */
+.bundle .now, .bundle .was, .bundle .per, .rev-score .n, .ifc-stat .big, .guarantee-box .seal .num, .sticky-cta .info .s b { font-variant-numeric: tabular-nums; }
+
+/* ---- micro-motion d'ingresso (rivelazione allo scroll) ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s var(--ease), transform .6s var(--ease); will-change: opacity, transform; }
+  .reveal.in { opacity: 1; transform: none; }
+}
+
+/* ---- accessibilità: rispetta "riduci movimento" ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
