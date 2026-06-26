@@ -423,18 +423,20 @@ table.compare td.us { background: var(--green-l); }
 .site-footer { background: #fbf7ee; border-top: 1px solid var(--line); color: var(--ink); padding: 56px 0 40px; font-size: .9rem; }
 .foot-top { text-align: center; max-width: 580px; margin: 0 auto 4px; }
 .site-footer .foot-logo { font-size: 2.3rem; justify-content: center; }
-.site-footer .logo .l1 { color: var(--c-green); }
-.site-footer .logo .l2 { color: var(--cta); }
-.site-footer .logo .l3 { color: var(--c-coral); }
-.site-footer .logo .l4 { color: var(--c-amber); }
-.site-footer .logo .l6 { color: var(--c-green); }
-.site-footer .logo .l7 { color: var(--c-lilac); }
+.site-footer .logo span { color: #161616; }
 .foot-tag { margin: 12px 0 0; color: var(--muted); line-height: 1.6; }
 
 .foot-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 34px; padding-top: 34px; border-top: 1px solid var(--line); }
 .foot-col h4 { font-family: "Plus Jakarta Sans", sans-serif; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--green-d); margin: 0 0 14px; font-weight: 800; }
 .foot-col a { display: block; width: max-content; max-width: 100%; color: var(--muted); text-decoration: none; margin-bottom: 11px; transition: color .18s var(--ease), transform .18s var(--ease); }
 .foot-col a:hover { color: var(--green-d); transform: translateX(3px); }
+.foot-col a.foot-mail { display: inline-flex; align-items: center; gap: 8px; }
+.foot-col a.foot-mail .gi { width: 1.05em; height: 1.05em; color: var(--green); }
+.foot-col a.foot-mail:hover { transform: none; }
+.socials { display: flex; gap: 10px; margin-top: 6px; }
+.socials a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 11px; background: #fff; border: 1px solid var(--line); color: var(--green-d); margin: 0; box-shadow: var(--shadow-s); transition: transform .18s var(--ease), color .18s, box-shadow .18s; }
+.socials a:hover { transform: translateY(-3px); color: var(--cta-d); box-shadow: var(--shadow); }
+.socials .gi { width: 1.2em; height: 1.2em; }
 
 /* newsletter card morbida */
 .news { background: linear-gradient(135deg, var(--green-l) 0%, #f4f8ea 100%); border: 1.5px solid #cfe0ac; border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow-s); }
@@ -483,7 +485,11 @@ table.compare td.us { background: var(--green-l); }
   .benefici { grid-template-columns: 1fr 1fr; }
   .reviews { grid-template-columns: 1fr 1fr 1fr; }
   .rev-head { grid-template-columns: 240px 1fr; }
-  .foot-grid { grid-template-columns: 1fr 1fr 1.7fr; gap: 44px; align-items: start; }
+  .foot-grid { grid-template-columns: 1fr 1fr 1fr 1.8fr; gap: 40px; align-items: start; }
+}
+@media (min-width: 600px) and (max-width: 879px) {
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 30px 40px; }
+  .news { grid-column: 1 / -1; }
 }
 @media (max-width: 879px) { body { padding-bottom: 78px; } }
 

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=55" />
+  <link rel="stylesheet" href="assets/styles.css?v=56" />
 </head>
 <body>
 
@@ -40,6 +40,10 @@
     <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
     <symbol id="ic-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></symbol>
     <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></symbol>
+    <symbol id="ic-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+    <symbol id="ic-instagram" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.6 3.6 0 0 1-1.4-.9 3.6 3.6 0 0 1-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.8-11.2a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></symbol>
+    <symbol id="ic-facebook" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></symbol>
+    <symbol id="ic-tiktok" viewBox="0 0 24 24"><path d="M16.5 3c.4 2.1 1.6 3.7 3.7 4.1v2.8c-1.4 0-2.7-.4-3.8-1.2v6.1a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v2.9a2.9 2.9 0 1 0 2 2.8V3z"/></symbol>
   </svg>
 
   <span id="top"></span>
@@ -425,7 +429,7 @@
           <h4>Aiuto</h4>
           <a href="#top">Acquista</a>
           <a href="#">Spedizioni e resi</a>
-          <a href="#">Contatti</a>
+          <a href="#">Domande frequenti</a>
         </nav>
         <nav class="foot-col" aria-label="Legale">
           <h4>Legale</h4>
@@ -433,8 +437,17 @@
           <a href="#">Privacy</a>
           <a href="#">Garanzia 60 giorni</a>
         </nav>
+        <nav class="foot-col" aria-label="Contatti">
+          <h4>Contatti</h4>
+          <a class="foot-mail" href="mailto:info@tryscratchy.com"><svg class="gi"><use href="#ic-mail"/></svg> info@tryscratchy.com</a>
+          <div class="socials">
+            <a href="#" aria-label="Instagram"><svg class="gi fill"><use href="#ic-instagram"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg class="gi fill"><use href="#ic-facebook"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg class="gi fill"><use href="#ic-tiktok"/></svg></a>
+          </div>
+        </nav>
         <form class="news" id="news-form" onsubmit="return false">
-          <b class="news-ttl">Iscriviti e ricevi la mini-guida</b>
+          <b class="news-ttl">Iscriviti alla newsletter</b>
           <p class="news-sub">Consigli sul comportamento del gatto e offerte riservate ai nuovi iscritti.</p>
           <div class="row">
             <input type="email" placeholder="Il tuo indirizzo email" aria-label="Il tuo indirizzo email" autocomplete="email" />
@@ -466,6 +479,6 @@
     </div>
   </div>
 
-  <script src="assets/script.js?v=55"></script>
+  <script src="assets/script.js?v=56"></script>
 </body>
 </html>
