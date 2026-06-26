@@ -90,19 +90,19 @@
 
   /* "Cosa ricevi": contenuto per kit (base prodotto + eventuali regali) */
   var receiveList = document.getElementById("receive-list");
-  var GIFT_GUIDA = { name: "Guida P.R.E.D.A.", sub: "il protocollo passo-passo", img: "assets/img/regalo-guida.webp", gift: true, was: "€19,90" };
-  var GIFT_SPED = { name: "Spedizione prioritaria", sub: "consegna più veloce", img: "assets/img/regalo-spedizione.webp", gift: true };
+  var GIFT_GUIDA = { name: "Guida P.R.E.D.A.", img: "assets/img/regalo-guida.webp", gift: true, was: "€19,90" };
+  var GIFT_SPED = { name: "Spedizione prioritaria", img: "assets/img/regalo-spedizione.webp", gift: true };
   var RECEIVE = {
     entry: [
-      { name: "2 Scratchy", sub: "il prodotto", img: "assets/img/regalo-scratchy.webp" }
+      { name: "2 Scratchy", img: "assets/img/regalo-scratchy.webp" }
     ],
     hero: [
-      { name: "4 Scratchy", sub: "il prodotto", img: "assets/img/regalo-scratchy.webp" },
+      { name: "4 Scratchy", img: "assets/img/regalo-scratchy.webp" },
       GIFT_GUIDA,
       GIFT_SPED
     ],
     value: [
-      { name: "6 Scratchy", sub: "il prodotto", img: "assets/img/regalo-scratchy.webp" },
+      { name: "6 Scratchy", img: "assets/img/regalo-scratchy.webp" },
       GIFT_GUIDA,
       GIFT_SPED
     ]
