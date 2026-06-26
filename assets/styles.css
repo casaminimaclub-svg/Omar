@@ -461,7 +461,15 @@ table.compare td.us { background: var(--green-l); }
 .loc-sel { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; font-family: inherit; font-size: .88rem; font-weight: 600; color: var(--ink); cursor: pointer; box-shadow: var(--shadow-s); transition: border-color .18s, box-shadow .18s; }
 .loc-sel:hover { border-color: var(--cta-2); box-shadow: var(--shadow-s); }
 .loc-sel .sep { color: var(--muted); }
-.loc-sel .chev { width: .85em; height: .85em; transform: rotate(90deg); color: var(--muted); }
+.loc-sel .chev { width: .85em; height: .85em; transform: rotate(90deg); color: var(--muted); transition: transform .2s var(--ease); }
+.loc-wrap { position: relative; }
+.loc-wrap.open .loc-sel .chev { transform: rotate(-90deg); }
+.loc-menu { position: absolute; bottom: calc(100% + 8px); left: 0; min-width: 100%; width: max-content; max-width: 260px; margin: 0; padding: 6px; list-style: none;
+  background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); z-index: 20; display: none; }
+.loc-wrap.open .loc-menu { display: block; }
+.loc-menu li { padding: 10px 12px; border-radius: 9px; font-size: .88rem; font-weight: 600; color: var(--ink); cursor: pointer; white-space: nowrap; transition: background .15s; }
+.loc-menu li:hover { background: var(--bg-soft); }
+.loc-menu li.active { background: var(--green-l); color: var(--green-d); }
 
 /* badge pagamenti */
 .pay { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--line); }

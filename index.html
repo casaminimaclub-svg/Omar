@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=65" />
+  <link rel="stylesheet" href="assets/styles.css?v=66" />
 </head>
 <body>
 
@@ -424,9 +424,27 @@
           <a href="#top" class="logo foot-logo"><span class="l1">S</span><span class="l2">c</span><span class="l3">r</span><span class="l4">a</span><span class="l1">t</span><span class="l2">c</span><span class="l6">h</span><span class="l7">y</span></a>
           <p class="foot-desc">Scratchy riporta in casa la stimolazione che manca al gatto d'appartamento: una <strong>terapia ambientale</strong> che agisce sulla causa del comportamento — non un giocattolo.</p>
           <a class="foot-mail" href="mailto:contatti.scratchy@gmail.com"><svg class="gi"><use href="#ic-mail"/></svg> contatti.scratchy@gmail.com</a>
-          <div class="foot-locale">
-            <button type="button" class="loc-sel" aria-label="Paese e valuta">Italia <span class="sep">|</span> EUR € <svg class="gi chev"><use href="#ic-arrow"/></svg></button>
-            <button type="button" class="loc-sel" aria-label="Lingua">IT <svg class="gi chev"><use href="#ic-arrow"/></svg></button>
+          <div class="foot-locale no-i18n">
+            <div class="loc-wrap">
+              <button type="button" class="loc-sel" id="loc-country" aria-haspopup="listbox" aria-expanded="false"><span id="loc-country-lbl">Italia</span> <span class="sep">|</span> EUR € <svg class="gi chev"><use href="#ic-arrow"/></svg></button>
+              <ul class="loc-menu" id="loc-country-menu" role="listbox">
+                <li data-lang="it">Italia — Italiano</li>
+                <li data-lang="en">International — English</li>
+                <li data-lang="fr">France — Français</li>
+                <li data-lang="es">España — Español</li>
+                <li data-lang="de">Deutschland — Deutsch</li>
+              </ul>
+            </div>
+            <div class="loc-wrap">
+              <button type="button" class="loc-sel" id="loc-lang" aria-haspopup="listbox" aria-expanded="false"><span id="loc-lang-lbl">IT</span> <svg class="gi chev"><use href="#ic-arrow"/></svg></button>
+              <ul class="loc-menu" id="loc-lang-menu" role="listbox">
+                <li data-lang="it">Italiano</li>
+                <li data-lang="en">English</li>
+                <li data-lang="fr">Français</li>
+                <li data-lang="es">Español</li>
+                <li data-lang="de">Deutsch</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -454,6 +472,6 @@
     </div>
   </div>
 
-  <script src="assets/script.js?v=65"></script>
+  <script src="assets/script.js?v=66"></script>
 </body>
 </html>
