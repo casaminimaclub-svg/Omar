@@ -768,3 +768,51 @@
   var nav = (navigator.language || "it").slice(0, 2).toLowerCase();
   setLang(I18N[nav] ? nav : "it");
 })();
+
+/* ============================================================
+   PAGINE ASSISTENZA — apertura/chiusura overlay + hash routing
+   ============================================================ */
+(function () {
+  "use strict";
+  var cms = document.getElementById("cms");
+  if (!cms) return;
+  var PAGES = ["contatti", "privacy", "spedizioni", "resi", "termini"];
+
+  function openPage(name) {
+    var pages = cms.querySelectorAll(".cms-page");
+    var found = false;
+    Array.prototype.forEach.call(pages, function (pg) {
+      var on = pg.getAttribute("data-page") === name;
+      pg.classList.toggle("active", on);
+      if (on) found = true;
+    });
+    if (!found && pages[0]) pages[0].classList.add("active");
+    cms.hidden = false;
+    document.body.style.overflow = "hidden";
+    cms.scrollTop = 0;
+    if (("#" + name) !== location.hash) { try { history.replaceState(null, "", "#" + name); } catch (e) {} }
+  }
+  function closePage() {
+    cms.hidden = true;
+    document.body.style.overflow = "";
+    if (PAGES.indexOf(location.hash.replace("#", "")) >= 0) { try { history.replaceState(null, "", "#top"); } catch (e) {} }
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-open]"), function (a) {
+    a.addEventListener("click", function (e) { e.preventDefault(); openPage(a.getAttribute("data-open")); });
+  });
+  Array.prototype.forEach.call(cms.querySelectorAll(".cms-back, .cms-logo"), function (b) {
+    b.addEventListener("click", function (e) { e.preventDefault(); closePage(); });
+  });
+  Array.prototype.forEach.call(cms.querySelectorAll(".cms-submit"), function (b) {
+    b.addEventListener("click", function (e) { e.preventDefault(); alert("ANTEPRIMA — In produzione il messaggio viene inviato al nostro supporto."); });
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !cms.hidden) closePage(); });
+
+  function fromHash() {
+    var h = location.hash.replace("#", "");
+    if (PAGES.indexOf(h) >= 0) openPage(h); else if (!cms.hidden) closePage();
+  }
+  window.addEventListener("hashchange", fromHash);
+  fromHash();
+})();

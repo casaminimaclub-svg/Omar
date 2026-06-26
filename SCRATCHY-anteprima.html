@@ -583,6 +583,41 @@ input:focus-visible, .bundle:focus-within, .gnav:focus-visible, .paw:focus-visib
   .reveal { opacity: 1 !important; transform: none !important; }
 }
 
+/* ===== pagine assistenza (overlay full-screen) ===== */
+.cms-wrap { position: fixed; inset: 0; z-index: 200; background: var(--bg); overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.cms-wrap[hidden] { display: none; }
+.cms-bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 14px; padding: 12px 20px; background: rgba(255,255,255,.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.cms-back { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px; font-family: inherit; font-size: .9rem; font-weight: 700; color: var(--ink); cursor: pointer; transition: border-color .18s, transform .15s; }
+.cms-back:hover { border-color: var(--cta-2); }
+.cms-back .gi { width: 1em; height: 1em; transform: rotate(180deg); }
+.cms-logo { margin-left: auto; font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 1.4rem; text-decoration: none; }
+.cms-logo span { color: #161616; }
+.cms-main { max-width: 820px; margin: 0 auto; padding: 30px 20px 90px; }
+.cms-page { display: none; }
+.cms-page.active { display: block; animation: cmsIn .35s var(--ease); }
+@keyframes cmsIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.cms-page h1 { font-size: clamp(1.6rem, 4.6vw, 2.2rem); margin-bottom: 6px; }
+.cms-page .lead { color: var(--muted); font-size: 1.02rem; line-height: 1.6; margin: 0 0 6px; }
+.cms-page h2 { font-size: 1.16rem; margin: 30px 0 8px; }
+.cms-page p, .cms-page li { color: #4a463f; line-height: 1.65; }
+.cms-page ul { padding-left: 20px; margin: 0 0 1rem; }
+.cms-page li { margin-bottom: 6px; }
+.cms-page a { color: var(--green-d); font-weight: 700; }
+.cms-note { margin-top: 30px; font-size: .8rem; color: var(--muted); background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.track-box { background: linear-gradient(135deg, var(--green-l), #fff8e8); border: 1.5px solid #ecd9a0; border-radius: var(--radius); padding: 18px; margin: 22px 0 6px; }
+.track-box .row { display: flex; gap: 9px; margin-top: 12px; }
+.track-box input { flex: 1; min-width: 0; border: 1px solid #e3d6b0; border-radius: 12px; padding: 12px 14px; font-family: inherit; font-size: .95rem; background: #fff; }
+.cform { margin-top: 18px; display: grid; gap: 12px; }
+.cform .two { display: grid; gap: 12px; }
+.cform input, .cform textarea { width: 100%; border: 1px solid var(--line); border-radius: 12px; padding: 13px 15px; font-family: inherit; font-size: .95rem; background: #fff; color: var(--ink); transition: border-color .18s, box-shadow .18s; }
+.cform input:focus, .cform textarea:focus, .track-box input:focus { outline: none; border-color: var(--cta); box-shadow: 0 0 0 3px rgba(244,137,47,.16); }
+.cform textarea { min-height: 120px; resize: vertical; }
+.cms-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: linear-gradient(180deg, var(--cta-2), var(--cta) 60%, var(--cta-d)); color: #fff; border: none; border-radius: 999px; padding: 13px 26px; font-family: inherit; font-size: .95rem; font-weight: 800; cursor: pointer; box-shadow: 0 6px 14px rgba(244,137,47,.34); transition: transform .15s var(--ease), filter .2s; white-space: nowrap; }
+.cms-btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.cms-btn:active { transform: translateY(1px); }
+.cform .cms-btn { justify-self: start; }
+@media (min-width: 620px) { .cform .two { grid-template-columns: 1fr 1fr; } }
+
 </style>
 </head>
 <body>
@@ -986,11 +1021,11 @@ input:focus-visible, .bundle:focus-within, .gnav:focus-visible, .paw:focus-visib
 
         <nav class="foot-col" aria-label="Assistenza Clienti">
           <h4>Assistenza Clienti</h4>
-          <a href="mailto:contatti.scratchy@gmail.com">Contatti e tracciamento</a>
-          <a href="#">Informativa sulla privacy</a>
-          <a href="#">Informativa spedizioni</a>
-          <a href="#">Informativa resi e rimborsi</a>
-          <a href="#">Termini e condizioni</a>
+          <a href="#contatti" data-open="contatti">Contatti e tracciamento</a>
+          <a href="#privacy" data-open="privacy">Informativa sulla privacy</a>
+          <a href="#spedizioni" data-open="spedizioni">Informativa spedizioni</a>
+          <a href="#resi" data-open="resi">Informativa resi e rimborsi</a>
+          <a href="#termini" data-open="termini">Termini e condizioni</a>
         </nav>
 
         <div class="foot-brand">
@@ -1043,6 +1078,146 @@ input:focus-visible, .bundle:focus-within, .gnav:focus-visible, .paw:focus-visib
       </div>
       <a href="#top" class="cta-btn cta-round" id="sticky-cta"><span class="lbl">Vedi le offerte</span></a>
     </div>
+  </div>
+
+  <!-- ===== PAGINE ASSISTENZA (overlay a tutto schermo, file unico) ===== -->
+  <div class="cms-wrap no-i18n" id="cms" hidden>
+    <div class="cms-bar">
+      <button type="button" class="cms-back"><svg class="gi"><use href="#ic-arrow"/></svg> Torna allo store</button>
+      <a href="#top" class="logo cms-logo"><span>Scratchy</span></a>
+    </div>
+    <main class="cms-main">
+
+      <!-- CONTATTI E TRACCIAMENTO -->
+      <article class="cms-page" data-page="contatti">
+        <h1>Contatti e tracciamento</h1>
+        <p class="lead">Hai una domanda sul tuo ordine o sul tuo gatto? Siamo qui per aiutarti. Scrivici e ti rispondiamo <b>entro 48 ore</b>.</p>
+
+        <div class="track-box">
+          <b>Traccia il tuo ordine</b>
+          <p style="margin:.4em 0 0;font-size:.9rem">Inserisci il codice di tracciamento che hai ricevuto via email dopo la spedizione.</p>
+          <div class="row">
+            <input type="text" placeholder="Es. IT123456789" aria-label="Codice di tracciamento" />
+            <button type="button" class="cms-btn cms-submit">Traccia</button>
+          </div>
+        </div>
+
+        <h2>Domande frequenti</h2>
+        <div class="faq">
+          <details open><summary>Quando arriva il mio ordine? <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Gli ordini vengono elaborati entro 24–72 ore lavorative (in 24h con la spedizione prioritaria, inclusa dal Kit 2+2). In Italia la consegna richiede in genere 5–9 giorni lavorativi. Riceverai un'email con il codice di tracciamento per seguire il tuo pacco.</div></details>
+          <details><summary>Il tracking non si aggiorna, cosa devo fare? <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Tranquillo: i corrieri possono impiegare fino a 48 ore per aggiornare il sistema. Se non si muove per oltre 5 giorni, scrivici a contatti.scratchy@gmail.com e lo verifichiamo noi.</div></details>
+          <details><summary>Posso cambiare l'indirizzo dopo l'ordine? <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Sì, se ci scrivi entro 12 ore dall'ordine a contatti.scratchy@gmail.com. Dopo la spedizione, purtroppo, non possiamo più modificarlo.</div></details>
+          <details><summary>Il pacco risulta in giacenza o consegnato ma non l'ho ricevuto. <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Contatta il corriere indicato nel tracking per concordare un nuovo tentativo o il ritiro in filiale. Se hai difficoltà, scrivici a contatti.scratchy@gmail.com e ti aiutiamo a risolvere.</div></details>
+          <details><summary>Come funziona la garanzia 60 giorni? <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Hai 60 giorni dalla consegna per provare Scratchy. Se non vedi il tuo gatto stare meglio, ti rimborsiamo l'intero importo. Scrivici a contatti.scratchy@gmail.com per avviare il reso.</div></details>
+          <details><summary>Ho ricevuto il prodotto sbagliato o danneggiato. <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Ci dispiace! Scrivici a contatti.scratchy@gmail.com con una foto e il numero d'ordine: ti inviamo subito il prodotto corretto, senza costi aggiuntivi.</div></details>
+          <details><summary>Posso avere un rimborso se il pacco arriva in ritardo? <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Capiamo la frustrazione. Se il pacco è in transito non possiamo annullarlo, ma una volta ricevuto puoi sempre usare la garanzia 60 giorni. Scrivici e troviamo insieme una soluzione.</div></details>
+          <details><summary>Scratchy è sicuro per il mio gatto? <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Sì. È realizzato in cartone a nido d'ape atossico, leggero e stabile, senza colle nocive, pensato per il graffio orizzontale naturale del gatto. Come con ogni novità in casa, supervisiona il primo utilizzo.</div></details>
+          <details><summary>Come si usa Scratchy? <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Posizionalo per terra nelle zone dove il gatto già graffia o passa il tempo. La Guida P.R.E.D.A. inclusa ti accompagna passo-passo nell'introduzione. Ogni gatto ha i suoi tempi.</div></details>
+          <details><summary>Posso pagare a rate? <span class="chev"><svg class="gi"><use href="#ic-plus"/></svg></span></summary><div class="answer">Sì, in 3 rate senza interessi con Scalapay o Klarna, direttamente alla cassa.</div></details>
+        </div>
+
+        <h2>Scrivici · Rispondiamo entro 48h</h2>
+        <form class="cform" onsubmit="return false">
+          <div class="two">
+            <input type="text" placeholder="Nome" aria-label="Nome" />
+            <input type="tel" placeholder="Numero di telefono" aria-label="Numero di telefono" />
+          </div>
+          <input type="email" placeholder="Email *" aria-label="Email" required />
+          <textarea placeholder="Il tuo messaggio" aria-label="Messaggio"></textarea>
+          <button type="submit" class="cms-btn cms-submit">Invia messaggio</button>
+        </form>
+        <p style="margin-top:14px"><svg class="gi" style="width:1em;height:1em;color:var(--green);vertical-align:-.15em"><use href="#ic-mail"/></svg> Oppure scrivici direttamente a <a href="mailto:contatti.scratchy@gmail.com">contatti.scratchy@gmail.com</a></p>
+      </article>
+
+      <!-- INFORMATIVA SPEDIZIONI -->
+      <article class="cms-page" data-page="spedizioni">
+        <h1>Informativa spedizioni</h1>
+        <p class="lead">Tutto quello che c'è da sapere su tempi, costi e tracciamento del tuo ordine Scratchy.</p>
+        <h2>Costi di spedizione</h2>
+        <ul>
+          <li><b>Italia:</b> spedizione gratuita su tutti gli ordini.</li>
+          <li><b>Spedizione prioritaria gratuita</b> a partire dal Kit 2+2.</li>
+          <li>Per le spedizioni in altri Paesi UE i costi vengono calcolati alla cassa.</li>
+        </ul>
+        <h2>Tempi di consegna</h2>
+        <ul>
+          <li>Elaborazione dell'ordine: 24–72 ore lavorative (24h con prioritaria).</li>
+          <li>Consegna in Italia: in genere 5–9 giorni lavorativi.</li>
+          <li>Resto dell'Unione Europea: in genere 6–12 giorni lavorativi.</li>
+        </ul>
+        <h2>Tracciamento</h2>
+        <p>Dopo la spedizione riceverai un'email con il codice di tracciamento. Se non lo trovi, controlla la cartella spam o scrivici a contatti.scratchy@gmail.com.</p>
+        <h2>Giacenze e mancata consegna</h2>
+        <p>Se il pacco va in giacenza, contatta il corriere indicato nel tracking per un nuovo tentativo o il ritiro in filiale. In caso di reso al mittente per mancato ritiro potrebbe essere applicato un costo di rispedizione; ti contatteremo prima di procedere.</p>
+        <p class="cms-note">Bozza informativa a scopo dimostrativo. Prima della pubblicazione, fai verificare i contenuti legali a un consulente.</p>
+      </article>
+
+      <!-- RESI E RIMBORSI -->
+      <article class="cms-page" data-page="resi">
+        <h1>Informativa resi e rimborsi</h1>
+        <p class="lead">Provi Scratchy senza rischi: garanzia <b>soddisfatti o rimborsati 60 giorni</b>.</p>
+        <h2>La nostra garanzia</h2>
+        <p>Hai 60 giorni dalla consegna per provare la terapia a casa tua. Se non vedi il tuo gatto stare meglio, ti rimborsiamo l'intero importo del prodotto.</p>
+        <h2>Come avviare un reso</h2>
+        <ul>
+          <li>Scrivici a contatti.scratchy@gmail.com indicando il numero d'ordine.</li>
+          <li>Ti inviamo le istruzioni per la restituzione.</li>
+          <li>Una volta ricevuto e verificato il reso, procediamo al rimborso.</li>
+        </ul>
+        <h2>Tempi di rimborso</h2>
+        <p>Il rimborso viene emesso sullo stesso metodo di pagamento usato per l'acquisto, in genere entro 5–10 giorni lavorativi dalla ricezione del reso.</p>
+        <h2>Prodotto danneggiato o sbagliato</h2>
+        <p>Se ricevi un articolo danneggiato o errato, scrivici con foto entro pochi giorni dalla consegna: provvediamo alla sostituzione senza costi aggiuntivi.</p>
+        <h2>Diritto di recesso (UE)</h2>
+        <p>Per gli acquisti online hai diritto di recesso entro 14 giorni secondo la normativa europea; la nostra garanzia 60 giorni è un'estensione volontaria più ampia.</p>
+        <p class="cms-note">Bozza informativa a scopo dimostrativo. Prima della pubblicazione, fai verificare i contenuti legali a un consulente.</p>
+      </article>
+
+      <!-- PRIVACY -->
+      <article class="cms-page" data-page="privacy">
+        <h1>Informativa sulla privacy</h1>
+        <p class="lead">Come trattiamo e proteggiamo i tuoi dati personali, nel rispetto del GDPR (Reg. UE 2016/679).</p>
+        <h2>Titolare del trattamento</h2>
+        <p>Scratchy — e-mail di contatto: contatti.scratchy@gmail.com.</p>
+        <h2>Dati che raccogliamo</h2>
+        <ul>
+          <li>Dati di contatto e spedizione (nome, indirizzo, email, telefono).</li>
+          <li>Dati di acquisto e di pagamento (gestiti in modo sicuro dai provider di pagamento).</li>
+          <li>Dati di navigazione e cookie a fini statistici e di marketing.</li>
+        </ul>
+        <h2>Finalità e base giuridica</h2>
+        <ul>
+          <li>Evadere gli ordini e fornire assistenza (esecuzione del contratto).</li>
+          <li>Adempimenti fiscali e legali (obbligo di legge).</li>
+          <li>Marketing e newsletter (consenso, revocabile in ogni momento).</li>
+        </ul>
+        <h2>Conservazione</h2>
+        <p>Conserviamo i dati per il tempo necessario alle finalità indicate e secondo gli obblighi di legge.</p>
+        <h2>I tuoi diritti</h2>
+        <p>Puoi richiedere accesso, rettifica, cancellazione, limitazione, portabilità e opposizione scrivendo a contatti.scratchy@gmail.com. Hai inoltre diritto di reclamo all'autorità di controllo competente.</p>
+        <p class="cms-note">Bozza informativa a scopo dimostrativo. Prima della pubblicazione, fai verificare i contenuti legali a un consulente.</p>
+      </article>
+
+      <!-- TERMINI E CONDIZIONI -->
+      <article class="cms-page" data-page="termini">
+        <h1>Termini e condizioni</h1>
+        <p class="lead">Le condizioni che regolano l'acquisto su Scratchy.</p>
+        <h2>Prodotti e prezzi</h2>
+        <p>I prezzi sono espressi in Euro (€) e includono l'IVA dove applicabile. Ci riserviamo di aggiornare prezzi e disponibilità in qualsiasi momento.</p>
+        <h2>Ordini</h2>
+        <p>L'ordine si intende concluso al ricevimento della conferma via email. Ci riserviamo di annullare ordini in caso di errori evidenti di prezzo o indisponibilità.</p>
+        <h2>Pagamenti</h2>
+        <p>Accettiamo i principali metodi di pagamento e il pagamento a rate con Scalapay e Klarna. Le transazioni avvengono su canali sicuri.</p>
+        <h2>Garanzia e resi</h2>
+        <p>Si applica la garanzia 60 giorni soddisfatti o rimborsati descritta nell'informativa Resi e rimborsi, oltre ai diritti previsti dalla legge.</p>
+        <h2>Proprietà intellettuale</h2>
+        <p>Marchio, testi, immagini e contenuti del sito sono di proprietà di Scratchy e non possono essere riprodotti senza autorizzazione.</p>
+        <h2>Legge applicabile</h2>
+        <p>I presenti termini sono regolati dalla legge italiana. Per le controversie è competente il foro del consumatore ove previsto.</p>
+        <p class="cms-note">Bozza informativa a scopo dimostrativo. Prima della pubblicazione, fai verificare i contenuti legali a un consulente.</p>
+      </article>
+
+    </main>
   </div>
 
   <script>
@@ -1815,6 +1990,54 @@ input:focus-visible, .bundle:focus-within, .gnav:focus-visible, .paw:focus-visib
 
   var nav = (navigator.language || "it").slice(0, 2).toLowerCase();
   setLang(I18N[nav] ? nav : "it");
+})();
+
+/* ============================================================
+   PAGINE ASSISTENZA — apertura/chiusura overlay + hash routing
+   ============================================================ */
+(function () {
+  "use strict";
+  var cms = document.getElementById("cms");
+  if (!cms) return;
+  var PAGES = ["contatti", "privacy", "spedizioni", "resi", "termini"];
+
+  function openPage(name) {
+    var pages = cms.querySelectorAll(".cms-page");
+    var found = false;
+    Array.prototype.forEach.call(pages, function (pg) {
+      var on = pg.getAttribute("data-page") === name;
+      pg.classList.toggle("active", on);
+      if (on) found = true;
+    });
+    if (!found && pages[0]) pages[0].classList.add("active");
+    cms.hidden = false;
+    document.body.style.overflow = "hidden";
+    cms.scrollTop = 0;
+    if (("#" + name) !== location.hash) { try { history.replaceState(null, "", "#" + name); } catch (e) {} }
+  }
+  function closePage() {
+    cms.hidden = true;
+    document.body.style.overflow = "";
+    if (PAGES.indexOf(location.hash.replace("#", "")) >= 0) { try { history.replaceState(null, "", "#top"); } catch (e) {} }
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-open]"), function (a) {
+    a.addEventListener("click", function (e) { e.preventDefault(); openPage(a.getAttribute("data-open")); });
+  });
+  Array.prototype.forEach.call(cms.querySelectorAll(".cms-back, .cms-logo"), function (b) {
+    b.addEventListener("click", function (e) { e.preventDefault(); closePage(); });
+  });
+  Array.prototype.forEach.call(cms.querySelectorAll(".cms-submit"), function (b) {
+    b.addEventListener("click", function (e) { e.preventDefault(); alert("ANTEPRIMA — In produzione il messaggio viene inviato al nostro supporto."); });
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !cms.hidden) closePage(); });
+
+  function fromHash() {
+    var h = location.hash.replace("#", "");
+    if (PAGES.indexOf(h) >= 0) openPage(h); else if (!cms.hidden) closePage();
+  }
+  window.addEventListener("hashchange", fromHash);
+  fromHash();
 })();
 
 </script>
