@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=54" />
+  <link rel="stylesheet" href="assets/styles.css?v=55" />
 </head>
 <body>
 
@@ -415,19 +415,42 @@
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="wrap">
-      <a href="#top" class="logo"><span class="l1">S</span><span class="l2">c</span><span class="l3">r</span><span class="l4">a</span><span class="l1">t</span><span class="l2">c</span><span class="l6">h</span><span class="l7">y</span></a>
-      <p class="tag">La terapia ambientale per il gatto che vive in casa. Curiamo la causa, non il sintomo.</p>
-      <div class="cols">
-        <div>
-          <div class="news">
-            <b style="color:#fff">Iscriviti e ricevi la mini-guida</b>
-            <div class="row"><input type="email" placeholder="Il tuo indirizzo email" /><button type="button"><svg class="gi"><use href="#ic-arrow"/></svg></button></div>
-          </div>
-        </div>
-        <div><h4>Aiuto</h4><a href="#top">Acquista</a><a href="#">Spedizioni e resi</a><a href="#">Contatti</a></div>
-        <div><h4>Legale</h4><a href="#">Termini e condizioni</a><a href="#">Privacy</a><a href="#">Garanzia 60 giorni</a></div>
+      <div class="foot-top">
+        <a href="#top" class="logo foot-logo"><span class="l1">S</span><span class="l2">c</span><span class="l3">r</span><span class="l4">a</span><span class="l1">t</span><span class="l2">c</span><span class="l6">h</span><span class="l7">y</span></a>
+        <p class="foot-tag">La terapia ambientale per il gatto che vive in casa.<br>Curiamo la causa, non il sintomo.</p>
       </div>
-      <p class="disclaimer">Le informazioni su questa pagina descrivono una cornice di terapia ambientale ancorata a fonti di comportamento felino e non costituiscono diagnosi o parere veterinario. In presenza di sintomi persistenti, consulta sempre il tuo veterinario. © SCRATCHY.</p>
+
+      <div class="foot-grid">
+        <nav class="foot-col" aria-label="Aiuto">
+          <h4>Aiuto</h4>
+          <a href="#top">Acquista</a>
+          <a href="#">Spedizioni e resi</a>
+          <a href="#">Contatti</a>
+        </nav>
+        <nav class="foot-col" aria-label="Legale">
+          <h4>Legale</h4>
+          <a href="#">Termini e condizioni</a>
+          <a href="#">Privacy</a>
+          <a href="#">Garanzia 60 giorni</a>
+        </nav>
+        <form class="news" id="news-form" onsubmit="return false">
+          <b class="news-ttl">Iscriviti e ricevi la mini-guida</b>
+          <p class="news-sub">Consigli sul comportamento del gatto e offerte riservate ai nuovi iscritti.</p>
+          <div class="row">
+            <input type="email" placeholder="Il tuo indirizzo email" aria-label="Il tuo indirizzo email" autocomplete="email" />
+            <button type="submit" aria-label="Iscriviti alla newsletter"><svg class="gi"><use href="#ic-arrow"/></svg></button>
+          </div>
+        </form>
+      </div>
+
+      <div class="pay" aria-label="Metodi di pagamento accettati">
+        <span>Visa</span><span>Mastercard</span><span>PayPal</span><span>Amex</span><span>Apple Pay</span>
+      </div>
+
+      <div class="foot-bottom">
+        <p class="disclaimer">Le informazioni su questa pagina descrivono una cornice di terapia ambientale ancorata a fonti di comportamento felino e non costituiscono diagnosi o parere veterinario. In presenza di sintomi persistenti, consulta sempre il tuo veterinario.</p>
+        <p class="copyright">© 2026 Scratchy™ · Tutti i diritti riservati</p>
+      </div>
     </div>
   </footer>
 
@@ -443,6 +466,6 @@
     </div>
   </div>
 
-  <script src="assets/script.js?v=54"></script>
+  <script src="assets/script.js?v=55"></script>
 </body>
 </html>

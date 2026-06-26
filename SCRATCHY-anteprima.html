@@ -432,19 +432,45 @@ table.compare td.us { background: var(--green-l); }
 .guarantee-seal { display: inline-flex; align-items: center; gap: 11px; margin: 0 auto 20px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); padding: 12px 18px; border-radius: 999px; color: #fff; font-weight: 700; }
 .guarantee-seal .gi { width: 1.4em; height: 1.4em; }
 
-/* ===== footer ===== */
-.site-footer { background: linear-gradient(160deg, var(--green-d), #0d4530); color: #c4d6cb; padding: 48px 0; font-size: .85rem; }
-.site-footer .logo .l6 { color: #fff; }
-.site-footer .tag { margin: 10px 0 0; color: #a9c2b3; }
-.site-footer .cols { display: grid; grid-template-columns: 1fr; gap: 26px; margin-top: 26px; }
-.site-footer h4 { font-family: "Plus Jakarta Sans", sans-serif; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: #fff; margin: 0 0 10px; }
-.site-footer a { color: #bfe9d2; text-decoration: none; display: block; margin-bottom: 6px; }
-.news { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15); border-radius: var(--radius); padding: 16px; }
-.news .row { display: flex; gap: 8px; margin-top: 8px; }
-.news input { flex: 1; border: none; border-radius: 10px; padding: 12px 14px; font-size: .9rem; }
-.news button { border: none; border-radius: 10px; padding: 0 14px; background: var(--cta); color: #fff; cursor: pointer; display: grid; place-items: center; }
-.news button .gi { width: 1.2em; height: 1.2em; }
-.disclaimer { margin-top: 26px; font-size: .76rem; color: #8fac9b; border-top: 1px solid rgba(255,255,255,.12); padding-top: 16px; }
+/* ===== footer (stile Toesy, palette Scratchy, light & clean) ===== */
+.site-footer { background: #fbf7ee; border-top: 1px solid var(--line); color: var(--ink); padding: 56px 0 40px; font-size: .9rem; }
+.foot-top { text-align: center; max-width: 580px; margin: 0 auto 4px; }
+.site-footer .foot-logo { font-size: 2.3rem; justify-content: center; }
+.site-footer .logo .l1 { color: var(--c-green); }
+.site-footer .logo .l2 { color: var(--cta); }
+.site-footer .logo .l3 { color: var(--c-coral); }
+.site-footer .logo .l4 { color: var(--c-amber); }
+.site-footer .logo .l6 { color: var(--c-green); }
+.site-footer .logo .l7 { color: var(--c-lilac); }
+.foot-tag { margin: 12px 0 0; color: var(--muted); line-height: 1.6; }
+
+.foot-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 34px; padding-top: 34px; border-top: 1px solid var(--line); }
+.foot-col h4 { font-family: "Plus Jakarta Sans", sans-serif; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--green-d); margin: 0 0 14px; font-weight: 800; }
+.foot-col a { display: block; width: max-content; max-width: 100%; color: var(--muted); text-decoration: none; margin-bottom: 11px; transition: color .18s var(--ease), transform .18s var(--ease); }
+.foot-col a:hover { color: var(--green-d); transform: translateX(3px); }
+
+/* newsletter card morbida */
+.news { background: linear-gradient(135deg, var(--green-l) 0%, #f4f8ea 100%); border: 1.5px solid #cfe0ac; border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow-s); }
+.news-ttl { display: block; color: var(--green-d); font-weight: 800; font-size: 1.04rem; letter-spacing: -.01em; }
+.news-sub { margin: 6px 0 14px; color: var(--muted); font-size: .84rem; line-height: 1.5; }
+.news .row { display: flex; gap: 9px; }
+.news input { flex: 1; min-width: 0; border: 1px solid #d8e3c2; border-radius: 12px; padding: 13px 15px; font-size: .95rem; font-family: inherit; color: var(--ink); background: #fff; transition: border-color .18s, box-shadow .18s; }
+.news input::placeholder { color: #9aa597; }
+.news input:focus { outline: none; border-color: var(--cta); box-shadow: 0 0 0 3px rgba(244,137,47,.18); }
+.news button { flex: 0 0 auto; width: 52px; border: none; border-radius: 12px; cursor: pointer; display: grid; place-items: center; color: #fff;
+  background: linear-gradient(180deg, var(--cta-2), var(--cta) 60%, var(--cta-d)); box-shadow: 0 6px 14px rgba(244,137,47,.34); transition: transform .15s var(--ease), filter .2s; }
+.news button:hover { filter: brightness(1.05); transform: translateY(-2px); }
+.news button:active { transform: translateY(1px); }
+.news button .gi { width: 1.25em; height: 1.25em; }
+
+/* badge pagamenti */
+.pay { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--line); }
+.pay span { font-size: .66rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: #6a6f66; background: #fff; border: 1px solid var(--line); padding: 8px 13px; border-radius: 9px; box-shadow: var(--shadow-s); }
+
+/* fondo legale */
+.foot-bottom { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); text-align: center; }
+.disclaimer { margin: 0 auto 12px; max-width: 720px; font-size: .76rem; color: var(--muted); line-height: 1.55; }
+.copyright { margin: 0; font-size: .82rem; color: var(--ink); font-weight: 700; }
 
 /* ===== sticky ===== */
 .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: rgba(255,255,255,.97); backdrop-filter: blur(10px); border-top: 1px solid var(--line); padding: 10px 14px; transform: translateY(120%); transition: transform .25s; box-shadow: 0 -6px 20px rgba(0,0,0,.08); }
@@ -470,7 +496,7 @@ table.compare td.us { background: var(--green-l); }
   .benefici { grid-template-columns: 1fr 1fr; }
   .reviews { grid-template-columns: 1fr 1fr 1fr; }
   .rev-head { grid-template-columns: 240px 1fr; }
-  .site-footer .cols { grid-template-columns: 2fr 1fr 1fr; }
+  .foot-grid { grid-template-columns: 1fr 1fr 1.7fr; gap: 44px; align-items: start; }
 }
 @media (max-width: 879px) { body { padding-bottom: 78px; } }
 
@@ -937,19 +963,42 @@ input:focus-visible, .bundle:focus-within, .gnav:focus-visible, .paw:focus-visib
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="wrap">
-      <a href="#top" class="logo"><span class="l1">S</span><span class="l2">c</span><span class="l3">r</span><span class="l4">a</span><span class="l1">t</span><span class="l2">c</span><span class="l6">h</span><span class="l7">y</span></a>
-      <p class="tag">La terapia ambientale per il gatto che vive in casa. Curiamo la causa, non il sintomo.</p>
-      <div class="cols">
-        <div>
-          <div class="news">
-            <b style="color:#fff">Iscriviti e ricevi la mini-guida</b>
-            <div class="row"><input type="email" placeholder="Il tuo indirizzo email" /><button type="button"><svg class="gi"><use href="#ic-arrow"/></svg></button></div>
-          </div>
-        </div>
-        <div><h4>Aiuto</h4><a href="#top">Acquista</a><a href="#">Spedizioni e resi</a><a href="#">Contatti</a></div>
-        <div><h4>Legale</h4><a href="#">Termini e condizioni</a><a href="#">Privacy</a><a href="#">Garanzia 60 giorni</a></div>
+      <div class="foot-top">
+        <a href="#top" class="logo foot-logo"><span class="l1">S</span><span class="l2">c</span><span class="l3">r</span><span class="l4">a</span><span class="l1">t</span><span class="l2">c</span><span class="l6">h</span><span class="l7">y</span></a>
+        <p class="foot-tag">La terapia ambientale per il gatto che vive in casa.<br>Curiamo la causa, non il sintomo.</p>
       </div>
-      <p class="disclaimer">Le informazioni su questa pagina descrivono una cornice di terapia ambientale ancorata a fonti di comportamento felino e non costituiscono diagnosi o parere veterinario. In presenza di sintomi persistenti, consulta sempre il tuo veterinario. © SCRATCHY.</p>
+
+      <div class="foot-grid">
+        <nav class="foot-col" aria-label="Aiuto">
+          <h4>Aiuto</h4>
+          <a href="#top">Acquista</a>
+          <a href="#">Spedizioni e resi</a>
+          <a href="#">Contatti</a>
+        </nav>
+        <nav class="foot-col" aria-label="Legale">
+          <h4>Legale</h4>
+          <a href="#">Termini e condizioni</a>
+          <a href="#">Privacy</a>
+          <a href="#">Garanzia 60 giorni</a>
+        </nav>
+        <form class="news" id="news-form" onsubmit="return false">
+          <b class="news-ttl">Iscriviti e ricevi la mini-guida</b>
+          <p class="news-sub">Consigli sul comportamento del gatto e offerte riservate ai nuovi iscritti.</p>
+          <div class="row">
+            <input type="email" placeholder="Il tuo indirizzo email" aria-label="Il tuo indirizzo email" autocomplete="email" />
+            <button type="submit" aria-label="Iscriviti alla newsletter"><svg class="gi"><use href="#ic-arrow"/></svg></button>
+          </div>
+        </form>
+      </div>
+
+      <div class="pay" aria-label="Metodi di pagamento accettati">
+        <span>Visa</span><span>Mastercard</span><span>PayPal</span><span>Amex</span><span>Apple Pay</span>
+      </div>
+
+      <div class="foot-bottom">
+        <p class="disclaimer">Le informazioni su questa pagina descrivono una cornice di terapia ambientale ancorata a fonti di comportamento felino e non costituiscono diagnosi o parere veterinario. In presenza di sintomi persistenti, consulta sempre il tuo veterinario.</p>
+        <p class="copyright">© 2026 Scratchy™ · Tutti i diritti riservati</p>
+      </div>
     </div>
   </footer>
 
