@@ -88,6 +88,34 @@
     }
   }
 
+  /* "Cosa ricevi": contenuto per kit (base prodotto + eventuali regali) */
+  var receiveList = document.getElementById("receive-list");
+  var RECEIVE = {
+    entry: [
+      { name: "2 Scratchy" }
+    ],
+    hero: [
+      { name: "4 Scratchy" },
+      { name: "Guida P.R.E.D.A.", gift: true, tag: "GRATIS", was: "€19,90" },
+      { name: "Spedizione prioritaria", gift: true, tag: "GRATIS" }
+    ],
+    value: [
+      { name: "6 Scratchy" },
+      { name: "Guida P.R.E.D.A.", gift: true, tag: "GRATIS", was: "€19,90" },
+      { name: "Spedizione prioritaria", gift: true, tag: "GRATIS" }
+    ]
+  };
+  function renderReceive(tier) {
+    if (!receiveList) return;
+    var items = RECEIVE[tier] || [];
+    var html = "";
+    items.forEach(function (it) {
+      var tag = it.tag ? '<span class="r-tag">' + it.tag + (it.was ? ' <s>' + it.was + '</s>' : '') + '</span>' : '';
+      html += '<li class="' + (it.gift ? 'is-gift' : '') + '"><span class="dot"></span><span class="r-name">' + it.name + '</span>' + tag + '</li>';
+    });
+    receiveList.innerHTML = html;
+  }
+
   function selectBundle(b) {
     bundles.forEach(function (x) { x.classList.remove("selected"); });
     b.classList.add("selected");
@@ -97,7 +125,7 @@
     var name = b.getAttribute("data-name");
     if (sumRate) sumRate.textContent = euro(price / 3);
     /* La barra fissa promuove sempre il Kit 2+2 (il più scelto), non cambia con la selezione */
-    applyGifts(b.getAttribute("data-tier"));
+    renderReceive(b.getAttribute("data-tier"));
   }
 
   bundles.forEach(function (b) {
