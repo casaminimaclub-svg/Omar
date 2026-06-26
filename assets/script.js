@@ -90,19 +90,21 @@
 
   /* "Cosa ricevi": contenuto per kit (base prodotto + eventuali regali) */
   var receiveList = document.getElementById("receive-list");
+  var GIFT_GUIDA = { name: "Guida P.R.E.D.A.", sub: "il protocollo passo-passo", img: "assets/img/regalo-guida.webp", gift: true, was: "€19,90" };
+  var GIFT_SPED = { name: "Spedizione prioritaria", sub: "consegna più veloce", img: "assets/img/regalo-spedizione.webp", gift: true };
   var RECEIVE = {
     entry: [
-      { name: "2 Scratchy", sub: "il prodotto", img: "assets/img/scratchy-1.webp" }
+      { name: "2 Scratchy", sub: "il prodotto", img: "assets/img/regalo-scratchy.webp" }
     ],
     hero: [
-      { name: "4 Scratchy", sub: "il prodotto", img: "assets/img/scratchy-2.webp" },
-      { name: "Guida P.R.E.D.A.", sub: "il protocollo passo-passo", icon: "ic-book", gift: true, was: "€19,90" },
-      { name: "Spedizione prioritaria", sub: "consegna più veloce", icon: "ic-truck", gift: true }
+      { name: "4 Scratchy", sub: "il prodotto", img: "assets/img/regalo-scratchy.webp" },
+      GIFT_GUIDA,
+      GIFT_SPED
     ],
     value: [
-      { name: "6 Scratchy", sub: "il prodotto", img: "assets/img/scratchy-3.webp" },
-      { name: "Guida P.R.E.D.A.", sub: "il protocollo passo-passo", icon: "ic-book", gift: true, was: "€19,90" },
-      { name: "Spedizione prioritaria", sub: "consegna più veloce", icon: "ic-truck", gift: true }
+      { name: "6 Scratchy", sub: "il prodotto", img: "assets/img/regalo-scratchy.webp" },
+      GIFT_GUIDA,
+      GIFT_SPED
     ]
   };
   function renderReceive(tier) {
