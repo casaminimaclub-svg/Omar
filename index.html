@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=56" />
+  <link rel="stylesheet" href="assets/styles.css?v=57" />
 </head>
 <body>
 
@@ -116,42 +116,41 @@
           <form id="kit-form" class="bundles">
             <label class="bundle" data-price="29.90" data-name="Kit 1+1" data-units="2" data-tier="entry">
               <input type="radio" name="kit" value="1+1" />
-              <span class="pick"><svg class="gi"><use href="#ic-check"/></svg></span>
-              <div>
-                <div class="name">Kit 1+1 GRATIS</div>
-                <div class="desc">2 SCRATCHY (1 in regalo) · prova una zona</div>
+              <div class="b-media">
+                <img src="assets/img/scratchy-1.webp" alt="Kit 1+1 — 2 Scratchy" loading="lazy" draggable="false" />
+                <span class="b-qty">x2</span>
               </div>
-              <div class="price"><span class="now">€29,90</span><span class="per">€14,95 a Scratchy</span></div>
+              <div class="b-name">Kit 1+1</div>
+              <div class="b-desc">1 in regalo · prova una zona</div>
+              <div class="b-now">€29,90</div>
+              <div class="b-per">€14,95/Scratchy</div>
             </label>
 
-            <label class="bundle selected" data-price="59.80" data-name="Kit 2+2" data-units="4" data-tier="hero">
+            <label class="bundle feat selected" data-price="59.80" data-name="Kit 2+2" data-units="4" data-tier="hero">
               <input type="radio" name="kit" value="2+2" checked />
-              <span class="pop"><svg class="gi fill"><use href="#ic-star"/></svg> Il più scelto</span>
-              <span class="pick"><svg class="gi"><use href="#ic-check"/></svg></span>
-              <div>
-                <div class="name">Kit 2+2 GRATIS</div>
-                <div class="desc">4 SCRATCHY · copri le zone chiave della casa</div>
-                <div class="perks">
-                  <span><svg class="gi"><use href="#ic-check"/></svg> Dose terapeutica completa</span>
-                  <span><svg class="gi"><use href="#ic-check"/></svg> Spedizione prioritaria</span>
-                </div>
-                <span class="tag">Consigliato dal protocollo</span>
+              <span class="b-ribbon"><svg class="gi fill"><use href="#ic-star"/></svg> Il più scelto</span>
+              <div class="b-media">
+                <img src="assets/img/scratchy-2.webp" alt="Kit 2+2 — 4 Scratchy" loading="lazy" draggable="false" />
+                <span class="b-qty">x4</span>
               </div>
-              <div class="price"><span class="now">€59,80</span><span class="per">€14,95 a Scratchy</span></div>
+              <div class="b-name">Kit 2+2</div>
+              <div class="b-desc">2 in regalo · copri le zone chiave</div>
+              <div class="b-now">€59,80</div>
+              <div class="b-per">€14,95/Scratchy</div>
             </label>
 
             <label class="bundle" data-price="69.90" data-name="Kit 3+3" data-units="6" data-tier="value">
               <input type="radio" name="kit" value="3+3" />
-              <span class="pick"><svg class="gi"><use href="#ic-check"/></svg></span>
-              <div>
-                <div class="name">Kit 3+3 GRATIS</div>
-                <div class="desc">6 SCRATCHY · copri ogni stanza</div>
-                <div class="perks">
-                  <span><svg class="gi"><use href="#ic-check"/></svg> Spedizione prioritaria</span>
-                </div>
-                <span class="tag save">Risparmi €19,80</span>
+              <span class="b-flag">-22%</span>
+              <div class="b-media">
+                <img src="assets/img/scratchy-3.webp" alt="Kit 3+3 — 6 Scratchy" loading="lazy" draggable="false" />
+                <span class="b-qty">x6</span>
               </div>
-              <div class="price"><span class="now">€69,90</span><span class="was">€89,70</span><span class="per">€11,65 a Scratchy</span></div>
+              <div class="b-name">Kit 3+3</div>
+              <div class="b-desc">3 in regalo · copri ogni stanza</div>
+              <div class="b-now">€69,90</div>
+              <div class="b-was">€89,70</div>
+              <div class="b-per">€11,65/Scratchy</div>
             </label>
           </form>
 
@@ -479,6 +478,6 @@
     </div>
   </div>
 
-  <script src="assets/script.js?v=56"></script>
+  <script src="assets/script.js?v=57"></script>
 </body>
 </html>
