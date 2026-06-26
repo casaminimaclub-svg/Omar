@@ -255,6 +255,7 @@ section.tight { padding: 30px 0; }
 .bundle .b-name { font-weight: 800; font-size: 1.08rem; letter-spacing: -.01em; color: var(--cta-d); display: flex; align-items: center; gap: 8px; }
 .bundle .b-sub { font-size: .82rem; color: var(--green-d); margin-top: 1px; }
 .bundle .b-flag { font-size: .66rem; font-weight: 800; color: #fff; background: var(--green); padding: 2px 7px; border-radius: 7px; letter-spacing: .01em; }
+.bundle .b-free { display: inline-flex; align-items: center; font-size: .64rem; font-weight: 800; color: #fff; background: linear-gradient(135deg, #82b13a, var(--green)); padding: 3px 9px; border-radius: 999px; letter-spacing: .05em; text-transform: uppercase; box-shadow: 0 2px 6px rgba(111,158,44,.35); }
 
 .bundle .b-price { text-align: right; white-space: nowrap; }
 .bundle .b-price .now { display: block; font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 1.32rem; color: var(--green-d); line-height: 1; }
@@ -265,16 +266,23 @@ section.tight { padding: 30px 0; }
 .bundle .pop { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, var(--cta-2), var(--cta), var(--cta-d)); color: #fff; font-size: .72rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 5px 16px; border-radius: 999px; box-shadow: 0 6px 14px rgba(244,137,47,.4); display: inline-flex; align-items: center; gap: 6px; }
 .bundle .pop .gi { width: .85em; height: .85em; }
 
-/* ===== "Cosa ricevi" — blocco piccolo e staccato, dinamico ===== */
-.receive { margin-top: 16px; }
-.receive-ttl { font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 9px; }
-.receive-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.receive-list li { display: flex; align-items: center; gap: 10px; font-size: .88rem; }
-.receive-list .dot { flex: 0 0 auto; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
-.receive-list .r-name { font-weight: 700; color: var(--ink); }
-.receive-list .r-tag { margin-left: auto; font-size: .74rem; font-weight: 800; color: var(--green-d); white-space: nowrap; }
-.receive-list .r-tag s { color: var(--muted); font-weight: 600; margin-left: 4px; }
-.receive-list li.is-gift .dot { background: var(--cta); }
+/* ===== "Cosa ricevi" — card pulita, righe con icona e badge GRATIS ===== */
+.receive { margin-top: 18px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 6px 16px 8px; box-shadow: var(--shadow-s); }
+.receive-ttl { font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: 12px 0 4px; }
+.receive-list { list-style: none; margin: 0; padding: 0; display: grid; }
+.receive-list li { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-top: 1px solid var(--line); }
+.receive-list li:first-child { border-top: none; }
+.r-ico { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 12px; overflow: hidden; display: grid; place-items: center; background: var(--green-l); color: var(--green-d); }
+.r-ico img { width: 100%; height: 100%; object-fit: cover; }
+.r-ico .gi { width: 1.2em; height: 1.2em; }
+.r-ico.gift { background: var(--cta-l); color: var(--cta-d); }
+.r-txt { display: flex; flex-direction: column; min-width: 0; }
+.r-name { font-weight: 800; color: var(--ink); font-size: .94rem; letter-spacing: -.01em; }
+.r-sub { font-size: .73rem; color: var(--muted); margin-top: 1px; }
+.r-tag { margin-left: auto; display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.r-was { font-size: .78rem; color: var(--muted); text-decoration: line-through; }
+.r-free { background: linear-gradient(135deg, #82b13a, var(--green)); color: #fff; font-weight: 800; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; padding: 5px 11px; border-radius: 999px; box-shadow: 0 2px 6px rgba(111,158,44,.32); }
+.r-incl { font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #9aa597; }
 
 /* regali */
 .gifts { margin-top: 18px; background: linear-gradient(135deg, #fff6e1 0%, #fdeccb 100%); border: 1.5px solid #efcd89; border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow-s); }

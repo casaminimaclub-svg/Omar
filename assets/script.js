@@ -92,17 +92,17 @@
   var receiveList = document.getElementById("receive-list");
   var RECEIVE = {
     entry: [
-      { name: "2 Scratchy" }
+      { name: "2 Scratchy", sub: "il prodotto", img: "assets/img/scratchy-1.webp" }
     ],
     hero: [
-      { name: "4 Scratchy" },
-      { name: "Guida P.R.E.D.A.", gift: true, tag: "GRATIS", was: "€19,90" },
-      { name: "Spedizione prioritaria", gift: true, tag: "GRATIS" }
+      { name: "4 Scratchy", sub: "il prodotto", img: "assets/img/scratchy-2.webp" },
+      { name: "Guida P.R.E.D.A.", sub: "il protocollo passo-passo", icon: "ic-book", gift: true, was: "€19,90" },
+      { name: "Spedizione prioritaria", sub: "consegna più veloce", icon: "ic-truck", gift: true }
     ],
     value: [
-      { name: "6 Scratchy" },
-      { name: "Guida P.R.E.D.A.", gift: true, tag: "GRATIS", was: "€19,90" },
-      { name: "Spedizione prioritaria", gift: true, tag: "GRATIS" }
+      { name: "6 Scratchy", sub: "il prodotto", img: "assets/img/scratchy-3.webp" },
+      { name: "Guida P.R.E.D.A.", sub: "il protocollo passo-passo", icon: "ic-book", gift: true, was: "€19,90" },
+      { name: "Spedizione prioritaria", sub: "consegna più veloce", icon: "ic-truck", gift: true }
     ]
   };
   function renderReceive(tier) {
@@ -110,8 +110,15 @@
     var items = RECEIVE[tier] || [];
     var html = "";
     items.forEach(function (it) {
-      var tag = it.tag ? '<span class="r-tag">' + it.tag + (it.was ? ' <s>' + it.was + '</s>' : '') + '</span>' : '';
-      html += '<li class="' + (it.gift ? 'is-gift' : '') + '"><span class="dot"></span><span class="r-name">' + it.name + '</span>' + tag + '</li>';
+      var ico = it.img
+        ? '<span class="r-ico"><img src="' + it.img + '" alt="" /></span>'
+        : '<span class="r-ico gift"><svg class="gi"><use href="#' + it.icon + '"/></svg></span>';
+      var tag = it.gift
+        ? '<span class="r-tag">' + (it.was ? '<s class="r-was">' + it.was + '</s>' : '') + '<span class="r-free">Gratis</span></span>'
+        : '<span class="r-tag"><span class="r-incl">Incluso</span></span>';
+      html += '<li>' + ico +
+        '<span class="r-txt"><span class="r-name">' + it.name + '</span>' +
+        (it.sub ? '<span class="r-sub">' + it.sub + '</span>' : '') + '</span>' + tag + '</li>';
     });
     receiveList.innerHTML = html;
   }
