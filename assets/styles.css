@@ -441,38 +441,27 @@ table.compare td.us { background: var(--green-l); }
 .guarantee-seal { display: inline-flex; align-items: center; gap: 11px; margin: 0 auto 20px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); padding: 12px 18px; border-radius: 999px; color: #fff; font-weight: 700; }
 .guarantee-seal .gi { width: 1.4em; height: 1.4em; }
 
-/* ===== footer (stile Toesy, palette Scratchy, light & clean) ===== */
-.site-footer { background: #fbf7ee; border-top: 1px solid var(--line); color: var(--ink); padding: 56px 0 40px; font-size: .9rem; }
-.foot-top { text-align: center; max-width: 580px; margin: 0 auto 4px; }
-.site-footer .foot-logo { font-size: 2.3rem; justify-content: center; }
+/* ===== footer (stile iBrushy, palette Scratchy) ===== */
+.site-footer { background: #fbf7ee; border-top: 1px solid var(--line); color: var(--ink); padding: 54px 0 40px; font-size: .9rem; }
 .site-footer .logo span { color: #161616; }
-.foot-tag { margin: 12px 0 0; color: var(--muted); line-height: 1.6; }
 
-.foot-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 34px; padding-top: 34px; border-top: 1px solid var(--line); }
-.foot-col h4 { font-family: "Plus Jakarta Sans", sans-serif; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--green-d); margin: 0 0 14px; font-weight: 800; }
-.foot-col a { display: block; width: max-content; max-width: 100%; color: var(--muted); text-decoration: none; margin-bottom: 11px; transition: color .18s var(--ease), transform .18s var(--ease); }
+.foot-grid { display: grid; grid-template-columns: 1fr; gap: 36px; }
+.foot-col h4 { font-family: "Plus Jakarta Sans", sans-serif; font-size: 1.05rem; letter-spacing: -.01em; color: var(--ink); margin: 0 0 16px; font-weight: 800; }
+.foot-col a { display: block; width: max-content; max-width: 100%; color: var(--muted); text-decoration: none; margin-bottom: 12px; transition: color .18s var(--ease), transform .18s var(--ease); }
 .foot-col a:hover { color: var(--green-d); transform: translateX(3px); }
-.foot-col a.foot-mail { display: inline-flex; align-items: center; gap: 8px; }
-.foot-col a.foot-mail .gi { width: 1.05em; height: 1.05em; color: var(--green); }
-.foot-col a.foot-mail:hover { transform: none; }
-.socials { display: flex; gap: 10px; margin-top: 6px; }
-.socials a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 11px; background: #fff; border: 1px solid var(--line); color: var(--green-d); margin: 0; box-shadow: var(--shadow-s); transition: transform .18s var(--ease), color .18s, box-shadow .18s; }
-.socials a:hover { transform: translateY(-3px); color: var(--cta-d); box-shadow: var(--shadow); }
-.socials .gi { width: 1.2em; height: 1.2em; }
 
-/* newsletter card morbida */
-.news { background: linear-gradient(135deg, var(--green-l) 0%, #fff8e8 100%); border: 1.5px solid #ecd9a0; border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow-s); }
-.news-ttl { display: block; color: var(--green-d); font-weight: 800; font-size: 1.04rem; letter-spacing: -.01em; }
-.news-sub { margin: 6px 0 14px; color: var(--muted); font-size: .84rem; line-height: 1.5; }
-.news .row { display: flex; gap: 9px; }
-.news input { flex: 1; min-width: 0; border: 1px solid #e3d6b0; border-radius: 12px; padding: 13px 15px; font-size: .95rem; font-family: inherit; color: var(--ink); background: #fff; transition: border-color .18s, box-shadow .18s; }
-.news input::placeholder { color: #9aa597; }
-.news input:focus { outline: none; border-color: var(--cta); box-shadow: 0 0 0 3px rgba(244,137,47,.18); }
-.news button { flex: 0 0 auto; width: 52px; border: none; border-radius: 12px; cursor: pointer; display: grid; place-items: center; color: #fff;
-  background: linear-gradient(180deg, var(--cta-2), var(--cta) 60%, var(--cta-d)); box-shadow: 0 6px 14px rgba(244,137,47,.34); transition: transform .15s var(--ease), filter .2s; }
-.news button:hover { filter: brightness(1.05); transform: translateY(-2px); }
-.news button:active { transform: translateY(1px); }
-.news button .gi { width: 1.25em; height: 1.25em; }
+/* blocco brand: logo + descrizione + email + selettori */
+.foot-brand .foot-logo { font-size: 2rem; justify-content: flex-start; }
+.foot-desc { margin: 14px 0 0; color: var(--muted); line-height: 1.6; max-width: 380px; font-size: .88rem; }
+.foot-desc strong { color: var(--green-d); }
+.foot-mail { display: inline-flex; align-items: center; gap: 8px; margin: 16px 0 0; color: var(--ink); text-decoration: none; font-weight: 700; transition: color .18s; }
+.foot-mail .gi { width: 1.05em; height: 1.05em; color: var(--green); }
+.foot-mail:hover { color: var(--green-d); }
+.foot-locale { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.loc-sel { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; font-family: inherit; font-size: .88rem; font-weight: 600; color: var(--ink); cursor: pointer; box-shadow: var(--shadow-s); transition: border-color .18s, box-shadow .18s; }
+.loc-sel:hover { border-color: var(--cta-2); box-shadow: var(--shadow-s); }
+.loc-sel .sep { color: var(--muted); }
+.loc-sel .chev { width: .85em; height: .85em; transform: rotate(90deg); color: var(--muted); }
 
 /* badge pagamenti */
 .pay { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--line); }
@@ -507,11 +496,11 @@ table.compare td.us { background: var(--green-l); }
   .benefici { grid-template-columns: 1fr 1fr; }
   .reviews { grid-template-columns: 1fr 1fr 1fr; }
   .rev-head { grid-template-columns: 240px 1fr; }
-  .foot-grid { grid-template-columns: 1fr 1fr 1fr 1.8fr; gap: 40px; align-items: start; }
+  .foot-grid { grid-template-columns: 1fr 1.15fr 1.5fr; gap: 48px; align-items: start; }
 }
 @media (min-width: 600px) and (max-width: 879px) {
-  .foot-grid { grid-template-columns: 1fr 1fr; gap: 30px 40px; }
-  .news { grid-column: 1 / -1; }
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px 40px; }
+  .foot-brand { grid-column: 1 / -1; }
 }
 @media (max-width: 879px) { body { padding-bottom: 78px; } }
 
