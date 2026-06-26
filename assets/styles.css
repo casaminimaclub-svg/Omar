@@ -237,33 +237,41 @@ section.tight { padding: 30px 0; }
 @keyframes shimmer { 0% { background-position: -220px 0; } 100% { background-position: 280px 0; } }
 .scar .when { font-size: .76rem; color: var(--muted); margin-top: 6px; }
 
-/* ===== bundle a TESSERE (stile iBrushy: immagine + qtà + prezzo) ===== */
-.bundles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: stretch; }
-.bundle { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center;
-  background: #fff; border: 2px solid var(--line); border-radius: var(--radius); padding: 13px 9px 12px; cursor: pointer;
+/* ===== bundle a righe pulite (testo minimo + regalo inline) ===== */
+.bundles { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.bundle { position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px;
+  background: #fff; border: 2px solid var(--line); border-radius: var(--radius); padding: 15px 16px; cursor: pointer;
   transition: transform .16s var(--ease), border-color .16s var(--ease), box-shadow .16s var(--ease), background .2s var(--ease); }
-.bundle:hover { transform: translateY(-3px); border-color: var(--cta-2); box-shadow: var(--shadow-s); }
+.bundle:hover { transform: translateY(-2px); border-color: var(--cta-2); box-shadow: var(--shadow-s); }
 .bundle.selected { border-color: var(--cta); box-shadow: 0 0 0 3px rgba(244,137,47,.2), var(--shadow); background: linear-gradient(180deg, #fff 0%, #fff4e8 100%); }
 .bundle input { position: absolute; opacity: 0; pointer-events: none; }
 
-/* tessera in evidenza: fascetta in alto */
-.bundle.feat { padding-top: 36px; border-color: var(--cta); }
-.bundle .b-ribbon { position: absolute; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; gap: 5px;
-  background: linear-gradient(90deg, var(--cta-2), var(--cta), var(--cta-d)); color: #fff; font-size: .64rem; font-weight: 800;
-  letter-spacing: .06em; text-transform: uppercase; padding: 6px 4px; border-radius: 15px 15px 0 0; }
-.bundle .b-ribbon .gi { width: .9em; height: .9em; }
+.bundle .pick { flex: 0 0 24px; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #d7d0c2; display: grid; place-items: center; transition: border-color .15s, background .15s; }
+.bundle.selected .pick { border-color: var(--cta); background: var(--cta); }
+.bundle .pick .gi { width: 15px; height: 15px; color: #fff; opacity: 0; transform: scale(.5); transition: opacity .15s, transform .15s; stroke-width: 3; }
+.bundle.selected .pick .gi { opacity: 1; transform: scale(1); }
 
-/* flag sconto (es. -22%) angolo */
-.bundle .b-flag { position: absolute; top: 8px; left: 8px; z-index: 2; background: var(--green); color: #fff; font-size: .66rem; font-weight: 800; padding: 3px 7px; border-radius: 7px; box-shadow: var(--shadow-s); }
+.bundle .b-main { min-width: 0; }
+.bundle .b-name { font-weight: 800; font-size: 1.08rem; letter-spacing: -.01em; color: var(--cta-d); display: flex; align-items: center; gap: 8px; }
+.bundle .b-sub { font-size: .82rem; color: var(--green-d); margin-top: 1px; }
+.bundle .b-flag { font-size: .66rem; font-weight: 800; color: #fff; background: var(--green); padding: 2px 7px; border-radius: 7px; letter-spacing: .01em; }
 
-.bundle .b-media { position: relative; width: 100%; aspect-ratio: 1/1; border-radius: 12px; overflow: hidden; background: var(--bg-soft); margin-bottom: 9px; }
-.bundle .b-media img { width: 100%; height: 100%; object-fit: cover; }
-.bundle .b-qty { position: absolute; top: 6px; right: 6px; background: linear-gradient(135deg, var(--cta-2), var(--cta-d)); color: #fff; font-weight: 800; font-size: .72rem; padding: 3px 8px; border-radius: 8px; box-shadow: var(--shadow-s); }
-.bundle .b-name { font-weight: 800; font-size: 1rem; letter-spacing: -.01em; color: var(--cta-d); }
-.bundle .b-desc { font-size: .69rem; color: var(--green-d); line-height: 1.3; margin-top: 2px; min-height: 2.6em; }
-.bundle .b-now { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--green-d); margin-top: 6px; line-height: 1; }
-.bundle .b-was { font-size: .76rem; color: var(--muted); text-decoration: line-through; margin-top: 1px; }
-.bundle .b-per { font-size: .64rem; color: var(--green); font-weight: 700; margin-top: 3px; }
+.bundle .b-price { text-align: right; white-space: nowrap; }
+.bundle .b-price .now { display: block; font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 1.32rem; color: var(--green-d); line-height: 1; }
+.bundle .b-price .was { display: block; font-size: .8rem; color: var(--muted); text-decoration: line-through; margin-top: 2px; }
+.bundle .b-price .per { display: block; font-size: .68rem; color: var(--green); font-weight: 700; margin-top: 2px; }
+
+/* badge "Il più scelto" */
+.bundle .pop { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, var(--cta-2), var(--cta), var(--cta-d)); color: #fff; font-size: .72rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 5px 16px; border-radius: 999px; box-shadow: 0 6px 14px rgba(244,137,47,.4); display: inline-flex; align-items: center; gap: 6px; }
+.bundle .pop .gi { width: .85em; height: .85em; }
+
+/* regalo INLINE: appare solo nel bundle selezionato */
+.bundle .b-gift { display: none; }
+.bundle.selected .b-gift { display: flex; align-items: center; gap: 7px; margin-top: 9px; font-size: .77rem; font-weight: 700; color: #8a5a12;
+  background: linear-gradient(135deg, #fff6e1, #fdeccb); border: 1px solid #efcd89; border-radius: 10px; padding: 7px 10px; line-height: 1.3; }
+.bundle .b-gift .gi { width: 1.05em; height: 1.05em; color: #d2841a; flex: 0 0 auto; }
+.bundle .b-gift b { color: var(--cta-d); }
+.bundle .b-gift s { color: #b08a5a; }
 
 /* regali */
 .gifts { margin-top: 18px; background: linear-gradient(135deg, #fff6e1 0%, #fdeccb 100%); border: 1.5px solid #efcd89; border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow-s); }

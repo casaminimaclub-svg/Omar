@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=57" />
+  <link rel="stylesheet" href="assets/styles.css?v=58" />
 </head>
 <body>
 
@@ -116,53 +116,38 @@
           <form id="kit-form" class="bundles">
             <label class="bundle" data-price="29.90" data-name="Kit 1+1" data-units="2" data-tier="entry">
               <input type="radio" name="kit" value="1+1" />
-              <div class="b-media">
-                <img src="assets/img/scratchy-1.webp" alt="Kit 1+1 — 2 Scratchy" loading="lazy" draggable="false" />
-                <span class="b-qty">x2</span>
+              <span class="pick"><svg class="gi"><use href="#ic-check"/></svg></span>
+              <div class="b-main">
+                <div class="b-name">Kit 1+1</div>
+                <div class="b-sub">2 Scratchy</div>
+                <div class="b-gift"><svg class="gi"><use href="#ic-gift"/></svg> Assistenza in italiano inclusa</div>
               </div>
-              <div class="b-name">Kit 1+1</div>
-              <div class="b-desc">1 in regalo · prova una zona</div>
-              <div class="b-now">€29,90</div>
-              <div class="b-per">€14,95/Scratchy</div>
+              <div class="b-price"><span class="now">€29,90</span><span class="per">€14,95/cad.</span></div>
             </label>
 
-            <label class="bundle feat selected" data-price="59.80" data-name="Kit 2+2" data-units="4" data-tier="hero">
+            <label class="bundle selected" data-price="59.80" data-name="Kit 2+2" data-units="4" data-tier="hero">
               <input type="radio" name="kit" value="2+2" checked />
-              <span class="b-ribbon"><svg class="gi fill"><use href="#ic-star"/></svg> Il più scelto</span>
-              <div class="b-media">
-                <img src="assets/img/scratchy-2.webp" alt="Kit 2+2 — 4 Scratchy" loading="lazy" draggable="false" />
-                <span class="b-qty">x4</span>
+              <span class="pop"><svg class="gi fill"><use href="#ic-star"/></svg> Il più scelto</span>
+              <span class="pick"><svg class="gi"><use href="#ic-check"/></svg></span>
+              <div class="b-main">
+                <div class="b-name">Kit 2+2</div>
+                <div class="b-sub">4 Scratchy</div>
+                <div class="b-gift"><svg class="gi"><use href="#ic-gift"/></svg> <span>In regalo: <b>Guida P.R.E.D.A.</b> <s>€19,90</s> + spedizione prioritaria</span></div>
               </div>
-              <div class="b-name">Kit 2+2</div>
-              <div class="b-desc">2 in regalo · copri le zone chiave</div>
-              <div class="b-now">€59,80</div>
-              <div class="b-per">€14,95/Scratchy</div>
+              <div class="b-price"><span class="now">€59,80</span><span class="per">€14,95/cad.</span></div>
             </label>
 
             <label class="bundle" data-price="69.90" data-name="Kit 3+3" data-units="6" data-tier="value">
               <input type="radio" name="kit" value="3+3" />
-              <span class="b-flag">-22%</span>
-              <div class="b-media">
-                <img src="assets/img/scratchy-3.webp" alt="Kit 3+3 — 6 Scratchy" loading="lazy" draggable="false" />
-                <span class="b-qty">x6</span>
+              <span class="pick"><svg class="gi"><use href="#ic-check"/></svg></span>
+              <div class="b-main">
+                <div class="b-name">Kit 3+3 <span class="b-flag">-22%</span></div>
+                <div class="b-sub">6 Scratchy</div>
+                <div class="b-gift"><svg class="gi"><use href="#ic-gift"/></svg> <span>In regalo: <b>Guida P.R.E.D.A.</b> <s>€19,90</s> + spedizione prioritaria</span></div>
               </div>
-              <div class="b-name">Kit 3+3</div>
-              <div class="b-desc">3 in regalo · copri ogni stanza</div>
-              <div class="b-now">€69,90</div>
-              <div class="b-was">€89,70</div>
-              <div class="b-per">€11,65/Scratchy</div>
+              <div class="b-price"><span class="now">€69,90</span><span class="was">€89,70</span><span class="per">€11,65/cad.</span></div>
             </label>
           </form>
-
-          <div class="gifts">
-            <div class="ttl"><svg class="gi"><use href="#ic-gift"/></svg> Regali inclusi oggi</div>
-            <div class="hint" id="gift-hint">Inclusi con il Kit 2+2 selezionato</div>
-            <div class="gift-list" id="gift-list">
-              <div class="gift" data-min="hero"><span class="g-name"><span class="ico tint c1"><svg class="gi"><use href="#ic-book"/></svg></span> Guida P.R.E.D.A. completa</span> <span class="free">GRATIS · <s>€19,90</s></span></div>
-              <div class="gift" data-min="hero"><span class="g-name"><span class="ico tint c2"><svg class="gi"><use href="#ic-truck"/></svg></span> Spedizione prioritaria</span> <span class="free">GRATIS</span></div>
-              <div class="gift" data-min="all"><span class="g-name"><span class="ico tint c3"><svg class="gi"><use href="#ic-chat"/></svg></span> Assistenza dedicata in italiano</span> <span class="free">GRATIS</span></div>
-            </div>
-          </div>
 
           <div class="buy-cta-wrap"><button class="cta-btn buy-cta" id="buy-btn"><span class="lbl"><svg class="gi"><use href="#ic-bag"/></svg> Aggiungi al carrello</span><span class="note">Reso gratuito entro 60 giorni</span></button></div>
 
@@ -478,6 +463,6 @@
     </div>
   </div>
 
-  <script src="assets/script.js?v=57"></script>
+  <script src="assets/script.js?v=58"></script>
 </body>
 </html>
