@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=74" />
+  <link rel="stylesheet" href="assets/styles.css?v=75" />
 </head>
 <body>
 
@@ -418,6 +418,7 @@
           <a href="#spedizioni" data-open="spedizioni">Informativa spedizioni</a>
           <a href="#resi" data-open="resi">Informativa resi e rimborsi</a>
           <a href="#termini" data-open="termini">Termini e condizioni</a>
+          <a href="#revocazione" data-open="revocazione">Revocazione contratto</a>
         </nav>
 
         <div class="foot-brand">
@@ -749,9 +750,41 @@
         <p>Le domande sui Termini di Servizio possono essere inviate a <a href="mailto:contatti.scratchy@gmail.com">contatti.scratchy@gmail.com</a>.</p>
       </article>
 
+      <!-- REVOCAZIONE CONTRATTO -->
+      <article class="cms-page" data-page="revocazione">
+        <h1>Revocazione del contratto</h1>
+        <p class="lead">Ai sensi della Direttiva UE 2023/2673, hai 14 giorni dalla consegna del prodotto per esercitare il diritto di recesso. Compila il modulo: la richiesta arriva direttamente al nostro team che ti contatterà entro 48h con le istruzioni per il reso e il rimborso.</p>
+
+        <form class="cform rev-form" onsubmit="return false">
+          <div>
+            <label class="rev-lbl" for="rev-ord">Numero ordine *</label>
+            <input id="rev-ord" type="text" placeholder="es. #1234" aria-label="Numero ordine" required />
+          </div>
+          <div>
+            <label class="rev-lbl" for="rev-name">Nome e cognome *</label>
+            <input id="rev-name" type="text" placeholder="Mario Rossi" aria-label="Nome e cognome" required />
+          </div>
+          <div>
+            <label class="rev-lbl" for="rev-email">Email dell'ordine *</label>
+            <input id="rev-email" type="email" placeholder="nome@esempio.com" aria-label="Email dell'ordine" required />
+          </div>
+          <div>
+            <label class="rev-lbl" for="rev-date">Data di ricezione del prodotto</label>
+            <input id="rev-date" type="date" aria-label="Data di ricezione del prodotto" />
+          </div>
+          <div>
+            <label class="rev-lbl" for="rev-motivo">Motivo del recesso (opzionale)</label>
+            <textarea id="rev-motivo" placeholder="Facoltativo — ci aiuta a migliorare." aria-label="Motivo del recesso"></textarea>
+          </div>
+          <label class="rev-check"><input type="checkbox" /> <span>Con la presente comunico il recesso dal contratto di vendita relativo all'ordine sopra indicato. *</span></label>
+          <button type="submit" class="cms-btn cms-submit">Invia richiesta di recesso</button>
+        </form>
+        <p class="rev-note">La richiesta sarà inviata a <b>contatti.scratchy@gmail.com</b>. Riceverai conferma scritta entro 48h.</p>
+      </article>
+
     </main>
   </div>
 
-  <script src="assets/script.js?v=74"></script>
+  <script src="assets/script.js?v=75"></script>
 </body>
 </html>

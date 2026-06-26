@@ -618,6 +618,12 @@ input:focus-visible, .bundle:focus-within, .gnav:focus-visible, .paw:focus-visib
 .cform .cms-btn { justify-self: start; }
 @media (min-width: 620px) { .cform .two { grid-template-columns: 1fr 1fr; } }
 
+/* ===== modulo revocazione contratto ===== */
+.rev-form .rev-lbl { display: block; font-size: .82rem; font-weight: 700; color: var(--ink); margin: 0 0 6px; }
+.rev-check { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; color: #4a463f; line-height: 1.5; cursor: pointer; }
+.rev-check input { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 2px; accent-color: var(--cta); }
+.rev-note { margin-top: 14px; font-size: .82rem; color: var(--muted); }
+
 </style>
 </head>
 <body>
@@ -1026,6 +1032,7 @@ input:focus-visible, .bundle:focus-within, .gnav:focus-visible, .paw:focus-visib
           <a href="#spedizioni" data-open="spedizioni">Informativa spedizioni</a>
           <a href="#resi" data-open="resi">Informativa resi e rimborsi</a>
           <a href="#termini" data-open="termini">Termini e condizioni</a>
+          <a href="#revocazione" data-open="revocazione">Revocazione contratto</a>
         </nav>
 
         <div class="foot-brand">
@@ -1355,6 +1362,38 @@ input:focus-visible, .bundle:focus-within, .gnav:focus-visible, .paw:focus-visib
 
         <h2>Sezione 20 — Informazioni di contatto</h2>
         <p>Le domande sui Termini di Servizio possono essere inviate a <a href="mailto:contatti.scratchy@gmail.com">contatti.scratchy@gmail.com</a>.</p>
+      </article>
+
+      <!-- REVOCAZIONE CONTRATTO -->
+      <article class="cms-page" data-page="revocazione">
+        <h1>Revocazione del contratto</h1>
+        <p class="lead">Ai sensi della Direttiva UE 2023/2673, hai 14 giorni dalla consegna del prodotto per esercitare il diritto di recesso. Compila il modulo: la richiesta arriva direttamente al nostro team che ti contatterà entro 48h con le istruzioni per il reso e il rimborso.</p>
+
+        <form class="cform rev-form" onsubmit="return false">
+          <div>
+            <label class="rev-lbl" for="rev-ord">Numero ordine *</label>
+            <input id="rev-ord" type="text" placeholder="es. #1234" aria-label="Numero ordine" required />
+          </div>
+          <div>
+            <label class="rev-lbl" for="rev-name">Nome e cognome *</label>
+            <input id="rev-name" type="text" placeholder="Mario Rossi" aria-label="Nome e cognome" required />
+          </div>
+          <div>
+            <label class="rev-lbl" for="rev-email">Email dell'ordine *</label>
+            <input id="rev-email" type="email" placeholder="nome@esempio.com" aria-label="Email dell'ordine" required />
+          </div>
+          <div>
+            <label class="rev-lbl" for="rev-date">Data di ricezione del prodotto</label>
+            <input id="rev-date" type="date" aria-label="Data di ricezione del prodotto" />
+          </div>
+          <div>
+            <label class="rev-lbl" for="rev-motivo">Motivo del recesso (opzionale)</label>
+            <textarea id="rev-motivo" placeholder="Facoltativo — ci aiuta a migliorare." aria-label="Motivo del recesso"></textarea>
+          </div>
+          <label class="rev-check"><input type="checkbox" /> <span>Con la presente comunico il recesso dal contratto di vendita relativo all'ordine sopra indicato. *</span></label>
+          <button type="submit" class="cms-btn cms-submit">Invia richiesta di recesso</button>
+        </form>
+        <p class="rev-note">La richiesta sarà inviata a <b>contatti.scratchy@gmail.com</b>. Riceverai conferma scritta entro 48h.</p>
       </article>
 
     </main>
@@ -2139,7 +2178,7 @@ input:focus-visible, .bundle:focus-within, .gnav:focus-visible, .paw:focus-visib
   "use strict";
   var cms = document.getElementById("cms");
   if (!cms) return;
-  var PAGES = ["contatti", "privacy", "spedizioni", "resi", "termini"];
+  var PAGES = ["contatti", "privacy", "spedizioni", "resi", "termini", "revocazione"];
 
   function openPage(name) {
     var pages = cms.querySelectorAll(".cms-page");

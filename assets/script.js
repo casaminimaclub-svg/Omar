@@ -776,7 +776,7 @@
   "use strict";
   var cms = document.getElementById("cms");
   if (!cms) return;
-  var PAGES = ["contatti", "privacy", "spedizioni", "resi", "termini"];
+  var PAGES = ["contatti", "privacy", "spedizioni", "resi", "termini", "revocazione"];
 
   function openPage(name) {
     var pages = cms.querySelectorAll(".cms-page");

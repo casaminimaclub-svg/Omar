@@ -604,3 +604,9 @@ input:focus-visible, .bundle:focus-within, .gnav:focus-visible, .paw:focus-visib
 .cms-btn:active { transform: translateY(1px); }
 .cform .cms-btn { justify-self: start; }
 @media (min-width: 620px) { .cform .two { grid-template-columns: 1fr 1fr; } }
+
+/* ===== modulo revocazione contratto ===== */
+.rev-form .rev-lbl { display: block; font-size: .82rem; font-weight: 700; color: var(--ink); margin: 0 0 6px; }
+.rev-check { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; color: #4a463f; line-height: 1.5; cursor: pointer; }
+.rev-check input { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 2px; accent-color: var(--cta); }
+.rev-note { margin-top: 14px; font-size: .82rem; color: var(--muted); }
