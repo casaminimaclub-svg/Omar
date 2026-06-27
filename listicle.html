@@ -10,32 +10,25 @@
 <meta property="og:description" content="La terapia ambientale che agisce sulla causa, non sul sintomo. Garanzia 60 giorni." />
 <meta property="og:type" content="article" />
 <style>
-  /* Self-hosted Plus Jakarta Sans (latin subset, variable) — no external dependency */
-  @font-face{
-    font-family:"Plus Jakarta Sans";
-    font-style:normal;
-    font-weight:200 800;
-    font-display:swap;
-    src:url("assets/fonts/listicle/PlusJakartaSans-latin.woff2") format("woff2");
-  }
-  @font-face{
-    font-family:"Plus Jakarta Sans";
-    font-style:italic;
-    font-weight:200 800;
-    font-display:swap;
-    src:url("assets/fonts/listicle/PlusJakartaSans-latin-italic.woff2") format("woff2");
-  }
+  /* Self-hosted fonts (no external dependency) — coerenti con la product page */
+  @font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:200 800;font-display:swap;src:url("assets/fonts/listicle/PlusJakartaSans-latin.woff2") format("woff2");}
+  @font-face{font-family:"Plus Jakarta Sans";font-style:italic;font-weight:200 800;font-display:swap;src:url("assets/fonts/listicle/PlusJakartaSans-latin-italic.woff2") format("woff2");}
+  @font-face{font-family:"Baloo 2";font-style:normal;font-weight:400 800;font-display:swap;src:url("assets/fonts/listicle/Baloo2-latin.woff2") format("woff2");}
+
   :root{
-    --navy:#15384a;
-    --ink:#1d1d1f;
-    --gray:#54565b;
-    --quote:#5a5c61;
-    --amber:#f6a700;
-    --amber-dark:#e89a00;
-    --hi:#ffd24a;
-    --star:#f5b301;
-    --red:#e0241b;
-    --footer:#f5a623;
+    /* palette product page (oro / ocra / arancio caldo) */
+    --ink:#221e18;
+    --muted:#75706a;
+    --line:#ece8df;
+    --gold:#f2a521;
+    --ocra:#cf9412;
+    --ocra-d:#9a6a0f;
+    --cta:#f4892f;
+    --cta-2:#fba93a;
+    --cta-d:#db6f1a;
+    --scar:#e2682c;
+    --bg-soft:#f7f3ec;
+    --gold-grad:linear-gradient(95deg,#ffce3d 0%,#f4b51c 35%,#e09f12 70%,#c9890c 100%);
     --maxw:680px;
   }
   *{box-sizing:border-box;}
@@ -43,6 +36,13 @@
   body{
     margin:0;
     background:#fff;
+    background-image:
+      radial-gradient(42% 30% at 90% 3%, rgba(244,165,36,.20), transparent 70%),
+      radial-gradient(38% 24% at 5% 14%, rgba(244,137,47,.16), transparent 70%),
+      radial-gradient(44% 30% at 98% 48%, rgba(226,104,44,.12), transparent 70%),
+      radial-gradient(40% 26% at 0% 70%, rgba(242,165,33,.16), transparent 70%),
+      radial-gradient(38% 24% at 84% 94%, rgba(199,147,36,.15), transparent 70%);
+    background-attachment:fixed;
     color:var(--ink);
     font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-size:19px;
@@ -55,30 +55,39 @@
 
   /* Top promo bar */
   .promobar{
-    background:var(--navy);
+    background:#221e18;
     color:#fff;
+    font-family:"Baloo 2",system-ui,sans-serif;
     text-align:center;
     font-weight:800;
     font-size:clamp(20px,5.6vw,28px);
     letter-spacing:.2px;
-    padding:20px 16px;
+    padding:18px 16px;
+    box-shadow:inset 0 -3px 0 rgba(242,165,33,.6);
   }
 
   h1.title{
     font-weight:800;
     font-size:clamp(33px,8.5vw,46px);
     line-height:1.12;
-    letter-spacing:-.5px;
+    letter-spacing:-.025em;
     margin:30px 0 24px;
+    color:var(--ink);
   }
-  mark{background:var(--hi);color:var(--ink);padding:0 .12em;border-radius:2px;}
+  /* parole evidenziate -> testo oro a gradiente (come .em della product page) */
+  mark{
+    background:transparent;padding:0;
+    background-image:var(--gold-grad);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+  }
 
   /* Byline */
   .byline{display:flex;align-items:center;gap:16px;margin:0 0 18px;}
-  .byline img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:0 0 auto;}
-  .byline .who{font-size:18px;line-height:1.4;color:var(--gray);}
+  .byline img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:0 0 auto;box-shadow:0 0 0 3px #fff,0 0 0 5px var(--ocra-l, #fbeecb);}
+  .byline .who{font-size:18px;line-height:1.4;color:var(--muted);}
   .byline .who b{color:var(--ink);}
-  .byline .upd{font-size:16px;color:#8a8c90;}
+  .byline .upd{font-size:16px;color:#a39c92;}
 
   p{margin:0 0 20px;}
   .lead p{font-size:19px;}
@@ -88,19 +97,20 @@
     font-weight:800;
     font-size:clamp(28px,6.6vw,36px);
     line-height:1.18;
-    letter-spacing:-.4px;
+    letter-spacing:-.025em;
     margin:42px 0 22px;
+    color:var(--ink);
   }
 
   figure{margin:0 0 14px;}
-  figure img{width:100%;height:auto;display:block;}
-  figure.rounded img{border-radius:14px;}
+  figure img{width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 3px 8px rgba(35,43,37,.05),0 18px 40px rgba(120,80,20,.13);border:1px solid var(--line);}
+  figure.rounded img{border-radius:18px;}
 
   /* Reviews */
   blockquote{
     margin:0 0 10px;
     font-style:italic;
-    color:var(--quote);
+    color:var(--muted);
     font-size:18px;
     line-height:1.6;
   }
@@ -108,50 +118,66 @@
     display:flex;align-items:center;justify-content:space-between;
     gap:12px;margin:0 0 26px;flex-wrap:wrap;
   }
-  .stars{color:var(--star);font-size:22px;letter-spacing:2px;line-height:1;white-space:nowrap;}
+  .stars{color:var(--gold);font-size:22px;letter-spacing:2px;line-height:1;white-space:nowrap;}
   .author{font-weight:700;color:var(--ink);font-size:18px;}
 
-  /* CTA buttons */
+  /* CTA buttons — stile product page (gradiente arancio + lucentezza) */
   .cta{
+    position:relative;overflow:hidden;
     display:block;width:100%;
-    background:var(--amber);
-    color:#1a1a1a;
+    background:linear-gradient(180deg,var(--cta-2) 0%,var(--cta) 52%,var(--cta-d) 100%);
+    color:#fff;
     text-decoration:none;
     text-align:center;
     font-weight:800;
     font-size:clamp(21px,5.4vw,26px);
     line-height:1.25;
-    padding:26px 24px;
-    border:none;border-radius:60px;
+    padding:24px 24px;
+    border:none;border-radius:999px;
     margin:30px 0;
-    box-shadow:0 6px 18px rgba(246,167,0,.28);
-    transition:transform .12s ease, background .12s ease;
+    box-shadow:0 10px 24px rgba(244,137,47,.36),inset 0 1px 0 rgba(255,255,255,.35);
+    transition:transform .12s ease, filter .2s ease;
     cursor:pointer;
   }
-  .cta:hover{background:var(--amber-dark);transform:translateY(-1px);}
-  .cta:active{transform:translateY(0);}
+  .cta::after{
+    content:"";position:absolute;top:0;left:0;height:100%;width:45%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);
+    transform:translateX(-180%) skewX(-12deg);
+    animation:lstcl-shine 4.5s ease-in-out infinite;
+  }
+  .cta:hover{filter:brightness(1.05);transform:translateY(-1px);}
+  .cta:active{transform:translateY(2px);}
+  @keyframes lstcl-shine{0%{transform:translateX(-180%) skewX(-12deg);}55%,100%{transform:translateX(320%) skewX(-12deg);}}
 
   /* Offer block */
   .offer-h{
+    font-family:"Baloo 2",system-ui,sans-serif;
     text-align:center;font-weight:800;
     font-size:clamp(34px,8vw,44px);letter-spacing:.5px;
     margin:48px 0 26px;
+    background-image:var(--gold-grad);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
   }
   ul.checks{list-style:none;padding:0;margin:24px 0;}
-  ul.checks li{display:flex;align-items:center;gap:16px;font-size:20px;color:var(--gray);margin:0 0 18px;}
+  ul.checks li{display:flex;align-items:center;gap:16px;font-size:20px;color:var(--muted);margin:0 0 18px;}
   ul.checks .ck{
     flex:0 0 auto;width:34px;height:34px;border-radius:50%;
-    background:var(--amber);color:#fff;display:flex;align-items:center;justify-content:center;
-    font-size:19px;font-weight:800;
+    background:linear-gradient(135deg,#f2b740,#d68910);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:19px;font-weight:800;box-shadow:0 4px 10px rgba(216,142,16,.4);
   }
-  .clicca{margin:18px 0 0;color:var(--gray);}
+  .clicca{margin:18px 0 0;color:var(--muted);}
   .scorte{text-align:center;font-weight:700;font-size:20px;margin:-6px 0 0;color:var(--ink);}
-  .scorte .r{color:var(--red);}
+  .scorte .r{color:var(--scar);}
 
   .footer-h{
-    color:var(--footer);font-weight:800;
+    font-family:"Baloo 2",system-ui,sans-serif;
+    text-align:center;font-weight:800;
     font-size:clamp(26px,6vw,34px);
     margin:54px 0 10px;
+    background-image:var(--gold-grad);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
   }
 
   /* ===== DESKTOP / PC — versione rifinita ===== */
@@ -159,22 +185,20 @@
     body{
       font-size:20px;
       line-height:1.7;
-      background:#eceef0;
-      background-image:radial-gradient(circle at 50% 0,#f4f6f7,#e7eaec);
+      background-color:#f5efe4;
     }
     .promobar{
       font-size:30px;
-      padding:24px 16px;
+      padding:22px 16px;
       letter-spacing:.3px;
     }
-    /* article becomes a centered white "sheet" */
     .wrap{
       max-width:760px;
       margin:34px auto 56px;
       padding:54px 64px 64px;
       background:#fff;
       border-radius:18px;
-      box-shadow:0 18px 50px rgba(20,40,55,.10),0 2px 8px rgba(20,40,55,.06);
+      box-shadow:0 18px 50px rgba(120,80,20,.12),0 2px 8px rgba(120,80,20,.06);
     }
     h1.title{
       font-size:52px;
@@ -191,9 +215,8 @@
     p{margin:0 0 22px;}
     blockquote{font-size:19px;}
     figure{margin:0 0 16px;}
-    figure img{border-radius:12px;}
+    figure img{border-radius:14px;}
     figure.rounded img{border-radius:16px;}
-    /* keep media at a comfortable reading size, not oversized */
     figure img,
     ul.checks{max-width:600px;margin-left:auto;margin-right:auto;}
     .cta{
@@ -201,7 +224,7 @@
       font-size:25px;padding:24px;
     }
     .offer-h{font-size:46px;}
-    .footer-h{font-size:34px;text-align:center;}
+    .footer-h{font-size:34px;}
   }
 
   @media (min-width:1100px){
@@ -212,7 +235,9 @@
 
   @media (prefers-reduced-motion:reduce){
     .cta{transition:none;}
+    .cta::after{animation:none;}
   }
+
 </style>
 </head>
 <body>
