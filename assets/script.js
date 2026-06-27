@@ -694,6 +694,10 @@
     es: { "Carrello": "Carrito", "Offerte riservate ancora per": "Ofertas reservadas aún por", "Spedizione gratuita": "Envío gratis", "Garanzia 60 giorni": "Garantía 60 días", "Risparmi": "Ahorras", "Spedizione in Italia": "Envío en Italia", "Checkout sicuro": "Pago seguro", "Pagamento 100% sicuro": "Pago 100% seguro", "Il carrello è vuoto": "Tu carrito está vacío", "Scopri le offerte qui sotto e aggiungi il tuo Scratchy.": "Descubre las ofertas abajo y añade tu Scratchy.", "Continua lo shopping": "Seguir comprando" },
     de: { "Carrello": "Warenkorb", "Offerte riservate ancora per": "Angebote reserviert noch für", "Spedizione gratuita": "Kostenloser Versand", "Garanzia 60 giorni": "60 Tage Garantie", "Risparmi": "Du sparst", "Spedizione in Italia": "Versand nach Italien", "Checkout sicuro": "Sicher bezahlen", "Pagamento 100% sicuro": "100% sichere Zahlung", "Il carrello è vuoto": "Dein Warenkorb ist leer", "Scopri le offerte qui sotto e aggiungi il tuo Scratchy.": "Entdecke die Angebote unten und füge deinen Scratchy hinzu.", "Continua lo shopping": "Weiter einkaufen" }
   };
+  CART_I18N.en["Incluso nell'offerta"] = "Included in the offer";
+  CART_I18N.fr["Incluso nell'offerta"] = "Inclus dans l'offre";
+  CART_I18N.es["Incluso nell'offerta"] = "Incluido en la oferta";
+  CART_I18N.de["Incluso nell'offerta"] = "Im Angebot enthalten";
   Object.keys(CART_I18N).forEach(function (l) {
     Object.keys(CART_I18N[l]).forEach(function (k) { I18N[l][k] = CART_I18N[l][k]; });
   });
@@ -944,12 +948,12 @@
 
     activeGifts(tier).forEach(function (g) {
       var gi = GIFTS[g];
+      /* i regali NON sono rimovibili singolarmente: spariscono solo togliendo Scratchy */
       html += '<div class="c-item c-gift"><span class="c-elbow"></span>' +
         '<img class="c-thumb" src="' + gi.img + '" alt="" />' +
-        '<div class="c-mid"><div class="c-name">' + gi.name + '</div></div>' +
+        '<div class="c-mid"><div class="c-name">' + gi.name + '</div><span class="c-incluso">Incluso nell\'offerta</span></div>' +
         '<div class="c-right">' + (gi.was ? '<s class="c-was">' + euro(gi.was) + '</s>' : '') +
-        '<span class="c-free">Gratis</span>' +
-        '<button class="c-del" type="button" data-remove="' + g + '" aria-label="Rimuovi"><svg class="gi"><use href="#ic-trash"/></svg></button></div>' +
+        '<span class="c-free">Gratis</span></div>' +
         '</div>';
     });
 

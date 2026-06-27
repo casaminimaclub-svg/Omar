@@ -682,6 +682,7 @@ input:focus-visible, .bundle:focus-within, .gnav:focus-visible, .paw:focus-visib
 .c-gift { padding: 13px 0 13px 16px; }
 .c-gift .c-thumb { width: 46px; height: 46px; border-radius: 11px; }
 .c-gift .c-name { font-size: .9rem; font-weight: 700; }
+.c-incluso { display: block; margin-top: 2px; font-size: .7rem; font-weight: 700; color: var(--green-d); }
 .c-elbow { position: absolute; left: 0; top: -2px; width: 12px; height: 26px; border-left: 2px solid #e3dccd; border-bottom: 2px solid #e3dccd; border-bottom-left-radius: 8px; }
 
 /* cestino rimozione: piccolo e grigio SOTTO il prezzo, rosso all'hover (stile Clirear) */
