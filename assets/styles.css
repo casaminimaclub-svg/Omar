@@ -149,8 +149,13 @@ section.tight { padding: 30px 0; }
 .logo span { line-height: 1; }
 /* header: logo SEMPRE centrato e nero */
 .site-header .logo span { color: #161616; }
-.cart { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--ink); }
+.cart { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--ink); background: none; border: 0; cursor: pointer; padding: 8px; border-radius: 50%; display: grid; place-content: center; transition: background .15s var(--ease), transform .12s var(--ease); }
+.cart:hover { background: var(--bg-soft); }
+.cart:active { transform: translateY(-50%) scale(.92); }
+.cart:focus-visible { box-shadow: var(--ring); outline: none; }
 .cart .gi { width: 1.4rem; height: 1.4rem; }
+.cart .cart-dot { position: absolute; top: 4px; right: 4px; min-width: 17px; height: 17px; padding: 0 4px; border-radius: 999px; background: linear-gradient(135deg, var(--gold), var(--cta)); color: #fff; font-size: .62rem; font-weight: 800; line-height: 17px; text-align: center; box-shadow: 0 2px 6px rgba(240,165,40,.45); }
+.cart .cart-dot[hidden] { display: none; }
 /* footer: logo bianco su fondo scuro */
 .site-footer .logo span { color: #ffffff; }
 

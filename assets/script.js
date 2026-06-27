@@ -913,6 +913,7 @@
     body.innerHTML = html;
     elCount.textContent = "(" + (d.units + d.gifts.length) + ")";
     elTotal.textContent = euro(d.price);
+    if (headerDot) { headerDot.textContent = (d.units + d.gifts.length); headerDot.hidden = false; }
 
     Array.prototype.forEach.call(body.querySelectorAll(".c-step"), function (btn) {
       btn.addEventListener("click", function () {
@@ -944,6 +945,19 @@
   }
 
   buy.addEventListener("click", function (e) { e.preventDefault(); open(); });
+
+  /* icona borsa nell'header -> apre il carrello + pallino contatore */
+  var headerCart = document.getElementById("header-cart");
+  var headerDot = document.getElementById("header-cart-dot");
+  function updateDot(tier) {
+    if (!headerDot) return;
+    var d = DATA[tier] || DATA.hero;
+    headerDot.textContent = (d.units + d.gifts.length);
+    headerDot.hidden = false;
+  }
+  updateDot(currentTier());
+  if (headerCart) headerCart.addEventListener("click", function (e) { e.preventDefault(); open(); });
+
   cart.addEventListener("click", function (e) {
     if (e.target.closest("[data-cart-close]")) close();
   });
