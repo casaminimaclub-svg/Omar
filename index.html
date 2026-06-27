@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=79" />
+  <link rel="stylesheet" href="assets/styles.css?v=80" />
 </head>
 <body>
 
@@ -486,6 +486,38 @@
     </div>
   </div>
 
+  <!-- ===== CARRELLO (drawer anteprima — palette Scratchy) ===== -->
+  <div class="cart-wrap" id="cart" hidden aria-hidden="true">
+    <div class="cart-ovl" data-cart-close></div>
+    <aside class="cart-panel" role="dialog" aria-label="Carrello" aria-modal="true">
+      <header class="cart-head">
+        <span class="cart-ttl">Carrello <span class="cart-count" id="cart-count">(0)</span></span>
+        <button class="cart-x" type="button" data-cart-close aria-label="Chiudi"><svg class="gi"><use href="#ic-x"/></svg></button>
+      </header>
+
+      <div class="cart-timer">Offerte riservate ancora per <b id="cart-clock">10:00</b></div>
+
+      <div class="cart-trust">
+        <span><svg class="gi"><use href="#ic-truck"/></svg> Spedizione gratuita</span>
+        <span><svg class="gi"><use href="#ic-shield"/></svg> Garanzia 60 giorni</span>
+      </div>
+
+      <div class="cart-body" id="cart-body"></div>
+
+      <div class="cart-foot">
+        <div class="cart-ship">
+          <span class="cart-ship-l"><span class="flag">🇮🇹</span> Spedizione in Italia</span>
+          <span class="cart-ship-free">Gratis</span>
+        </div>
+        <button class="cta-btn cart-checkout" id="cart-checkout" type="button">
+          <span class="lbl"><span class="ck">Checkout sicuro</span> · <b id="cart-total">€0,00</b></span>
+          <span class="note"><svg class="gi"><use href="#ic-lock"/></svg> Pagamento 100% sicuro</span>
+        </button>
+        <div class="cart-pays"><span>VISA</span><span>MASTERCARD</span><span>PAYPAL</span><span>AMEX</span><span>KLARNA</span></div>
+      </div>
+    </aside>
+  </div>
+
   <!-- ===== PAGINE ASSISTENZA (overlay a tutto schermo, file unico) ===== -->
   <div class="cms-wrap no-i18n" id="cms" hidden>
     <div class="cms-bar">
@@ -798,6 +830,6 @@
     </main>
   </div>
 
-  <script src="assets/script.js?v=79"></script>
+  <script src="assets/script.js?v=80"></script>
 </body>
 </html>

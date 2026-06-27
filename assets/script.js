@@ -172,16 +172,7 @@
     if (el) el.addEventListener("click", scrollToBuy);
   });
 
-  /* ---------- BOTTONE ACQUISTO (anteprima) ---------- */
-  var buy = document.getElementById("buy-btn");
-  if (buy) {
-    buy.addEventListener("click", function (e) {
-      e.preventDefault();
-      var sel = document.querySelector(".bundle.selected");
-      var name = sel ? sel.getAttribute("data-name") : "Kit";
-      alert("ANTEPRIMA — In produzione: aggiunta al carrello di " + name + ".");
-    });
-  }
+  /* ---------- BOTTONE ACQUISTO -> apre il carrello (gestito nell'IIFE CARRELLO in fondo) ---------- */
 
   /* ---------- STICKY CTA ---------- */
   var sticky = document.getElementById("sticky");
@@ -695,6 +686,17 @@
     Object.keys(EXTRA[l]).forEach(function (k) { I18N[l][k] = EXTRA[l][k]; });
   });
 
+  /* Stringhe del CARRELLO (l'italiano resta la lingua sorgente) */
+  var CART_I18N = {
+    en: { "Carrello": "Cart", "Offerte riservate ancora per": "Offers reserved for", "Spedizione gratuita": "Free shipping", "Garanzia 60 giorni": "60-day guarantee", "Risparmi": "You save", "Spedizione in Italia": "Shipping in Italy", "Checkout sicuro": "Secure checkout", "Pagamento 100% sicuro": "100% secure payment" },
+    fr: { "Carrello": "Panier", "Offerte riservate ancora per": "Offres réservées encore pour", "Spedizione gratuita": "Livraison gratuite", "Garanzia 60 giorni": "Garantie 60 jours", "Risparmi": "Vous économisez", "Spedizione in Italia": "Livraison en Italie", "Checkout sicuro": "Paiement sécurisé", "Pagamento 100% sicuro": "Paiement 100 % sécurisé" },
+    es: { "Carrello": "Carrito", "Offerte riservate ancora per": "Ofertas reservadas aún por", "Spedizione gratuita": "Envío gratis", "Garanzia 60 giorni": "Garantía 60 días", "Risparmi": "Ahorras", "Spedizione in Italia": "Envío en Italia", "Checkout sicuro": "Pago seguro", "Pagamento 100% sicuro": "Pago 100% seguro" },
+    de: { "Carrello": "Warenkorb", "Offerte riservate ancora per": "Angebote reserviert noch für", "Spedizione gratuita": "Kostenloser Versand", "Garanzia 60 giorni": "60 Tage Garantie", "Risparmi": "Du sparst", "Spedizione in Italia": "Versand nach Italien", "Checkout sicuro": "Sicher bezahlen", "Pagamento 100% sicuro": "100% sichere Zahlung" }
+  };
+  Object.keys(CART_I18N).forEach(function (l) {
+    Object.keys(CART_I18N[l]).forEach(function (k) { I18N[l][k] = CART_I18N[l][k]; });
+  });
+
   var COUNTRY = { it: "Italia", en: "International", fr: "France", es: "España", de: "Deutschland" };
   var CODE = { it: "IT", en: "EN", fr: "FR", es: "ES", de: "DE" };
   var origMap = new WeakMap();
@@ -841,4 +843,129 @@
   document.addEventListener("visibilitychange", function () {
     if (!document.hidden) Array.prototype.forEach.call(vids, kick);
   });
+})();
+
+/* ============================================================
+   CARRELLO (drawer anteprima) — riflette il kit selezionato,
+   regali GRATIS, stepper che cambia bundle, countdown, checkout.
+   ============================================================ */
+(function () {
+  "use strict";
+  var cart = document.getElementById("cart");
+  var buy = document.getElementById("buy-btn");
+  if (!cart || !buy) return;
+
+  var euro = function (n) { return "€" + n.toFixed(2).replace(".", ","); };
+  var UNIT = 29.90;
+  var body = document.getElementById("cart-body");
+  var elCount = document.getElementById("cart-count");
+  var elTotal = document.getElementById("cart-total");
+
+  var TIERS = ["entry", "hero", "value"]; /* ordine per lo stepper */
+  var DATA = {
+    entry: { units: 2, price: 29.90, gifts: [] },
+    hero:  { units: 4, price: 59.80, gifts: ["guida", "sped"] },
+    value: { units: 6, price: 69.90, gifts: ["guida", "sped"] }
+  };
+  var GIFTS = {
+    guida: { name: "Guida P.R.E.D.A.", img: "assets/img/regalo-guida.webp", was: 19.90 },
+    sped:  { name: "Spedizione prioritaria", img: "assets/img/regalo-spedizione.webp", was: null }
+  };
+
+  function currentTier() {
+    var sel = document.querySelector(".bundle.selected");
+    var t = sel ? sel.getAttribute("data-tier") : "hero";
+    return DATA[t] ? t : "hero";
+  }
+
+  function render(tier) {
+    var d = DATA[tier] || DATA.hero;
+    var reg = d.units * UNIT;
+    var save = reg - d.price;
+    var i = TIERS.indexOf(tier);
+    var html = "";
+
+    html += '<div class="c-item c-main">' +
+      '<img class="c-thumb" src="assets/img/scratchy-1.webp" alt="Scratchy" />' +
+      '<div class="c-mid"><div class="c-name">Scratchy</div>' +
+        '<div class="c-qty">' +
+          '<button class="c-step" type="button" data-step="-1" aria-label="Riduci"' + (i <= 0 ? ' disabled' : '') + '>−</button>' +
+          '<span class="c-num">' + d.units + '</span>' +
+          '<button class="c-step" type="button" data-step="1" aria-label="Aumenta"' + (i >= TIERS.length - 1 ? ' disabled' : '') + '>+</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="c-right"><s class="c-was">' + euro(reg) + '</s><span class="c-now">' + euro(d.price) + '</span>' +
+        '<span class="c-save">Risparmi <b>' + euro(save) + '</b></span></div>' +
+      '<button class="c-del" type="button" data-cart-close aria-label="Rimuovi"><svg class="gi"><use href="#ic-x"/></svg></button>' +
+      '</div>';
+
+    d.gifts.forEach(function (g) {
+      var gi = GIFTS[g];
+      if (!gi) return;
+      html += '<div class="c-item c-gift"><span class="c-elbow"></span>' +
+        '<img class="c-thumb" src="' + gi.img + '" alt="" />' +
+        '<div class="c-mid"><div class="c-name">' + gi.name + '</div></div>' +
+        '<div class="c-right">' + (gi.was ? '<s class="c-was">' + euro(gi.was) + '</s>' : '') +
+        '<span class="c-free">Gratis</span></div>' +
+        '</div>';
+    });
+
+    body.innerHTML = html;
+    elCount.textContent = "(" + (d.units + d.gifts.length) + ")";
+    elTotal.textContent = euro(d.price);
+
+    Array.prototype.forEach.call(body.querySelectorAll(".c-step"), function (btn) {
+      btn.addEventListener("click", function () {
+        var dir = parseInt(btn.getAttribute("data-step"), 10);
+        var ci = TIERS.indexOf(currentTier());
+        var ni = Math.max(0, Math.min(TIERS.length - 1, ci + dir));
+        if (ni === ci) return;
+        var lbl = document.querySelector('.bundle[data-tier="' + TIERS[ni] + '"]');
+        if (lbl) lbl.click(); /* aggiorna anche la buy box + "Cosa ricevi" */
+        render(TIERS[ni]);
+      });
+    });
+
+    if (window.__retranslate) window.__retranslate();
+  }
+
+  function open() {
+    render(currentTier());
+    cart.hidden = false;
+    cart.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    requestAnimationFrame(function () { cart.classList.add("show"); });
+  }
+  function close() {
+    cart.classList.remove("show");
+    cart.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    setTimeout(function () { cart.hidden = true; }, 300);
+  }
+
+  buy.addEventListener("click", function (e) { e.preventDefault(); open(); });
+  cart.addEventListener("click", function (e) {
+    if (e.target.closest("[data-cart-close]")) close();
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !cart.hidden) close(); });
+
+  var checkout = document.getElementById("cart-checkout");
+  if (checkout) checkout.addEventListener("click", function () {
+    alert("ANTEPRIMA — In produzione qui parte il checkout sicuro.");
+  });
+
+  /* countdown urgenza: 10:00 -> 0 -> riparte; persiste nella sessione */
+  var clock = document.getElementById("cart-clock");
+  if (clock) {
+    var KEY = "scratchy_cart_deadline", LEN = 10 * 60 * 1000;
+    var dl = parseInt(sessionStorage.getItem(KEY), 10);
+    if (!dl || dl < Date.now()) { dl = Date.now() + LEN; try { sessionStorage.setItem(KEY, dl); } catch (e) {} }
+    function tick() {
+      var ms = dl - Date.now();
+      if (ms <= 0) { dl = Date.now() + LEN; try { sessionStorage.setItem(KEY, dl); } catch (e) {} ms = LEN; }
+      var s = Math.floor(ms / 1000), m = Math.floor(s / 60), ss = s % 60;
+      clock.textContent = (m < 10 ? "0" : "") + m + ":" + (ss < 10 ? "0" : "") + ss;
+    }
+    tick(); setInterval(tick, 1000);
+  }
 })();
