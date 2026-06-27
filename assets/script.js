@@ -929,8 +929,8 @@
         '</div>' +
       '</div>' +
       '<div class="c-right"><s class="c-was">' + euro(reg) + '</s><span class="c-now">' + euro(d.price) + '</span>' +
-        '<span class="c-save">Risparmi <b>' + euro(save) + '</b></span></div>' +
-      '<button class="c-del" type="button" data-remove="main" aria-label="Rimuovi dal carrello"><svg class="gi"><use href="#ic-trash"/></svg></button>' +
+        '<span class="c-save">Risparmi <b>' + euro(save) + '</b></span>' +
+        '<button class="c-del" type="button" data-remove="main" aria-label="Rimuovi dal carrello"><svg class="gi"><use href="#ic-trash"/></svg></button></div>' +
       '</div>';
 
     activeGifts(tier).forEach(function (g) {
@@ -939,8 +939,8 @@
         '<img class="c-thumb" src="' + gi.img + '" alt="" />' +
         '<div class="c-mid"><div class="c-name">' + gi.name + '</div></div>' +
         '<div class="c-right">' + (gi.was ? '<s class="c-was">' + euro(gi.was) + '</s>' : '') +
-        '<span class="c-free">Gratis</span></div>' +
-        '<button class="c-del" type="button" data-remove="' + g + '" aria-label="Rimuovi"><svg class="gi"><use href="#ic-trash"/></svg></button>' +
+        '<span class="c-free">Gratis</span>' +
+        '<button class="c-del" type="button" data-remove="' + g + '" aria-label="Rimuovi"><svg class="gi"><use href="#ic-trash"/></svg></button></div>' +
         '</div>';
     });
 
