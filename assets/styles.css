@@ -472,10 +472,10 @@ table.compare td.us { background: var(--green-l); }
 .foot-mail .gi { width: 1.05em; height: 1.05em; color: var(--green); }
 .foot-mail:hover { color: var(--green-d); }
 .foot-locale { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-.loc-sel { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; font-family: inherit; font-size: .88rem; font-weight: 600; color: var(--ink); cursor: pointer; box-shadow: var(--shadow-s); transition: border-color .18s, box-shadow .18s; }
-.loc-sel:hover { border-color: var(--cta-2); box-shadow: var(--shadow-s); }
+.loc-sel { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(180deg, #fffdf8 0%, #fbf5e8 100%); border: 1px solid #ecdcb8; border-radius: 12px; padding: 10px 14px; font-family: inherit; font-size: .88rem; font-weight: 700; color: var(--ink); cursor: pointer; box-shadow: 0 1px 3px rgba(150,110,20,.06); transition: border-color .18s, box-shadow .18s; }
+.loc-sel:hover { border-color: var(--green); box-shadow: 0 2px 8px rgba(150,110,20,.12); }
 .loc-sel .sep { color: var(--muted); }
-.loc-sel .chev { width: .85em; height: .85em; transform: rotate(90deg); color: var(--muted); transition: transform .2s var(--ease); }
+.loc-sel .chev { width: .85em; height: .85em; transform: rotate(90deg); color: var(--green-d); transition: transform .2s var(--ease); }
 .loc-wrap { position: relative; }
 .loc-wrap.open .loc-sel .chev { transform: rotate(-90deg); }
 .loc-menu { position: absolute; bottom: calc(100% + 8px); left: 0; min-width: 100%; width: max-content; max-width: 260px; margin: 0; padding: 6px; list-style: none;
@@ -487,7 +487,7 @@ table.compare td.us { background: var(--green-l); }
 
 /* badge pagamenti */
 .pay { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--line); }
-.pay span { font-size: .66rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: #6a6f66; background: #fff; border: 1px solid var(--line); padding: 8px 13px; border-radius: 9px; box-shadow: var(--shadow-s); }
+.pay span { font-size: .66rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--ink); background: linear-gradient(180deg, #fffdf8 0%, #fbf5e8 100%); border: 1px solid #ecdcb8; padding: 8px 13px; border-radius: 9px; box-shadow: 0 1px 3px rgba(150,110,20,.06); }
 
 /* fondo legale */
 .foot-bottom { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); text-align: center; }
