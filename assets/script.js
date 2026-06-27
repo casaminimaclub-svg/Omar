@@ -91,7 +91,7 @@
   /* "Cosa ricevi": contenuto per kit (base prodotto + eventuali regali) */
   var receiveList = document.getElementById("receive-list");
   var GIFT_GUIDA = { name: "Guida P.R.E.D.A.", img: "assets/img/regalo-guida.webp", gift: true, was: "€19,90" };
-  var GIFT_SPED = { name: "Spedizione prioritaria", img: "assets/img/regalo-spedizione.webp", gift: true, was: "€6,99" };
+  var GIFT_SPED = { name: "Spedizione espressa", img: "assets/img/regalo-spedizione.webp", gift: true, was: "€6,99" };
   var RECEIVE = {
     entry: [
       { name: "2 Scratchy", img: "assets/img/regalo-scratchy.webp" }
@@ -875,6 +875,9 @@
   var headerCart = document.getElementById("header-cart");
   var headerDot = document.getElementById("header-cart-dot");
   var checkout = document.getElementById("cart-checkout");
+  var expressBtn = document.getElementById("express-toggle");
+  var EXPRESS_VARIANT = 47792310714553, EXPRESS_PRICE = 2.99, express = false;
+  function orderTotal() { return state.tier ? (DATA[state.tier].price + (express ? EXPRESS_PRICE : 0)) : 0; }
 
   var TIERS = ["entry", "hero", "value"]; /* ordine per lo stepper */
   var DATA = {
@@ -884,7 +887,7 @@
   };
   var GIFTS = {
     guida: { name: "Guida P.R.E.D.A.", img: "assets/img/regalo-guida.webp", was: 19.90 },
-    sped:  { name: "Spedizione prioritaria", img: "assets/img/regalo-spedizione.webp", was: 6.99 }
+    sped:  { name: "Spedizione espressa", img: "assets/img/regalo-spedizione.webp", was: 6.99 }
   };
 
   /* stato: tier === null -> carrello vuoto */
@@ -961,7 +964,7 @@
     });
 
     body.innerHTML = html;
-    if (elTotal) elTotal.textContent = euro(d.price);
+    if (elTotal) elTotal.textContent = euro(orderTotal());
     if (checkout) checkout.disabled = false;
     syncBadges();
 
@@ -1008,6 +1011,11 @@
 
   buy.addEventListener("click", function (e) { e.preventDefault(); addToCart(); });
   if (headerCart) headerCart.addEventListener("click", function (e) { e.preventDefault(); open(); });
+  if (expressBtn) expressBtn.addEventListener("click", function () {
+    express = !express;
+    expressBtn.setAttribute("aria-checked", express ? "true" : "false");
+    if (elTotal && state.tier) elTotal.textContent = euro(orderTotal());
+  });
   cart.addEventListener("click", function (e) {
     if (e.target.closest("[data-cart-close]")) close();
   });

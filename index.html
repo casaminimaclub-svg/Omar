@@ -154,11 +154,6 @@
 
           <div class="buy-cta-wrap"><button class="cta-btn buy-cta" id="buy-btn"><span class="lbl"><svg class="gi"><use href="#ic-bag"/></svg> Aggiungi al carrello</span><span class="note">Reso gratuito entro 60 giorni</span></button></div>
 
-          <div class="trust-chips offer-trust">
-            <div class="tchip"><span class="ico tint c1"><svg class="gi"><use href="#ic-flask"/></svg></span> <span>Metodo su <b>fonti di comportamento felino</b></span></div>
-            <div class="tchip"><span class="ico tint c2"><svg class="gi"><use href="#ic-return"/></svg></span> <span><b>Reso gratuito 60 giorni</b> — il rischio è nostro</span></div>
-          </div>
-
           <div class="pay-rate">oppure in 3 rate da <b id="sum-rate">€19,93</b> con <span class="scala">Scalapay</span> <span class="klarna">Klarna</span> — senza interessi</div>
           <div class="pay-badges"><span>VISA</span><span>MASTERCARD</span><span>PAYPAL</span><span>AMEX</span><span>KLARNA</span><span>SCALAPAY</span></div>
           <div class="secure"><svg class="gi"><use href="#ic-lock"/></svg> Pagamento 100% sicuro · acquista anche con PayPal</div>
@@ -523,6 +518,12 @@
       <div class="cart-body" id="cart-body"></div>
 
       <div class="cart-foot">
+        <div class="cart-express" id="cart-express">
+          <span class="cx-ico"><svg class="gi"><use href="#ic-truck"/></svg></span>
+          <div class="cx-txt"><div class="cx-name">Spedizione Express + Prioritaria</div><div class="cx-sub">Ordine processato entro 24h</div></div>
+          <span class="cx-price">€2,99</span>
+          <button type="button" class="cx-toggle" id="express-toggle" role="switch" aria-checked="false" aria-label="Aggiungi spedizione express"><span class="cx-knob"></span></button>
+        </div>
         <div class="cart-ship">
           <span class="cart-ship-l"><span class="flag">🇮🇹</span> Spedizione prioritaria</span>
           <span class="cart-ship-free">Gratis</span>
