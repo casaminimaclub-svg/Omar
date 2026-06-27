@@ -343,6 +343,13 @@ section.tight { padding: 30px 0; }
 .acc summary .chev { color: var(--green); transition: transform .2s; }
 .acc summary .chev .gi { width: 1.1em; height: 1.1em; }
 .acc details[open] summary .chev { transform: rotate(45deg); }
+/* Titoli accordion: effetto testo NERO -> ORO (palette brand) */
+.acc-t, .faq summary {
+  background-image: linear-gradient(95deg, #2a1d10 0%, #6b4d14 26%, #b07e10 48%, #d99a1a 68%, #f4ac24 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.acc-t { font-weight: 800; }
 .acc .body { padding: 0 2px 14px; color: var(--muted); font-size: .9rem; }
 
 /* ===== sintomi ===== */
