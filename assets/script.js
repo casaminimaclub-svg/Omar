@@ -91,7 +91,7 @@
   /* "Cosa ricevi": contenuto per kit (base prodotto + eventuali regali) */
   var receiveList = document.getElementById("receive-list");
   var GIFT_GUIDA = { name: "Guida P.R.E.D.A.", img: "assets/img/regalo-guida.webp", gift: true, was: "€19,90" };
-  var GIFT_SPED = { name: "Spedizione prioritaria", img: "assets/img/regalo-spedizione.webp", gift: true };
+  var GIFT_SPED = { name: "Spedizione prioritaria", img: "assets/img/regalo-spedizione.webp", gift: true, was: "€6,99" };
   var RECEIVE = {
     entry: [
       { name: "2 Scratchy", img: "assets/img/regalo-scratchy.webp" }
@@ -884,7 +884,7 @@
   };
   var GIFTS = {
     guida: { name: "Guida P.R.E.D.A.", img: "assets/img/regalo-guida.webp", was: 19.90 },
-    sped:  { name: "Spedizione prioritaria", img: "assets/img/regalo-spedizione.webp", was: null }
+    sped:  { name: "Spedizione prioritaria", img: "assets/img/regalo-spedizione.webp", was: 6.99 }
   };
 
   /* stato: tier === null -> carrello vuoto */
@@ -929,7 +929,10 @@
     }
 
     var tier = state.tier, d = DATA[tier];
-    var reg = d.units * UNIT, save = reg - d.price, i = TIERS.indexOf(tier);
+    var reg = d.units * UNIT, i = TIERS.indexOf(tier);
+    /* risparmio TOTALE = sconto sugli Scratchy + valore dei regali inclusi */
+    var giftsValue = activeGifts(tier).reduce(function (s, g) { return s + (GIFTS[g] && GIFTS[g].was ? GIFTS[g].was : 0); }, 0);
+    var save = (reg - d.price) + giftsValue;
     var html = "";
 
     html += '<div class="c-item c-main">' +
