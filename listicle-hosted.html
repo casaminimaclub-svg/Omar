@@ -179,6 +179,29 @@
     -webkit-text-fill-color:transparent;color:transparent;
   }
 
+  /* Barra CTA fissa (compare scorrendo) */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    padding:10px 14px;
+    background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
+    box-shadow:0 -6px 22px rgba(20,40,55,.14);
+    transform:translateY(130%);transition:transform .35s ease;
+  }
+  .sticky-cta.show{transform:translateY(0);}
+  .sticky-inner{display:flex;align-items:center;gap:12px;max-width:680px;margin:0 auto;}
+  .sticky-thumb{flex:0 0 auto;width:46px;height:46px;border-radius:12px;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.15);}
+  .sticky-info{flex:1;min-width:0;line-height:1.2;}
+  .sticky-info .p{display:block;font-weight:800;font-size:15px;color:var(--ink);}
+  .sticky-info .s{display:block;font-size:12.5px;color:var(--muted);}
+  .sticky-btn{
+    flex:0 0 auto;
+    background:linear-gradient(180deg,var(--cta-2) 0%,var(--cta) 52%,var(--cta-d) 100%);
+    color:#fff;text-decoration:none;font-weight:800;font-size:15px;
+    padding:13px 20px;border-radius:999px;white-space:nowrap;
+    box-shadow:0 6px 16px rgba(244,137,47,.4);
+  }
+  .sticky-btn:hover{filter:brightness(1.05);}
+
   /* ===== DESKTOP / PC — versione rifinita ===== */
   @media (min-width:760px){
     body{
@@ -286,6 +309,8 @@
     <p>È come dare un calmante a chi ha bisogno di muoversi.</p>
     <p><strong>Scratchy</strong> non aggiunge un'altra distrazione. Toglie la causa.</p>
 
+    <a class="cta" href="https://tryscratchy.com/">Voglio agire sulla causa →</a>
+
     <!-- 3 -->
     <h2 class="sec">3. "Ma è di cartone — può valere davvero?" Sì. Ed è esattamente il motivo per cui funziona.</h2>
     <figure class="rounded"><img src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/listicle-sec3.jpg?v=1782576062" alt="Gatto rosso disteso dentro Scratchy" loading="lazy" /></figure>
@@ -346,6 +371,8 @@
     <p>Se dopo due mesi non è cambiato niente, scrivi alla nostra assistenza e organizziamo il reso, senza che tu debba dimostrare niente e senza rimandare indietro il prodotto.</p>
     <p>Una persona vera ti risponde entro 24 ore.</p>
 
+    <a class="cta" href="https://tryscratchy.com/">Provalo 60 giorni, zero rischi →</a>
+
     <!-- 6 -->
     <h2 class="sec">6. "Migliaia di proprietari, e un dato che cambia tutto"</h2>
     <figure><img src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/listicle-sec6.jpg?v=1782576062" alt="Galleria di gatti che usano Scratchy" loading="lazy" /></figure>
@@ -359,6 +386,8 @@
     <p>Il tuo gatto non è rotto.</p>
     <p><strong>E tu non hai sbagliato niente.</strong></p>
     <p>Vi mancava solo lo strumento giusto.</p>
+
+    <a class="cta" href="https://tryscratchy.com/">Lo voglio anche per il mio gatto →</a>
 
     <!-- 7 -->
     <h2 class="sec">7. "60 giorni per provarlo. Zero rischi."</h2>
@@ -411,5 +440,30 @@
     <div class="footer-h">Il tuo gatto è in buone mani</div>
 
   </div>
+
+  <div class="sticky-cta" id="lstclSticky">
+    <div class="sticky-inner">
+      <img class="sticky-thumb" src="https://cdn.shopify.com/s/files/1/0784/4790/2905/files/listicle-offer.jpg?v=1782576062" alt="Scratchy" />
+      <div class="sticky-info">
+        <span class="p">Scratchy — terapia ambientale</span>
+        <span class="s">60 giorni soddisfatti o rimborsati</span>
+      </div>
+      <a class="sticky-btn" href="https://tryscratchy.com/">Vedi l'offerta →</a>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var el=document.getElementById('lstclSticky');
+    if(!el) return;
+    function s(){
+      var y=window.pageYOffset||document.documentElement.scrollTop;
+      var nb=(window.innerHeight+y)>=(document.documentElement.scrollHeight-520);
+      if(y>650 && !nb){el.classList.add('show');}else{el.classList.remove('show');}
+    }
+    window.addEventListener('scroll',s,{passive:true});
+    window.addEventListener('resize',s,{passive:true});
+    s();
+  })();
+  </script>
 </body>
 </html>
