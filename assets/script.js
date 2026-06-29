@@ -883,7 +883,7 @@
   var DATA = {
     entry: { units: 2, price: 34.90, gifts: [] },
     hero:  { units: 4, price: 59.90, gifts: ["guida", "sped"] },
-    value: { units: 6, price: 79.90, gifts: ["guida", "sped"] }
+    value: { units: 6, price: 89.90, gifts: ["guida", "sped"] }
   };
   var GIFTS = {
     guida: { name: "Guida P.R.E.D.A.", img: "assets/img/regalo-guida.webp", was: 19.90 },
