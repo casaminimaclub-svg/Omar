@@ -90,22 +90,34 @@
 
   /* "Cosa ricevi": contenuto per kit (base prodotto + eventuali regali) */
   var receiveList = document.getElementById("receive-list");
+  var receiveTotal = document.getElementById("receive-total");
   var GIFT_GUIDA = { name: "Guida P.R.E.D.A.", img: "https://raw.githack.com/casaminimaclub-svg/Omar/claude/nice-hopper-21wptu/assets/img/regalo-guida.webp", gift: true, was: "€19,90" };
   var GIFT_SPED = { name: "Spedizione espressa", img: "https://raw.githack.com/casaminimaclub-svg/Omar/claude/nice-hopper-21wptu/assets/img/regalo-spedizione.webp", gift: true, was: "€6,99" };
+  var GIFT_PALLINA = { name: "Pallina interattiva", icon: "ic-paw", gift: true, was: "€9,90" };
+  var GIFT_PALLINA2 = { name: "2 Palline interattive", icon: "ic-paw", gift: true, was: "€19,80" };
   var RECEIVE = {
     entry: [
-      { name: "2 Scratchy", img: "https://raw.githack.com/casaminimaclub-svg/Omar/claude/nice-hopper-21wptu/assets/img/regalo-scratchy.webp" }
+      { name: "2 Scratchy", img: "https://raw.githack.com/casaminimaclub-svg/Omar/claude/nice-hopper-21wptu/assets/img/regalo-scratchy.webp" },
+      GIFT_GUIDA
     ],
     hero: [
       { name: "4 Scratchy", img: "https://raw.githack.com/casaminimaclub-svg/Omar/claude/nice-hopper-21wptu/assets/img/regalo-scratchy.webp" },
       GIFT_GUIDA,
-      GIFT_SPED
+      GIFT_SPED,
+      GIFT_PALLINA
     ],
     value: [
       { name: "6 Scratchy", img: "https://raw.githack.com/casaminimaclub-svg/Omar/claude/nice-hopper-21wptu/assets/img/regalo-scratchy.webp" },
       GIFT_GUIDA,
-      GIFT_SPED
+      GIFT_SPED,
+      GIFT_PALLINA2
     ]
+  };
+  /* valore totale barrato = somma dei valori (Scratchy a €29,90/cad + bonus) -> prezzo di oggi */
+  var TOTALS = {
+    entry: { was: "€79,70", now: "€34,90" },
+    hero:  { was: "€156,39", now: "€59,90" },
+    value: { was: "€226,09", now: "€89,90" }
   };
   function renderReceive(tier) {
     if (!receiveList) return;
@@ -123,6 +135,12 @@
         (it.sub ? '<span class="r-sub">' + it.sub + '</span>' : '') + '</span>' + tag + '</li>';
     });
     receiveList.innerHTML = html;
+    var t = TOTALS[tier];
+    if (receiveTotal) {
+      receiveTotal.innerHTML = t
+        ? '<span class="rt-lbl">Valore totale</span> <s class="rt-was">' + t.was + '</s> <span class="rt-arrow">→</span> <span class="rt-now">oggi ' + t.now + '</span>'
+        : "";
+    }
     if (window.__retranslateEl) window.__retranslateEl(receiveList);
     else if (window.__retranslate) window.__retranslate();
   }
@@ -881,13 +899,15 @@
 
   var TIERS = ["entry", "hero", "value"]; /* ordine per lo stepper */
   var DATA = {
-    entry: { units: 2, price: 34.90, gifts: [] },
-    hero:  { units: 4, price: 59.90, gifts: ["guida", "sped"] },
-    value: { units: 6, price: 89.90, gifts: ["guida", "sped"] }
+    entry: { units: 2, price: 34.90, gifts: ["guida"] },
+    hero:  { units: 4, price: 59.90, gifts: ["guida", "sped", "pallina"] },
+    value: { units: 6, price: 89.90, gifts: ["guida", "sped", "pallina2"] }
   };
   var GIFTS = {
     guida: { name: "Guida P.R.E.D.A.", img: "https://raw.githack.com/casaminimaclub-svg/Omar/claude/nice-hopper-21wptu/assets/img/regalo-guida.webp", was: 19.90 },
-    sped:  { name: "Spedizione espressa", img: "https://raw.githack.com/casaminimaclub-svg/Omar/claude/nice-hopper-21wptu/assets/img/regalo-spedizione.webp", was: 6.99 }
+    sped:  { name: "Spedizione espressa", img: "https://raw.githack.com/casaminimaclub-svg/Omar/claude/nice-hopper-21wptu/assets/img/regalo-spedizione.webp", was: 6.99 },
+    pallina:  { name: "Pallina interattiva", icon: "ic-paw", was: 9.90 },
+    pallina2: { name: "2 Palline interattive", icon: "ic-paw", was: 19.80 }
   };
 
   /* stato: tier === null -> carrello vuoto */
@@ -955,8 +975,11 @@
     activeGifts(tier).forEach(function (g) {
       var gi = GIFTS[g];
       /* i regali NON sono rimovibili singolarmente: spariscono solo togliendo Scratchy */
+      var gthumb = gi.img
+        ? '<img class="c-thumb" src="' + gi.img + '" alt="" />'
+        : '<span class="c-thumb c-thumb-ico"><svg class="gi"><use href="#' + gi.icon + '"/></svg></span>';
       html += '<div class="c-item c-gift"><span class="c-elbow"></span>' +
-        '<img class="c-thumb" src="' + gi.img + '" alt="" />' +
+        gthumb +
         '<div class="c-mid"><div class="c-name">' + gi.name + '</div><span class="c-incluso">Incluso nell\'offerta</span></div>' +
         '<div class="c-right">' + (gi.was ? '<s class="c-was">' + euro(gi.was) + '</s>' : '') +
         '<span class="c-free">Gratis</span></div>' +
@@ -1024,7 +1047,7 @@
     if (checkout.disabled || !state.tier) return;
     var units = DATA[state.tier].units;
     var items = [{ id: 47308481790137, quantity: units }];
-    if (state.tier === "hero" || state.tier === "value") items.push({ id: 47503663005881, quantity: 1 });
+    items.push({ id: 47503663005881, quantity: 1 });
     if (express) items.push({ id: 47792310714553, quantity: 1 });
     checkout.disabled = true;
     fetch("/cart/clear.js", { method: "POST", headers: { "Content-Type": "application/json" } })
