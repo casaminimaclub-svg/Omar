@@ -137,7 +137,8 @@
     var t = TOTALS[tier];
     if (receiveTotal) {
       receiveTotal.innerHTML = t
-        ? '<span class="rt-lbl">Valore totale</span> <s class="rt-was">' + t.was + '</s> <span class="rt-arrow">→</span> <span class="rt-now">oggi ' + t.now + '</span>'
+        ? '<span class="rt-old"><span class="rt-lbl">Valore totale</span><s class="rt-was">' + t.was + '</s></span>' +
+          '<span class="rt-new"><span class="rt-today">Oggi paghi</span><span class="rt-now">' + t.now + '</span></span>'
         : "";
     }
     if (window.__retranslateEl) window.__retranslateEl(receiveList);
