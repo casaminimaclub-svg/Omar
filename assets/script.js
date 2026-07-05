@@ -93,9 +93,7 @@
   var receiveTotal = document.getElementById("receive-total");
   var GIFT_GUIDA = { name: "Guida P.R.E.D.A.", img: "assets/img/regalo-guida.webp", gift: true, was: "€19,90" };
   var GIFT_SPED = { name: "Spedizione espressa", img: "assets/img/regalo-spedizione.webp", gift: true, was: "€6,99" };
-  var GIFT_MAPPA = { name: "La Mappa dei Punti Caldi", img: "https://cdn.shopify.com/s/files/1/0784/4790/2905/files/mappa_punti_caldi_cover.png?v=1783246673", gift: true, was: "€14,90" };
-  var GIFT_PALLINA = { name: "Pallina interattiva", icon: "ic-paw", gift: true, was: "€9,90" };
-  var GIFT_PALLINA2 = { name: "2 Palline interattive", icon: "ic-paw", gift: true, was: "€19,80" };
+  var GIFT_MAPPA = { name: "La Mappa dei Punti Caldi", img: "https://cdn.shopify.com/s/files/1/0784/4790/2905/files/guidaim.png?v=1783271594", gift: true, was: "€14,90" };
   var RECEIVE = {
     entry: [
       { name: "2 Scratchy", img: "assets/img/regalo-scratchy.webp" },
@@ -104,23 +102,21 @@
     hero: [
       { name: "4 Scratchy", img: "assets/img/regalo-scratchy.webp" },
       GIFT_GUIDA,
-      GIFT_SPED,
       GIFT_MAPPA,
-      GIFT_PALLINA
+      GIFT_SPED
     ],
     value: [
       { name: "6 Scratchy", img: "assets/img/regalo-scratchy.webp" },
       GIFT_GUIDA,
-      GIFT_SPED,
       GIFT_MAPPA,
-      GIFT_PALLINA2
+      GIFT_SPED
     ]
   };
   /* valore totale barrato = somma dei valori (Scratchy a €29,90/cad + bonus) -> prezzo di oggi */
   var TOTALS = {
     entry: { was: "€79,70", now: "€34,90" },
-    hero:  { was: "€171,29", now: "€59,90" },
-    value: { was: "€240,99", now: "€89,90" }
+    hero:  { was: "€161,39", now: "€59,90" },
+    value: { was: "€221,19", now: "€89,90" }
   };
   function renderReceive(tier) {
     if (!receiveList) return;
@@ -903,15 +899,13 @@
   var TIERS = ["entry", "hero", "value"]; /* ordine per lo stepper */
   var DATA = {
     entry: { units: 2, price: 34.90, gifts: ["guida"] },
-    hero:  { units: 4, price: 59.90, gifts: ["guida", "sped", "mappa", "pallina"] },
-    value: { units: 6, price: 89.90, gifts: ["guida", "sped", "mappa", "pallina2"] }
+    hero:  { units: 4, price: 59.90, gifts: ["guida", "mappa", "sped"] },
+    value: { units: 6, price: 89.90, gifts: ["guida", "mappa", "sped"] }
   };
   var GIFTS = {
     guida: { name: "Guida P.R.E.D.A.", img: "assets/img/regalo-guida.webp", was: 19.90 },
     sped:  { name: "Spedizione espressa", img: "assets/img/regalo-spedizione.webp", was: 6.99 },
-    mappa: { name: "La Mappa dei Punti Caldi", img: "https://cdn.shopify.com/s/files/1/0784/4790/2905/files/mappa_punti_caldi_cover.png?v=1783246673", was: 14.90 },
-    pallina:  { name: "Pallina interattiva", icon: "ic-paw", was: 9.90 },
-    pallina2: { name: "2 Palline interattive", icon: "ic-paw", was: 19.80 }
+    mappa: { name: "La Mappa dei Punti Caldi", img: "https://cdn.shopify.com/s/files/1/0784/4790/2905/files/guidaim.png?v=1783271594", was: 14.90 }
   };
 
   /* stato: tier === null -> carrello vuoto */
