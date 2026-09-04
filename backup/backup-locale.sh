@@ -70,7 +70,13 @@ if [ -d "$CLAUDE_HOME/projects" ]; then
       mkdir -p "$(dirname "$out")"
       gzip -c "$f" > "$out"
       log "ok  chat grande compressa: $rel ($(du -h "$out" | cut -f1))"
-      if [ "$(du -m "$out" | cut -f1)" -ge "$MAX_MB" ]; then err "ancora > ${MAX_MB} MB anche compressa: $rel (esclusa)"; rm -f "$out"; fi
+      if [ "$(du -m "$out" | cut -f1)" -ge "$MAX_MB" ]; then
+        # Ancora troppo grande: spezzo in parti da 90 MB (ripristino: cat X.gz.part-* | gunzip > X)
+        rm -f "$out".part-*
+        split -b 90m -a 2 "$out" "$out.part-"
+        rm -f "$out"
+        log "    spezzata in $(ls "$out".part-* | wc -l | tr -d ' ') parti da 90 MB"
+      fi
     done
 fi
 

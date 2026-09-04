@@ -62,3 +62,11 @@ Claude Code ritroverà tutte le chat con `claude --resume`.
 ## Attenzione
 Le chat possono contenere dati sensibili (clienti, numeri, password scritte per
 sbaglio). Tieni il repository **privato** e non condividerlo.
+
+## Chat molto grandi (oltre 95 MB anche compresse)
+Vengono spezzate in parti `nome.jsonl.gz.part-aa`, `part-ab`, ... Per ripristinarle:
+```bash
+cd ~/Omar/backup/claude/projects-grandi/<cartella-progetto>
+cat <id>.jsonl.gz.part-* | gunzip > ~/.claude/projects/<cartella-progetto>/<id>.jsonl
+```
+Le chat compresse ma intere si ripristinano con `gunzip -c file.jsonl.gz > destinazione.jsonl`.
