@@ -1,0 +1,9 @@
+# Una cartella per riga. Verranno copiate in backup/cartelle/<nome>/ e spinte su GitHub.
+# Puoi usare ~ per la home. Le righe che iniziano con # sono commenti.
+# Esempi (modifica con i percorsi veri del tuo Mac/PC):
+#
+# ~/Dropbox/Linforia
+# ~/Dropbox/Scratchy
+# ~/Documents/Store Ceylon
+# ~/Desktop/Omar
+/tmp/tmp.Wr5EqQzdw6/lavoro
