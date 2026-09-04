@@ -43,7 +43,7 @@ per programmarlo.
 ## Cosa viene salvato
 | Cosa | Da dove | A dove nel repo |
 |---|---|---|
-| Chat (tutte le sessioni) | `~/.claude/projects` | `backup/claude/projects` |
+| Chat (tutte le sessioni) | `~/.claude/projects` | `backup/claude/projects` (oltre 95 MB: compresse in `projects-grandi`) |
 | Skill, agenti, comandi, memoria, piani | `~/.claude/{skills,agents,commands,memory,plans,todos}` | `backup/claude/...` |
 | Istruzioni globali e impostazioni | `~/.claude/CLAUDE.md`, `settings.json` | `backup/claude/` |
 | Cartelle di lavoro | quelle in `backup/cartelle.txt` | `backup/cartelle/<nome>` |

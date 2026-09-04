@@ -61,6 +61,19 @@ for f in CLAUDE.md settings.json keybindings.json; do
 done
 # NB: ~/.claude.json e ~/.claude/.credentials.json NON vengono copiati: contengono token di accesso.
 
+# Chat oltre il limite: salvate compresse (.jsonl.gz) in backup/claude/projects-grandi, nessuna perdita.
+if [ -d "$CLAUDE_HOME/projects" ]; then
+  find "$CLAUDE_HOME/projects" -type f -name '*.jsonl' -size +"${MAX_MB}"M -print0 2>/dev/null \
+  | while IFS= read -r -d '' f; do
+      rel="${f#$CLAUDE_HOME/projects/}"
+      out="$DEST/claude/projects-grandi/$rel.gz"
+      mkdir -p "$(dirname "$out")"
+      gzip -c "$f" > "$out"
+      log "ok  chat grande compressa: $rel ($(du -h "$out" | cut -f1))"
+      if [ "$(du -m "$out" | cut -f1)" -ge "$MAX_MB" ]; then err "ancora > ${MAX_MB} MB anche compressa: $rel (esclusa)"; rm -f "$out"; fi
+    done
+fi
+
 # ---------- 2. Cartelle di lavoro elencate in backup/cartelle.txt ----------
 if [ -f "$LISTA" ]; then
   while IFS= read -r riga || [ -n "$riga" ]; do
