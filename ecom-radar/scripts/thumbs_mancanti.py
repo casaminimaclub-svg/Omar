@@ -13,7 +13,7 @@ jobs = []
 # solo le top 100 di ogni brand, nello stesso ordine della bacheca (reach, poi punteggio)
 # 19 nov (Chry): anteprime solo per le ad della Home (classifica impression, lib_rank) + Nuracalm (34) tutte
 for aid, iu, m in c.execute("""SELECT ad_archive_id, image_url, media FROM ads WHERE brand_id IS NOT NULL
-        AND (vetrina=1 OR brand_id=34) AND (?=0 OR brand_id=?)""", (BRAND, BRAND)):
+        AND (vetrina=1 OR brand_id IN (SELECT id FROM brands WHERE pinned=1)) AND (?=0 OR brand_id=?)""", (BRAND, BRAND)):
     if aid in have: continue
     urls = [iu] + [x.get("thumb") or x.get("url") for x in json.loads(m or "[]")]
     urls = [u for u in urls if u][:3]

@@ -2,7 +2,7 @@
 # Giro periodico (Chry 20 nov): ogni brand aggiornato con dati completi. Notte: attive + paesi + dettaglio attive.
 # Domenica: anche archivio completo (attive+passate). Si mostrano solo le 20 per formato (vetrina), i dati restano tutti.
 export PATH=/usr/sbin:/usr/bin:/bin:/opt/homebrew/bin
-cd /root/ecom-radar
+cd __HOME__/ecom-radar
 PY=/usr/bin/python3; L=data/giro.log
 pgrep -f "ripristino2.sh|ripristino3.sh|ripristino4.sh|scripts/giro.sh .*running" >/dev/null && { echo "$(date '+%d %H:%M') ripristino in corso, salto" >> $L; exit 0; }
 caffeinate -i -w $$ &

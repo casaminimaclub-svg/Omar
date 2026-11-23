@@ -10,7 +10,7 @@
 #   radar creative <id> [n]    analisi creativa (hook/angolo/persona) delle top n ad
 #   radar digest [giorni]      digest dei movimenti
 #   radar batch <file.txt>     coda di brand (una URL per riga)
-R=/root/ecom-radar/radar
+R=__HOME__/ecom-radar/radar
 case "$1" in
   add) shift; python3 -u $R/brand.py add "$@";;
   refresh)

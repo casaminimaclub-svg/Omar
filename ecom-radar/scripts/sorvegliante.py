@@ -7,7 +7,7 @@ Gira ogni 15 minuti (launchd com.utente.ecom-radar.sorvegliante). Controlla e RI
 - rete assente / CPU calda → lo scrive.
 Ogni giro: una riga in data/sorvegliante.log, stato leggibile in data/STATO.md. Notifica macOS solo sugli allarmi."""
 import os, subprocess, sqlite3, time, re, urllib.request
-R = "/root/ecom-radar"; os.chdir(R)
+R = "__HOME__/ecom-radar"; os.chdir(R)
 LOG = f"{R}/data/sorvegliante.log"; fatti = []; allarmi = []
 
 def sh(cmd): return subprocess.run(cmd, shell=True, capture_output=True, text=True).stdout
@@ -19,7 +19,7 @@ def etime_s(e):  # [[dd-]hh:]mm:ss
 
 # 0. browser di Playwright (21 nov: la cache è stata svuotata e per un giorno nessuna lettura ha funzionato)
 import glob
-if not glob.glob("/root/Library/Caches/ms-playwright/chromium_headless_shell-*/chrome-headless-shell-mac-arm64/chrome-headless-shell"):
+if not glob.glob("__HOME__/Library/Caches/ms-playwright/chromium_headless_shell-*/chrome-headless-shell-mac-arm64/chrome-headless-shell"):
     sh("/usr/bin/python3 -m playwright install chromium-headless-shell"); fatti.append("browser Playwright mancante: reinstallato")
 
 # 1. server

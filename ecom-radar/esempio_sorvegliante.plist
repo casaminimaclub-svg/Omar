@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict>
 <key>Label</key><string>com.utente.ecom-radar.sorvegliante</string>
-<key>ProgramArguments</key><array><string>/usr/bin/python3</string><string>/root/ecom-radar/scripts/sorvegliante.py</string></array>
+<key>ProgramArguments</key><array><string>/usr/bin/python3</string><string>__HOME__/ecom-radar/scripts/sorvegliante.py</string></array>
 <key>StartInterval</key><integer>900</integer>
 <key>RunAtLoad</key><true/>
-<key>StandardErrorPath</key><string>/root/ecom-radar/data/sorvegliante.err</string>
+<key>StandardErrorPath</key><string>__HOME__/ecom-radar/data/sorvegliante.err</string>
 </dict></plist>

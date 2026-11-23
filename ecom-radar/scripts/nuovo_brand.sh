@@ -1,6 +1,6 @@
 #!/bin/zsh
 # Brand nuovo da cima a fondo (20 nov): pagine, attive+archivio, ordine Meta, paesi, reach, vetrina, landing, punteggi.
-B=$1; cd /root/ecom-radar; export PATH=/usr/sbin:/usr/bin:/bin:/opt/homebrew/bin
+B=$1; cd __HOME__/ecom-radar; export PATH=/usr/sbin:/usr/bin:/bin:/opt/homebrew/bin
 caffeinate -i -w $$ &
 PY=/usr/bin/python3; L=data/nuovo_$B.log
 rete() { until curl -s -m 10 -o /dev/null https://www.facebook.com; do sleep 60; done; }

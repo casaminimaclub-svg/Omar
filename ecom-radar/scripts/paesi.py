@@ -9,8 +9,10 @@ from top20 import leggi, ranghi
 from pagine_browser import bloccata, raffredda
 from playwright.sync_api import sync_playwright
 
-PAESI = ["US", "GB", "CA", "AU", "NZ", "IE", "DE", "AT", "CH", "FR", "BE", "NL", "IT", "ES", "PT",
-         "SE", "NO", "DK", "FI", "PL", "CZ", "GR", "RO", "HU", "BR", "MX", "AE", "SA", "ZA", "JP", "SG"]
+# Mercati dell'utente: USA per primo (mercato principale), Italia, poi tutta l'Europa (UE27 + GB, CH, NO).
+# 31 paesi come nella lista originale, quindi lo stesso carico su Meta.
+PAESI = ["US", "IT", "GB", "DE", "FR", "ES", "NL", "BE", "AT", "IE", "PT", "SE", "DK", "FI", "PL", "CZ",
+         "GR", "RO", "HU", "SK", "SI", "HR", "BG", "LT", "LV", "EE", "LU", "MT", "CY", "CH", "NO"]
 
 def main():
     bid = int(sys.argv[1]); c = DB.conn(); b = B._brand(c, bid); t = DB.today()

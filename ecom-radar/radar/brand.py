@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import db as DB
 import meta_lib as M
 
-MARKETS = ["ALL", "US", "GB", "AU", "CA", "DE", "FR", "IT", "ES", "NL"]
+MARKETS = ["ALL", "US", "IT", "GB", "DE", "FR", "ES", "NL", "PL", "SE"]
 # Domini che NON identificano mai un brand: sono infrastruttura condivisa da chiunque.
 # Averli presi per domini di Gundry MD ha attaccato al brand 6.987 ad altrui (Maroon 5,
 # Warner Music, Dr. Marty Pets...): un accorciatore lo usano migliaia di inserzionisti.

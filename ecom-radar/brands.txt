@@ -1,0 +1,16 @@
+# Brand competitor da mappare: uno per riga, "URL [Nome]".
+# Sono tutti i brand citati nel kit di Chry (PLAYBOOK, SISTEMA_BRAND, codice).
+# Il primo è la prova (passo 8 del kit): Heusom è documentato (6 pagine, tryheusom.com), quindi il risultato si può confrontare.
+https://tryheusom.com Heusom
+https://tryrosabella.com Rosabella
+https://holior.com Holior
+https://tryultimapeak.com Ultimapeak
+https://spnutrition-us.com SP Nutrition
+https://radivy.co Radivy
+https://morningvitality.com Peak Health Research
+https://ouravive.com OsteoShield
+https://calmicollar.com Calmicollar
+https://officialpurelia.com Purelia
+# Senza dominio nel kit: lo script prova pureveen.com / trypureveen.com / .co ecc. e salta se nessuno risponde.
+https://pureveen.com Pureveen
+https://metabolae.com Metabolae
