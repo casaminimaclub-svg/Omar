@@ -1,0 +1,1 @@
+JSON.stringify([...document.images].filter(i=>/adfiles\/m\d+/.test(i.src)).slice(0,3).map(i=>{var e=i;for(var k=0;k<8&&e;k++){e=e.parentElement;if(e&&/\.(com|co|shop|net|org|io)\b/i.test(e.innerText||''))break}return {id:i.src.match(/adfiles\/(m\d+)/)[1],t:(e&&e.innerText||'').slice(0,300)}}))

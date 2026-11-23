@@ -1,0 +1,4 @@
+#!/bin/sh
+# shim Linux di taskpolicy (macOS): ignora le opzioni ed esegue il comando
+while [ $# -gt 0 ]; do case "$1" in -c|-d|-g|-t|-l) shift 2;; -b|-B) shift;; *) break;; esac; done
+exec "$@"

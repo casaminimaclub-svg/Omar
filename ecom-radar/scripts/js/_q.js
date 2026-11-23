@@ -1,0 +1,1 @@
+window.__r='p';fetch('/api/proxy/ads/search',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({keyword:'heusom.com',sort_by:'most_relevant'})}).then(r=>r.json()).then(j=>window.__r=JSON.stringify({debug:j.debug,total:j.total,cursor:j.cursor}).slice(0,3000));1

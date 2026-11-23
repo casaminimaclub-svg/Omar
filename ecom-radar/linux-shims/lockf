@@ -1,0 +1,4 @@
+#!/bin/sh
+# shim Linux di lockf (macOS): lockf [-k] [-t sec] file cmd...  ->  flock file cmd...
+W=""; while [ $# -gt 0 ]; do case "$1" in -k|-s|-n) shift;; -t) W="-w $2"; shift 2;; *) break;; esac; done
+F="$1"; shift; exec flock $W "$F" "$@"

@@ -1,0 +1,1 @@
+(function(){var b=document.querySelector('.ad-outer-box');var h=b.outerHTML.replace(/_ngcontent-c\d+=""/g,'').replace(/<!---->/g,'').replace(/\s+/g,' ');var i=h.indexOf('overflow-wrap');return h.slice(i+300,i+2600)})()

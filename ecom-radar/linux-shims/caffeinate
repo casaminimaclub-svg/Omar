@@ -1,0 +1,3 @@
+#!/bin/sh
+# shim Linux: sul server cloud non c'e' sospensione, caffeinate non serve
+exit 0

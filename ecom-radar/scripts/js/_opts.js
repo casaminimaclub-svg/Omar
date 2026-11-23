@@ -1,0 +1,1 @@
+JSON.stringify([...document.querySelectorAll('li,option,.ui-dropdown-item,span')].map(e=>e.innerText.trim()).filter(t=>t&&t.length<30&&/name|url|text|domain|page|comment|advertiser|link/i.test(t)).slice(0,40))
